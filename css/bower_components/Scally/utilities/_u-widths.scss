@@ -1,0 +1,27 @@
+/* ============================================================================
+   @UTILITIES -> WIDTHS
+   ========================================================================= */
+
+
+/**
+ * Apply percentage based width classes with the option to apply at all the
+ * main breakpoints. All the classes are the same as the Width settings found
+ * in: Core -> Settings -> Widths, so `$one-whole` would be `.u-one-whole`.
+ *
+ * N.B. by default we're applying to the Lap breakpoint.
+ */
+
+
+/**
+ * Settings.
+ */
+
+// Apply at breakpoints
+$u-widths-breakpoints: (lap) !default;
+
+
+/**
+ * Generate all the width classes.
+ */
+
+@include generate-percentage-classes-at-breakpoints($u-widths-breakpoints);

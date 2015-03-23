@@ -1,0 +1,337 @@
+/* ============================================================================
+   @UTILITIES -> POSITION
+   ========================================================================= */
+
+
+/**
+ * Various utilities for positioning elements.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#position
+ */
+
+
+/**
+ * Settings.
+ */
+
+/**
+ * Apply at breakpoints.
+ */
+
+// Which breakpoints do you want to use?
+$u-position-breakpoints:                          $default-breakpoints
+!default;
+
+// What do you want to apply it too?
+$u-position-breakpoint-toggle-relative:           false !default;
+
+$u-position-breakpoint-toggle-absolute:           false !default;
+
+$u-position-breakpoint-toggle-fixed:              false !default;
+
+$u-position-breakpoint-toggle-static:             false !default;
+
+$u-position-breakpoint-toggle-left:               false !default;
+
+$u-position-breakpoint-toggle-right:              false !default;
+
+$u-position-breakpoint-toggle-top:                false !default;
+
+$u-position-breakpoint-toggle-bottom:             false !default;
+
+$u-position-breakpoint-toggle-top-left:           false !default;
+
+$u-position-breakpoint-toggle-top-right:          false !default;
+
+$u-position-breakpoint-toggle-bottom-left:        false !default;
+
+$u-position-breakpoint-toggle-bottom-right:       false !default;
+
+$u-position-breakpoint-toggle-pin-all:            false !default;
+
+$u-position-breakpoint-toggle-pin-ends:           false !default;
+
+$u-position-breakpoint-toggle-pin-sides:          false !default;
+
+$u-position-breakpoint-toggle-pin-sides-top:      false !default;
+
+$u-position-breakpoint-toggle-pin-sides-bottom:   false !default;
+
+$u-position-breakpoint-toggle-v-middle:           false !default;
+
+$u-position-breakpoint-toggle-h-middle:           false !default;
+
+$u-position-breakpoint-toggle-middle:             false !default;
+
+
+/**
+ * Set positioning contexts.
+ */
+
+// Relative
+%u-position-relative,
+.u-position-relative {position: relative;}
+
+@if $u-position-breakpoint-toggle-relative {
+  @include generate-at-breakpoints('.u-position-relative',
+    $u-position-breakpoints) {position: relative;}
+}// end if
+
+// Absolute
+%u-position-absolute,
+.u-position-absolute {position: absolute;}
+
+@if $u-position-breakpoint-toggle-absolute {
+  @include generate-at-breakpoints('.u-position-absolute',
+    $u-position-breakpoints) {position: absolute;}
+}// end if
+
+// Fixed
+%u-position-fixed,
+.u-position-fixed {position: fixed;}
+
+@if $u-position-breakpoint-toggle-fixed {
+  @include generate-at-breakpoints('.u-position-fixed',
+    $u-position-breakpoints) {position: fixed;}
+}// end if
+
+// Static
+%u-position-static,
+.u-position-static {position: static;}
+
+@if $u-position-breakpoint-toggle-static {
+  @include generate-at-breakpoints('.u-position-static',
+    $u-position-breakpoints) {position: static;}
+}// end if
+
+
+/**
+ * Different ways to position an element.
+ */
+
+// Left
+%u-position-left,
+.u-position-left {left: 0;}
+
+@if $u-position-breakpoint-toggle-left {
+  @include generate-at-breakpoints('.u-position-left',
+    $u-position-breakpoints) {left: 0;}
+}// end if
+
+// Right
+%u-position-right,
+.u-position-right {right: 0;}
+
+@if $u-position-breakpoint-toggle-right {
+  @include generate-at-breakpoints('.u-position-right',
+    $u-position-breakpoints) {right: 0;}
+}// end if
+
+// Top
+%u-position-top,
+.u-position-top {top: 0;}
+
+@if $u-position-breakpoint-toggle-top {
+  @include generate-at-breakpoints('.u-position-top',
+    $u-position-breakpoints) {top: 0;}
+}// end if
+
+// Bottom
+%u-position-bottom,
+.u-position-bottom {bottom: 0;}
+
+@if $u-position-breakpoint-toggle-bottom {
+  @include generate-at-breakpoints('.u-position-bottom',
+    $u-position-breakpoints) {bottom: 0;}
+}// end if
+
+// Top left corner
+%u-position-top-left,
+.u-position-top-left {
+  top: 0;
+  left: 0;
+}
+
+@if $u-position-breakpoint-toggle-top-left {
+  @include generate-at-breakpoints('.u-position-top-left',
+    $u-position-breakpoints) {
+    top: 0;
+    left: 0;
+  }
+}// end if
+
+// Top right corner
+%u-position-top-right,
+.u-position-top-right {
+  top: 0;
+  right: 0;
+}
+
+@if $u-position-breakpoint-toggle-top-right {
+  @include generate-at-breakpoints('.u-position-top-right',
+    $u-position-breakpoints) {
+    top: 0;
+    right: 0;
+  }
+}// end if
+
+// Bottom left corner
+%u-position-bottom-left,
+.u-position-bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+@if $u-position-breakpoint-toggle-bottom-left {
+  @include generate-at-breakpoints('.u-position-bottom-left',
+    $u-position-breakpoints) {
+    bottom: 0;
+    left: 0;
+  }
+}// end if
+
+// Bottom right corner
+%u-position-bottom-right,
+.u-position-bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+@if $u-position-breakpoint-toggle-bottom-right {
+  @include generate-at-breakpoints('.u-position-bottom-right',
+    $u-position-breakpoints) {
+    bottom: 0;
+    right: 0;
+  }
+}// end if
+
+// Pin to all corners
+%u-position-pin-all,
+.u-position-pin-all {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+@if $u-position-breakpoint-toggle-pin-all {
+  @include generate-at-breakpoints('.u-position-pin-all',
+    $u-position-breakpoints) {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+}// end if
+
+// Pin to top and bottom
+%u-position-pin-ends,
+.u-position-pin-ends {
+  top: 0;
+  bottom: 0;
+}
+
+@if $u-position-breakpoint-toggle-pin-ends {
+  @include generate-at-breakpoints('.u-position-pin-ends',
+    $u-position-breakpoints) {
+    top: 0;
+    bottom: 0;
+  }
+}// end if
+
+// Pin to the sides
+%u-position-pin-sides,
+.u-position-pin-sides {
+  left: 0;
+  right: 0;
+}
+
+@if $u-position-breakpoint-toggle-pin-sides {
+  @include generate-at-breakpoints('.u-position-pin-sides',
+    $u-position-breakpoints) {
+    left: 0;
+    right: 0;
+  }
+}// end if
+
+// Pin to the sides and top
+%u-position-pin-sides-top,
+.u-position-pin-sides-top {
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+@if $u-position-breakpoint-toggle-pin-sides-top {
+  @include generate-at-breakpoints('.u-position-pin-sides-top',
+    $u-position-breakpoints) {
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+}// end if
+
+// Pin to the sides and bottom
+%u-position-pin-sides-bottom,
+.u-position-pin-sides-bottom {
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@if $u-position-breakpoint-toggle-pin-sides-bottom {
+  @include generate-at-breakpoints('.u-position-pin-sides-bottom',
+    $u-position-breakpoints) {
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}// end if
+
+// Vertically in the middle
+%u-position-v-middle,
+.u-position-v-middle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@if $u-position-breakpoint-toggle-v-middle {
+  @include generate-at-breakpoints('.u-position-v-middle',
+    $u-position-breakpoints) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}// end if
+
+// Horizontally in the middle
+%u-position-h-middle,
+.u-position-h-middle {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@if $u-position-breakpoint-toggle-h-middle {
+  @include generate-at-breakpoints('.u-position-h-middle',
+    $u-position-breakpoints) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}// end if
+
+// Vertically and horizontally in the middle
+%u-position-middle,
+.u-position-middle {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@if $u-position-breakpoint-toggle-middle {
+  @include generate-at-breakpoints('.u-position-middle',
+    $u-position-breakpoints) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}// end if

@@ -1,0 +1,28 @@
+/* ============================================================================
+   @CORE -> PLACEHOLDERS -> BOTTOM SPACING
+   ========================================================================= */
+
+
+/**
+ * Applies bottom spacing in order to try to keep a consistent vertical rhythm.
+ */
+
+
+/**
+ * Base.
+ */
+
+%c-bottom-spacing {@include to-rem(margin-bottom, $spacing-base);}
+
+
+/**
+ * Half.
+ */
+
+%c-bottom-spacing-half {@include to-rem(margin-bottom, $spacing-half);}
+
+// Remove from the last children
+%c-bottom-spacing,
+%c-bottom-spacing-half {
+  &:last-child {margin-bottom: 0;}
+}

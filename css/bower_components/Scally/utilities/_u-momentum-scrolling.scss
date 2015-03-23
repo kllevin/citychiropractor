@@ -1,0 +1,45 @@
+/* ============================================================================
+   @UTILITIES -> MOMENTUM SCROLLING
+   ========================================================================= */
+
+
+/**
+ * Web pages on iOS by default have a "momentum" style scrolling where a flick
+ * of the finger sends the web page scrolling and it keeps going until
+ * eventually slowing down and stopping as if friction is slowing it down. You
+ * might think that any element with scrolling would have this behavior as
+ * well, but it doesn't. You can add it back by applying this utility.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#momentum-scrolling
+ */
+
+
+/**
+ * Settings.
+ */
+
+/**
+ * Apply at breakpoints.
+ */
+
+// Which breakpoints do you want to use?
+$u-momentum-scrolling-breakpoints:         $default-breakpoints !default;
+
+// What do you want to apply it too?
+$u-momentum-scrolling-breakpoint-toggle:   false !default;
+
+
+%u-momentum-scrolling,
+.u-momentum-scrolling {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@if $u-momentum-scrolling-breakpoint-toggle {
+  @include generate-at-breakpoints('.u-momentum-scrolling',
+    $u-momentum-scrolling-breakpoints) {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}// end if

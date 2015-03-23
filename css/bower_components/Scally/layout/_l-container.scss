@@ -1,0 +1,103 @@
+/* ============================================================================
+   @LAYOUT -> CONTAINER
+   ========================================================================= */
+
+
+/**
+ * The main container that wraps all major layout pieces so that we keep all
+ * layout consistent. The container is responsive in that it will be a fluid
+ * width using '%' up until it hits it's maximum width. And it's center
+ * aligned by default.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/GiCzg/
+ */
+
+
+/**
+ * Settings.
+ */
+
+/**
+ * Apply at breakpoints.
+ */
+
+// Apply at these breakpoints
+$l-container-breakpoints:                     $default-breakpoints !default;
+
+// What do you want to apply it too?
+$l-container-breakpoint-toggle-default:       false !default;
+
+$l-container-breakpoint-toggle-full-bleed:    false !default;
+
+$l-container-breakpoint-toggle-not-centered:  false !default;
+
+// Widths
+$l-container-width:                           92% !default;
+
+$l-container-minimum-width:                   220 !default;
+
+$l-container-maximum-width:                   1600 !default;
+
+
+.l-container {
+  width: $l-container-width;
+  @include to-rem(min-width, $l-container-minimum-width);
+  @include to-rem(max-width, $l-container-maximum-width);
+  margin: 0 auto;
+
+  // Print
+  @media print {
+    width: auto;
+  }
+}
+
+@if $l-container-breakpoint-toggle-default {
+  @include generate-at-breakpoints('.l-container', $l-container-breakpoints) {
+    width: $l-container-width;
+    @include to-rem(min-width, $l-container-minimum-width);
+    @include to-rem(max-width, $l-container-maximum-width);
+    margin: 0 auto;
+
+    // Print
+    @media print {
+      width: auto;
+    }
+  }
+}// end if
+
+
+/**
+ * Modifier: full bleed.
+ */
+
+.l-container--full-bleed {
+  width: auto;
+  max-width: none;
+}
+
+@if $l-container-breakpoint-toggle-full-bleed {
+  @include generate-at-breakpoints('.l-container--full-bleed',
+    $l-container-breakpoints) {
+    width: auto;
+    max-width: none;
+  }
+}// end if
+
+
+/**
+ * Modifier: not centered.
+ */
+
+.l-container--not-centered {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@if $l-container-breakpoint-toggle-not-centered {
+  @include generate-at-breakpoints('.l-container--not-centered',
+    $l-container-breakpoints) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}// end if

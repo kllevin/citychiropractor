@@ -1,0 +1,301 @@
+@charset "UTF-8";
+
+
+/* ============================================================================
+   @MASTER STYLESHEET
+   ========================================================================= */
+
+
+/**
+ * Scally, being an OO framework, works in keeping with the open/closed
+ * principle. Any custom styles *SHOULD NOT* be added or modified in Scally
+ * directly. This also allows the framework to be updated seamlessly.
+ *
+ * Contents:
+ *
+ * Your settings.........your project-specific settings.
+ * Scally framework......the entire Scally framework including your overrides.
+ * Your styles...........all your project-specific styles.
+ *
+ * N.B. the above order and the order within the Scally framework section must
+ * always be followed.
+ */
+
+
+
+
+/* Your settings
+   ========================================================================= */
+
+/**
+ * Your project-specific settings.
+ *
+ * N.B. define first so they can be used throughout your styles.
+ */
+
+//@import "settings";
+
+
+
+
+/* Scally framework
+   ========================================================================= */
+
+/**
+ * By default everything is imported. But if you want to be selective and you
+ * definitely should, so your CSS is as lean as possible, then only import what
+ * you want. The Core section is however mandatory.
+ *
+ * Any settings you find set in Scally that you do not wish to keep, simply
+ * redefine above/below the relevant `@import`. This means that if Scally, for
+ * example, sets your `$font-size` at `16px` and you wish it to be `14px`,
+ * simply redeclare it above the relevant `@import`, like so:
+ *
+   $font-size: 14;
+   @import "bower_components/scally/core/settings/typography";
+ *
+ * If you want to use a Scally setting to override something then you need to
+ * define the override below the `@import`, like so:
+ *
+   @import "bower_components/scally/core/settings/colours";
+   $colour-text-base: $colour-brand;
+ *
+ * If you try to redeclare above the `@import` your Sass won't compile as you
+ * don't have access to the Scally setting at the point of compilation.
+ *
+ * All non-Core settings need to be overridden above the `@import`, like so:
+ *
+   $u-arrow-size-base: 14;
+   $u-arrow-colour: orange;
+   @import "bower_components/scally/utilities/u-arrow";
+ *
+ * Scally ignores its own settings in favour of using your own, so you can
+ * completely modify how Scally works without ever having to alter the
+ * framework itself.
+ *
+ * N.B. the order specified below must always be followed or Scally will
+ * break and if you're not using Bower or you customise where Bower installs
+ * then you'll need to update the `@import` paths accordingly.
+ *
+ * Contents:
+ *
+ * CORE
+ * LAYOUT
+ * COMPONENTS
+ * UTILITIES
+ */
+
+
+/**
+ * CORE.
+ *
+ * N.B. this is all mandatory for the Scally framework.
+ */
+
+// Settings
+$font-size:                   21;
+$line-height:                 34;
+$font-family-headings:        'Open Sans', sans-serif;
+$font-family-base:            'Gentium Basic', serif;
+@import "bower_components/scally/core/settings/typography";
+
+@import "bower_components/scally/core/settings/spacing";
+
+@import "bower_components/scally/core/settings/toggles";
+
+@import "bower_components/scally/core/settings/breakpoints";
+
+@import "bower_components/scally/core/settings/widths";
+
+$colour-brand:                #008CD6;
+$colour-text-base:            #2f363b;
+@import "bower_components/scally/core/settings/colours";
+
+@import "bower_components/scally/core/settings/positioning";
+
+@import "bower_components/scally/core/settings/cosmetics";
+
+// Functions
+@import "bower_components/scally/core/functions/convert-px-to-em-rem";
+
+@import "bower_components/scally/core/functions/math-helpers";
+
+@import "bower_components/scally/core/functions/string-replace";
+
+// Mixins
+@import "bower_components/scally/core/mixins/convert-px-to-em-rem";
+
+@import "bower_components/scally/core/mixins/font-size";
+
+@import "bower_components/scally/core/mixins/gradients";
+
+@import "bower_components/scally/core/mixins/media-queries";
+
+@import "bower_components/scally/core/mixins/generate-at-breakpoints";
+
+@import "bower_components/scally/core/mixins/generate-percentage-classes-at-breakpoints";
+
+@import "bower_components/scally/core/mixins/retina-bg-image";
+
+@import "bower_components/scally/core/mixins/target-browsers";
+
+@import "bower_components/scally/core/mixins/target-headings";
+
+// Normalize
+@import "bower_components/scally/core/normalize";
+
+// Reset
+@import "bower_components/scally/core/reset";
+
+// Debug
+@import "bower_components/scally/core/debug";
+
+// Base
+@import "bower_components/scally/core/base/root";
+
+@import "bower_components/scally/core/base/abbreviation";
+
+@import "bower_components/scally/core/base/forms";
+
+@import "bower_components/scally/core/base/details";
+
+@import "bower_components/scally/core/base/headings";
+
+@import "bower_components/scally/core/base/horizontal-rule";
+
+@import "bower_components/scally/core/base/links";
+
+@import "bower_components/scally/core/base/media";
+
+@import "bower_components/scally/core/base/paragraphs";
+
+@import "bower_components/scally/core/base/print";
+
+@import "bower_components/scally/core/base/viewport";
+
+// Placeholders
+@import "bower_components/scally/core/placeholders/c-bottom-spacing";
+
+
+/**
+ * LAYOUT.
+ */
+
+// Main container
+$l-container-breakpoint-toggle-default: true;
+@import "bower_components/scally/layout/l-container";
+
+// Grid
+@import "bower_components/scally/layout/l-grid";
+
+
+/**
+ * COMPONENTS.
+ */
+@import "bower_components/scally/components/button";
+
+/**
+ * UTILITIES.
+ */
+
+@import "bower_components/scally/utilities/u-display";
+
+@import "bower_components/scally/utilities/u-divider";
+
+@import "bower_components/scally/utilities/u-list";
+
+$u-list-inline-breakpoint-toggle-default:       true;
+@import "bower_components/scally/utilities/u-list-inline";
+
+@import "bower_components/scally/utilities/u-position";
+
+@import "bower_components/scally/utilities/u-side-by-side-alt";
+
+@import "bower_components/scally/utilities/u-spacing";
+
+$u-text-breakpoint-toggle-align-left:           true;
+@import "bower_components/scally/utilities/u-text";
+
+@import "bower_components/scally/utilities/u-widths";
+
+
+
+/* Your styles
+   ========================================================================= */
+
+$l-container-maximum-width-narrow:              900;
+.l-container--narrow {
+  max-width: $l-container-maximum-width-narrow;
+}
+
+
+h1 {
+  font-weight: 800;
+}
+
+h3 {
+  @extend %u-text-transform-uppercase;
+  font-weight: 400;
+}
+
+h5 {
+  @extend %u-text-transform-uppercase;
+  margin-bottom: 0;
+}
+
+body {
+  height: 100%;
+  background:rgb(242, 242, 242);
+}
+
+@include headings(2, 6, true) {
+  color: #008CD6;
+}
+
+//header
+.header {
+  background-color: #2f363b;
+  color: #fff
+}
+
+  .header__primary {
+    //height of navbar
+    padding-top: 34px;
+  }
+
+  .nav-menu {
+    background: rgb(198, 207, 212);
+  }
+  .nav-menu__content {
+    display: none;
+    a {
+      display: inherit;
+      text-align: center;
+    }
+  }
+
+main {
+  background-color: #fff;
+}
+
+blockquote {
+  border-right: 4px solid rgb(198, 207, 212);
+  font-style: italic;
+}
+
+
+
+summary {
+  @extend %u-s-pe-small;
+  border-bottom: 1px solid $colour-black;
+  text-transform: uppercase;
+}
+
+details[open] {
+  @extend %u-s-pb-base;
+  @extend %u-s-ps-base;
+  border-bottom: 1px solid $colour-black;
+  summary {
+    border-bottom: 0;
+  }
+}

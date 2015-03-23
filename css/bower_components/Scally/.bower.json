@@ -1,0 +1,46 @@
+{
+  "name": "Scally",
+  "version": "1.2.17-827",
+  "homepage": "https://github.com/westfieldlabs/scally",
+  "authors": [
+    "Chris Pearce <cpearce@westfield.com>",
+    "Alec Raeside <araeside@westfield.com>",
+    "Kate Levin <klevin@westfield.com>"
+  ],
+  "description": "Scally is a Sass, BEM, OOCSS, responsive ready, framework that provides you with a solid foundation for building reusable UI's quickly.",
+  "keywords": [
+    "scally",
+    "css",
+    "oocss",
+    "sass",
+    "bem",
+    "responsive"
+  ],
+  "license": "Apache 2.0",
+  "ignore": [
+    ".gitignore",
+    ".travis.yml",
+    ".version",
+    "Rakefile",
+    "settings.scss",
+    "style.scss",
+    "style-test.scss",
+    "style.css",
+    "style.css.map",
+    "demo-styles.scss",
+    "demo-styles.css",
+    "demo-styles.css.map",
+    "demo.html",
+    "CHANGELOG.md"
+  ],
+  "_release": "1.2.17-827",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.2.17-827",
+    "commit": "9c5737df62c6cee7022ed646c7155825948e6b0f"
+  },
+  "_source": "git://github.com/westfieldlabs/scally.git",
+  "_target": "~1.2.17-827",
+  "_originalSource": "westfieldlabs/scally",
+  "_direct": true
+}

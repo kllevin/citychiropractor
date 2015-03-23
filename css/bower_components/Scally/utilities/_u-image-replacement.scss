@@ -1,0 +1,74 @@
+/* ============================================================================
+   @UTILITIES -> IMAGE REPLACEMENT
+   ========================================================================= */
+
+
+/**
+ * Replacing some text with an image.
+ *
+ * @demo
+ * http://codepen.io/team/westfieldlabs/full/xFHfk#image-replacement
+ */
+
+
+/**
+ * Settings.
+ */
+
+/**
+ * Apply at breakpoints.
+ */
+
+// Which breakpoints do you want to use?
+$u-image-replacement-breakpoints:                 $default-breakpoints !default;
+
+// What do you want to apply it too?
+$u-image-replacement-breakpoint-toggle-default:   false !default;
+
+$u-image-replacement-breakpoint-toggle-alt:       false !default;
+
+
+%u-image-replacement,
+.u-image-replacement {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+  }
+}
+
+@if $u-image-replacement-breakpoint-toggle-default {
+  @include generate-at-breakpoints('.u-image-replacement',
+    $u-image-replacement-breakpoints) {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+
+    &:before {
+      content: "";
+      display: block;
+      width: 0;
+      height: 150%;
+    }
+  }
+}// end if
+
+
+/**
+ * Alternate version.
+ */
+
+%u-image-replacement-alt,
+.u-image-replacement-alt {text-indent: $off-screen-distance;}
+
+@if $u-image-replacement-breakpoint-toggle-alt {
+  @include generate-at-breakpoints('.u-image-replacement-alt',
+    $u-image-replacement-breakpoints) {
+    text-indent: $off-screen-distance;
+  }
+}// end if
