@@ -94,7 +94,7 @@
 
 // Settings
 $font-size:                   21;
-$line-height:                 34;
+$line-height:                 $font-size * 1.5;
 $font-family-headings:        'Open Sans', sans-serif;
 $font-family-base:            'Gentium Basic', serif;
 @import "bower_components/scally/core/settings/typography";
@@ -266,13 +266,57 @@ body {
   .nav-menu {
     background: rgb(198, 207, 212);
   }
+
+  // Create burger menu
+  .nav-menu__button span,
+  .nav-menu__button span:before,
+  .nav-menu__button span:after {
+    border-radius: 2px;
+    height: 5px;
+    width: 35px;
+    background: white;
+    position: absolute;
+    display: block;
+    content: '';
+    transition: all 500ms ease-in-out;
+  }
+
+  .nav-menu__button span:before {
+    top: -10px;
+  }
+  .nav-menu__button span:after {
+    bottom: -10px;
+  }
+
+  // Transition burger to x
+  .js-nav-trigger.is-open span {
+    background-color: transparent;
+
+    &:before,
+    &:after {top:0;}
+
+    &:before {transform: rotate(45deg);}
+    &:after {transform: rotate(-45deg);}
+  }
+
   .nav-menu__content {
+    @extend %u-s-pe-base;
     display: none;
+
     a {
       display: inherit;
       text-align: center;
+
+      @include respond-to(lap) {
+        text-align: left;
+      }
     }
   }
+
+  // Show nav on click
+  .js-nav-target.is-visible {display:block;}
+
+
 
 main {
   background-color: #fff;
