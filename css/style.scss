@@ -229,9 +229,7 @@ $l-container-maximum-width-narrow:              900;
 }
 
 
-h1 {
-  font-weight: 800;
-}
+h1 {font-weight: 800;}
 
 h3 {
   @extend %u-text-transform-uppercase;
@@ -263,9 +261,7 @@ body {
     padding-top: 34px;
   }
 
-  .nav-menu {
-    background: rgb(198, 207, 212);
-  }
+  .nav-menu {background: rgb(198, 207, 212);}
 
   // Create burger menu
   .nav-menu__button span,
@@ -281,12 +277,8 @@ body {
     transition: all 500ms ease-in-out;
   }
 
-  .nav-menu__button span:before {
-    top: -10px;
-  }
-  .nav-menu__button span:after {
-    bottom: -10px;
-  }
+  .nav-menu__button span:before {top: -10px;}
+  .nav-menu__button span:after {bottom: -10px;}
 
   // Transition burger to x
   .js-nav-trigger.is-open span {
@@ -318,16 +310,25 @@ body {
 
 
 
-main {
-  background-color: #fff;
-}
+main {background-color: #fff;}
 
 blockquote {
   border-right: 4px solid rgb(198, 207, 212);
   font-style: italic;
 }
 
+.caa {
+  display: block;
+  background: url(../images/caa-logo.png) no-repeat 0 0;
+  background-size: 100px;
+  width: 100px;
+  height: 40px;
+  margin: 0 auto;
 
+  @include respond-to(lap) {
+    margin: 0;
+  }
+}
 
 summary {
   @extend %u-s-pe-small;
