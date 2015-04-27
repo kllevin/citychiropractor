@@ -3,6 +3,7 @@
 .DS_Store*
 *.sass-cache
 .sass-cache
+*.grunt
 /.sass-cache
 node/
 node_modules/

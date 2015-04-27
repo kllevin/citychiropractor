@@ -71,6 +71,13 @@ module.exports = function(grunt) {
 
     clean: {
       all: ['./dist/*.html']
+    },
+
+    'gh-pages': {
+      options: {
+        base: 'dist'
+      },
+      src: ['**']
     }
 
   });
@@ -80,14 +87,17 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-gh-pages');
   grunt.loadNpmTasks('assemble');
 
 
   grunt.registerTask('style', ['sass', 'autoprefixer']);
 
-  grunt.registerTask('html', ['assemble'])
+  grunt.registerTask('html', ['assemble']);
 
-  grunt.registerTask('serve', ['default', 'connect', 'watch'])
+  grunt.registerTask('serve', ['default', 'connect', 'watch']);
+
+  grunt.registerTask('publish', ['default', 'gh-pages']);
 
   grunt.registerTask('default', ['style', 'clean', 'html']);
 
