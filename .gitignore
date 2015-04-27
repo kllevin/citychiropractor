@@ -6,3 +6,4 @@
 /.sass-cache
 node/
 node_modules/
+dist
