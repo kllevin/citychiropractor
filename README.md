@@ -1,6 +1,8 @@
 City Chiropractor
 ================
 
+WIP version: [City Chiropractor](http://kllevin.github.io/citychiropractor/)
+
 The build is using Assemble and Grunt to crunch the templates and create a static site.
 
 To run this project you will need:
