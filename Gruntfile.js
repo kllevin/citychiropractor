@@ -17,6 +17,10 @@ module.exports = function(grunt) {
         files: ['./dist/styles/*.css']
       },
 
+      uglify: {
+        files:['./dist/scripts/*.js']
+      },
+
       livereload: {
         files: ['./dist/**/*'],
         options: {livereload: true}
@@ -60,6 +64,18 @@ module.exports = function(grunt) {
       options: ['last 2 versions', 'ie 9']
     },
 
+    uglify: {
+      options: {
+          mangle: false,
+          beautify: true
+        },
+      dist: {
+        files: {
+          'dist/scripts/app.js': ['assets/scripts/*.js']
+        }
+      }
+    },
+
     connect: {
       dev: {
         options: {
@@ -71,6 +87,25 @@ module.exports = function(grunt) {
 
     clean: {
       all: ['./dist/*.html']
+    },
+
+    svgmin: {
+      options: {
+        plugins: [{
+          cleanupIDs: true,
+          removeUselessStrokeAndFill: true,
+          removeTitle: true,
+          removeAttrs: true
+        }]
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'assets/images/',
+          src: ['*.svg'],
+          dest: 'dist/images/'
+        }]
+      }
     },
 
     'gh-pages': {
@@ -87,7 +122,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-gh-pages');
+  grunt.loadNpmTasks('grunt-svgmin');
   grunt.loadNpmTasks('assemble');
 
 

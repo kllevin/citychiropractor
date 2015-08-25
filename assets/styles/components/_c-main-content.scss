@@ -1,0 +1,14 @@
+/* ============================================================================
+   @COMPONENTS -> SITE MAIN CONTENT
+   ========================================================================= */
+
+
+/**
+ * The main content area of the site.
+ */
+
+.c-main-content {
+  //offset height of fixed header
+  padding-top: to-rem($spacing-quadruple);
+  padding-bottom: to-rem($spacing-double);
+}

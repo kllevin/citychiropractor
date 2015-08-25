@@ -1,91 +1,12 @@
 @charset "UTF-8";
 
-
-/* ============================================================================
-   @MASTER STYLESHEET
-   ========================================================================= */
-
-
-/**
- * Scally, being an OO framework, works in keeping with the open/closed
- * principle. Any custom styles *SHOULD NOT* be added or modified in Scally
- * directly. This also allows the framework to be updated seamlessly.
- *
- * Contents:
- *
- * Your settings.........your project-specific settings.
- * Scally framework......the entire Scally framework including your overrides.
- * Your styles...........all your project-specific styles.
- *
- * N.B. the above order and the order within the Scally framework section must
- * always be followed.
- */
-
-
-
-
-
-/* Your settings
-   ========================================================================= */
-
-/**
- * Your project-specific settings.
- *
- * N.B. define first so they can be used throughout your styles.
- */
-
 //@import "settings";
-
-
-
+$color-charcoal:        #455560;
+$color-dark-grey:       #2f363b;
+$color-cool-grey:       #ADAFB2;
 
 /* Scally framework
    ========================================================================= */
-
-/**
- * By default everything is imported. But if you want to be selective and you
- * definitely should, so your CSS is as lean as possible, then only import what
- * you want. The Core section is however mandatory.
- *
- * Any settings you find set in Scally that you do not wish to keep, simply
- * redefine above/below the relevant `@import`. This means that if Scally, for
- * example, sets your `$font-size` at `16px` and you wish it to be `14px`,
- * simply redeclare it above the relevant `@import`, like so:
- *
-   $font-size: 14;
-   @import "bower_components/scally/core/settings/typography";
- *
- * If you want to use a Scally setting to override something then you need to
- * define the override below the `@import`, like so:
- *
-   @import "bower_components/scally/core/settings/colours";
-   $colour-text-base: $colour-brand;
- *
- * If you try to redeclare above the `@import` your Sass won't compile as you
- * don't have access to the Scally setting at the point of compilation.
- *
- * All non-Core settings need to be overridden above the `@import`, like so:
- *
-   $u-arrow-size-base: 14;
-   $u-arrow-colour: orange;
-   @import "bower_components/scally/utilities/u-arrow";
- *
- * Scally ignores its own settings in favour of using your own, so you can
- * completely modify how Scally works without ever having to alter the
- * framework itself.
- *
- * N.B. the order specified below must always be followed or Scally will
- * break and if you're not using Bower or you customise where Bower installs
- * then you'll need to update the `@import` paths accordingly.
- *
- * Contents:
- *
- * CORE
- * LAYOUT
- * COMPONENTS
- * UTILITIES
- */
-
 
 /**
  * CORE.
@@ -94,88 +15,86 @@
  */
 
 // Settings
-$font-size:                   21;
-$line-height:                 $font-size * 1.5;
-$font-family-headings:        'Open Sans', sans-serif;
-$font-family-base:            'Gentium Basic', serif;
-@import "bower_components/scally/core/settings/typography";
+//$font-family-headings:        'Open Sans', sans-serif;
+$font-family-base:            "Lato", Geneva, Tahoma, sans-serif;
+@import "../../node_modules/scally/core/settings/typography";
 
-@import "bower_components/scally/core/settings/spacing";
+@import "../../node_modules/scally/core/settings/spacing";
 
-@import "bower_components/scally/core/settings/toggles";
+@import "../../node_modules/scally/core/settings/retina-resolution";
 
-@import "bower_components/scally/core/settings/breakpoints";
+@import "../../node_modules/scally/core/settings/breakpoints";
 
-@import "bower_components/scally/core/settings/widths";
+@import "../../node_modules/scally/core/settings/widths";
 
-$colour-brand:                #008CD6;
-$colour-text-base:            #2f363b;
-@import "bower_components/scally/core/settings/colours";
+$color-text-base:            $color-dark-grey;
+@import "../../node_modules/scally/core/settings/colours";
 
-@import "bower_components/scally/core/settings/positioning";
+@import "../../node_modules/scally/core/settings/positioning";
 
-@import "bower_components/scally/core/settings/cosmetics";
+@import "../../node_modules/scally/core/settings/cosmetics";
 
 // Functions
-@import "bower_components/scally/core/functions/convert-px-to-em-rem";
+@import "../../node_modules/scally/core/functions/convert-px-to-em-rem";
 
-@import "bower_components/scally/core/functions/math-helpers";
+@import "../../node_modules/scally/core/functions/math-helpers";
 
-@import "bower_components/scally/core/functions/string-replace";
+@import "../../node_modules/scally/core/functions/string-replace";
+
+@import "../../node_modules/scally/core/functions/strip-unit";
 
 // Mixins
-@import "bower_components/scally/core/mixins/convert-px-to-em-rem";
+@import "../../node_modules/scally/core/mixins/convert-px-to-em-rem";
 
-@import "bower_components/scally/core/mixins/font-size";
+@import "../../node_modules/scally/core/mixins/font-size";
 
-@import "bower_components/scally/core/mixins/gradients";
+@import "../../node_modules/scally/core/mixins/gradients";
 
-@import "bower_components/scally/core/mixins/media-queries";
+@import "../../node_modules/scally/core/mixins/media-queries";
 
-@import "bower_components/scally/core/mixins/generate-at-breakpoints";
+@import "../../node_modules/scally/core/mixins/generate-at-breakpoints";
 
-@import "bower_components/scally/core/mixins/generate-percentage-classes-at-breakpoints";
+@import "../../node_modules/scally/core/mixins/generate-percentage-classes-at-breakpoints";
 
-@import "bower_components/scally/core/mixins/retina-bg-image";
+@import "../../node_modules/scally/core/mixins/retina-bg-image";
 
-@import "bower_components/scally/core/mixins/target-browsers";
+@import "../../node_modules/scally/core/mixins/target-browsers";
 
-@import "bower_components/scally/core/mixins/target-headings";
+@import "../../node_modules/scally/core/mixins/target-headings";
+
+@import "../../node_modules/scally/core/mixins/text-input-placeholder-colour.scss";
 
 // Normalize
-@import "bower_components/scally/core/normalize";
+@import "../../node_modules/scally/core/normalize";
 
 // Reset
-@import "bower_components/scally/core/reset";
-
-// Debug
-@import "bower_components/scally/core/debug";
+@import "../../node_modules/scally/core/reset";
 
 // Base
-@import "bower_components/scally/core/base/root";
+@import "../../node_modules/scally/core/base/root";
 
-@import "bower_components/scally/core/base/abbreviation";
+@import "../../node_modules/scally/core/base/abbreviation";
 
-@import "bower_components/scally/core/base/forms";
+@import "../../node_modules/scally/core/base/forms";
 
-@import "bower_components/scally/core/base/details";
+@import "../../node_modules/scally/core/base/details";
 
-@import "bower_components/scally/core/base/headings";
+@import "../../node_modules/scally/core/base/headings";
 
-@import "bower_components/scally/core/base/horizontal-rule";
+@import "../../node_modules/scally/core/base/horizontal-rule";
 
-@import "bower_components/scally/core/base/links";
+@import "../../node_modules/scally/core/base/links";
 
-@import "bower_components/scally/core/base/media";
+@import "../../node_modules/scally/core/base/media";
 
-@import "bower_components/scally/core/base/paragraphs";
+@import "../../node_modules/scally/core/base/paragraphs";
 
-@import "bower_components/scally/core/base/print";
+@import "../../node_modules/scally/core/base/print";
 
-@import "bower_components/scally/core/base/viewport";
+@import "../../node_modules/scally/core/base/viewport";
 
 // Placeholders
-@import "bower_components/scally/core/placeholders/c-bottom-spacing";
+@import "../../node_modules/scally/core/placeholders/bottom-spacing";
 
 
 /**
@@ -184,134 +103,127 @@ $colour-text-base:            #2f363b;
 
 // Main container
 $l-container-breakpoint-toggle-default: true;
-@import "bower_components/scally/layout/l-container";
+@import "../../node_modules/scally/layout/l-container";
 
 // Grid
-@import "bower_components/scally/layout/l-grid";
+@import "../../node_modules/scally/layout/l-grid";
+
+// Side-by-side
+@import "../../node_modules/scally/layout/l-side-by-side-alt";
 
 
 /**
- * COMPONENTS.
+ * OBJECTS.
  */
-@import "bower_components/scally/components/button";
+
+@import "../../node_modules/scally/objects/o-list";
+
+@import "../../node_modules/scally/objects/o-list-block";
+
+@import "../../node_modules/scally/objects/o-list-inline";
+
 
 /**
  * UTILITIES.
  */
 
-@import "bower_components/scally/utilities/u-display";
+@import "../../node_modules/scally/utilities/u-hide";
 
-@import "bower_components/scally/utilities/u-divider";
+@import "../../node_modules/scally/utilities/u-position";
 
-@import "bower_components/scally/utilities/u-list";
+$u-text-apply-at-breakpoints:                   lap;
+$u-text-apply-at-breakpoints-for-align-left:    true;
+@import "../../node_modules/scally/utilities/u-text";
 
-$u-list-inline-breakpoint-toggle-default:       true;
-@import "bower_components/scally/utilities/u-list-inline";
+@import "../../node_modules/scally/utilities/u-spacing";
 
-@import "bower_components/scally/utilities/u-position";
-
-@import "bower_components/scally/utilities/u-side-by-side-alt";
-
-@import "bower_components/scally/utilities/u-spacing";
-
-$u-text-breakpoint-toggle-align-left:           true;
-@import "bower_components/scally/utilities/u-text";
-
-@import "bower_components/scally/utilities/u-widths";
+@import "../../node_modules/scally/utilities/u-widths";
 
 
 
-/* Your styles
+
+/* Project Specific
    ========================================================================= */
 
-$l-container-maximum-width-narrow:              900;
-.l-container--narrow {
-  max-width: $l-container-maximum-width-narrow;
-}
+
+/**
+ * Core
+ */
+
+// Base
+@import "core/base/headings";
 
 
-h1 {font-weight: 800;}
+/**
+ * Components
+ */
 
-h3 {
-  @extend %u-text-transform-uppercase;
-  font-weight: 400;
-}
+@import "components/c-site-header";
 
-h5 {
-  @extend %u-text-transform-uppercase;
-  margin-bottom: 0;
-}
+@import "components/c-site-footer";
+
+@import "components/c-main-content";
+
+
+
 
 body {
   height: 100%;
-  background:rgb(242, 242, 242);
 }
 
-@include headings(2, 6, true) {
-  color: #008CD6;
-}
 
-//header
-.header {
-  background-color: #2f363b;
-  color: #fff
-}
-
-  .header__primary {
-    //height of navbar
-    padding-top: 34px;
-  }
-
-  .nav-menu {background: rgb(198, 207, 212);}
+  // .nav-menu {background: rgb(198, 207, 212);}
 
   // Create burger menu
-  .nav-menu__button span,
-  .nav-menu__button span:before,
-  .nav-menu__button span:after {
-    border-radius: 2px;
-    height: 5px;
-    width: 35px;
-    background: white;
-    position: absolute;
-    display: block;
-    content: '';
-    transition: all 500ms ease-in-out;
-  }
+  // .nav-menu__button span,
+  // .nav-menu__button span:before,
+  // .nav-menu__button span:after {
+  //   border-radius: 2px;
+  //   height: 5px;
+  //   width: 35px;
+  //   background: $color-white;
+  //   position: absolute;
+  //   display: block;
+  //   content: '';
+  //   transition: all 500ms ease-in-out;
+  // }
 
-  .nav-menu__button span:before {top: -10px;}
-  .nav-menu__button span:after {bottom: -10px;}
+  // .nav-menu__button span:before {top: -10px;}
+  // .nav-menu__button span:after {bottom: -10px;}
 
   // Transition burger to x
-  .js-nav-trigger.is-open span {
-    background-color: transparent;
+  // .js-nav-trigger.is-open span {
+  //   background-color: transparent;
 
-    &:before,
-    &:after {top:0;}
+  //   &:before,
+  //   &:after {top:0;}
 
-    &:before {transform: rotate(45deg);}
-    &:after {transform: rotate(-45deg);}
-  }
+  //   &:before {transform: rotate(45deg);}
+  //   &:after {transform: rotate(-45deg);}
+  // }
 
-  .nav-menu__content {
-    @extend %u-s-pe-base;
-    display: none;
+  // .nav-menu__content {
+  //   @extend %u-s-pe-base;
+  //   display: none;
 
-    a {
-      display: inherit;
-      text-align: center;
+  //   a {
+  //     display: inherit;
+  //     text-align: center;
 
-      @include respond-to(lap) {
-        text-align: left;
-      }
-    }
-  }
+  //     @include respond-to(lap) {
+  //       text-align: left;
+  //     }
+  //   }
+  //}
 
   // Show nav on click
-  .js-nav-target.is-visible {display:block;}
+  //.js-nav-target.is-visible {display:block;}
 
 
 
-main {background-color: #fff;}
+
+
+main {background-color: $color-white;}
 
 blockquote {
   border-right: 4px solid rgb(198, 207, 212);
@@ -333,14 +245,14 @@ blockquote {
 
 summary {
   @extend %u-s-pe-small;
-  border-bottom: 1px solid $colour-black;
+  border-bottom: 1px solid $color-black;
   text-transform: uppercase;
 }
 
 details[open] {
   @extend %u-s-pb-base;
   @extend %u-s-ps-base;
-  border-bottom: 1px solid $colour-black;
+  border-bottom: 1px solid $color-black;
   summary {
     border-bottom: 0;
   }

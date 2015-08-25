@@ -1,0 +1,29 @@
+/* ============================================================================
+   @COMPONENTS -> SITE FOOTER
+   ========================================================================= */
+
+
+/**
+ * The site footer.
+ */
+
+.c-site-footer {
+  color: $color-white;
+  background-color: $color-charcoal;
+  padding-top: to-rem($spacing-double);
+  padding-bottom: to-rem($spacing-half);
+
+  /**
+   * Links.
+   */
+
+  a {
+    color: $color-white;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
