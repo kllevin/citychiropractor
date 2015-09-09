@@ -11,7 +11,6 @@
   color: $color-white;
   background-color: $color-charcoal;
   padding-top: to-rem($spacing-double);
-  padding-bottom: to-rem($spacing-half);
 
   /**
    * Links.
@@ -26,4 +25,11 @@
       text-decoration: underline;
     }
   }
+}
+
+.c-site-footer__legal {
+  padding-top: to-rem($spacing-quarter);
+  padding-bottom: to-rem($spacing-quarter);
+  background-color: $color-black;
+  opacity: 0.4;
 }

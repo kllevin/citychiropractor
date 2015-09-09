@@ -9,6 +9,6 @@
 
 .c-main-content {
   //offset height of fixed header
-  padding-top: to-rem($spacing-quadruple);
-  padding-bottom: to-rem($spacing-double);
+  padding-top: to-rem(70) + to-rem($spacing-base);
+  padding-bottom: to-rem(60);
 }

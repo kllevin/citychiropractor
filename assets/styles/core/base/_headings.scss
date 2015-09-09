@@ -11,11 +11,13 @@
  * Headings.
  */
 
-h1 {font-weight: 300;}
+h2 {
+  font-weight: 300;
+}
 
 h3 {
   text-transform: uppercase;
-  font-weight: 300;
+  font-size: to-rem($font-size-heading-4);
 }
 
 h5 {

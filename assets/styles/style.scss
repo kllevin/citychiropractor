@@ -27,7 +27,8 @@ $font-family-base:            "Lato", Geneva, Tahoma, sans-serif;
 
 @import "../../node_modules/scally/core/settings/widths";
 
-$color-text-base:            $color-dark-grey;
+$color-text-base:             $color-dark-grey;
+$color-brand:                 #006699;
 @import "../../node_modules/scally/core/settings/colours";
 
 @import "../../node_modules/scally/core/settings/positioning";
@@ -75,6 +76,8 @@ $color-text-base:            $color-dark-grey;
 
 @import "../../node_modules/scally/core/base/abbreviation";
 
+$apply-text-input-and-select-rounded-corners:         true;
+
 @import "../../node_modules/scally/core/base/forms";
 
 @import "../../node_modules/scally/core/base/details";
@@ -103,6 +106,7 @@ $color-text-base:            $color-dark-grey;
 
 // Main container
 $l-container-breakpoint-toggle-default: true;
+$l-container-maximum-width:             1000;
 @import "../../node_modules/scally/layout/l-container";
 
 // Grid
@@ -116,12 +120,22 @@ $l-container-breakpoint-toggle-default: true;
  * OBJECTS.
  */
 
+@import "../../node_modules/scally/objects/o-button";
+
 @import "../../node_modules/scally/objects/o-list";
 
 @import "../../node_modules/scally/objects/o-list-block";
 
 @import "../../node_modules/scally/objects/o-list-inline";
 
+@import "../../node_modules/scally/objects/o-table";
+
+
+/**
+ * COMPONENTS
+ */
+
+@import "../../node_modules/scally/components/c-button";
 
 /**
  * UTILITIES.
@@ -170,6 +184,33 @@ $u-text-apply-at-breakpoints-for-align-left:    true;
 body {
   height: 100%;
 }
+
+
+.box {
+  border: 3px solid #006699;
+  border-radius: 4px;
+  padding: to-rem(20);
+  display: block;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $color-white;
+    background: #006699;
+  }
+}
+.c-avatar {
+  width: 150px;
+  border-radius: 4px;
+  //border-radius: 50%;
+}
+.c-text-quote {
+  font-size: to-rem(20);
+  font-style: italic;
+
+
+}
+
 
 
   // .nav-menu {background: rgb(198, 207, 212);}
@@ -257,3 +298,23 @@ details[open] {
     border-bottom: 0;
   }
 }
+
+// table {
+//   width: 100%;
+//   border: 1px solid #ccc;
+//   border-radius: 4px;
+// }
+// tr {
+//   border-bottom: 1px solid #ccc;
+// }
+
+// td {
+//   padding: to-rem(10);
+// }
+
+// th {
+//   text-align:left;
+//   background: $color-dark-grey;
+//   color: white;
+//   padding: to-rem(10);
+// }
