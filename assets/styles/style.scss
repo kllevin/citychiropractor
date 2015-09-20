@@ -17,6 +17,7 @@ $color-cool-grey:       #ADAFB2;
 // Settings
 //$font-family-headings:        'Open Sans', sans-serif;
 $font-family-base:            "Lato", Geneva, Tahoma, sans-serif;
+$font-size-heading-1:         50;
 @import "../../node_modules/scally/core/settings/typography";
 
 @import "../../node_modules/scally/core/settings/spacing";
@@ -179,11 +180,21 @@ $u-text-apply-at-breakpoints-for-align-left:    true;
 @import "components/c-main-content";
 
 
-
+.l-container--narrow {
+  max-width: to-rem(640);
+}
 
 body {
   height: 100%;
 }
+
+
+.homepage {
+  background-color: $color-charcoal;
+  color: $color-white;
+}
+
+
 
 
 .box {
