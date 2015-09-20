@@ -1,0 +1,11 @@
+/* ============================================================================
+   @LAYOUT -> CONTAINER
+   ========================================================================= */
+
+/**
+ * Extends the container component provided by Scally
+ */
+
+.l-container--narrow {
+  max-width: to-rem(640);
+}

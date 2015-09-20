@@ -1,0 +1,29 @@
+/* ============================================================================
+   @COMPONENTS -> DETAILS
+   ========================================================================= */
+
+
+/**
+ * Details component is used as a basic accordion.
+ */
+
+summary {
+  @extend %u-s-pe-base;
+  border-bottom: 1px solid $color-charcoal;
+  font-weight: 700;
+  font-size: to-rem($font-size-x-large);
+}
+
+
+/**
+ * Open.
+ */
+
+details[open] {
+  @extend %u-s-pb-base;
+  border-bottom: 1px solid $color-charcoal;
+
+  summary {
+    border-bottom: 0;
+  }
+}

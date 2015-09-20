@@ -119,6 +119,7 @@ $html-element-background-color: $color-brand;
 $apply-text-input-and-select-rounded-corners: true;
 @import "../../node_modules/scally/core/base/forms";
 
+$apply-details-marker:                                true;
 @import "../../node_modules/scally/core/base/details";
 
 @import "../../node_modules/scally/core/base/headings";
@@ -171,7 +172,7 @@ $l-container-maximum-width:             1000;
 
 
 /**
- * COMPONENTS
+ * COMPONENTS.
  */
 
 $c-button-background-color:   $color-aqua-dark;
@@ -202,16 +203,24 @@ $u-text-apply-at-breakpoints-for-align-left:    true;
 
 
 /**
- * Core
+ * CORE.
  */
 
 // Base
 @import "core/base/headings";
 
+/**
+ * LAYOUT.
+ */
+
+@import "layout/l-container";
+
 
 /**
- * Components
+ * COMPONENTS.
  */
+
+@import "components/c-details";
 
 @import "components/c-site-header";
 
@@ -219,23 +228,14 @@ $u-text-apply-at-breakpoints-for-align-left:    true;
 
 @import "components/c-main-content";
 
-
-.l-container--narrow {
-  max-width: to-rem(640);
-}
-
 body {
   height: 100%;
 }
-
 
 .homepage {
   background-color: $color-charcoal;
   color: $color-white;
 }
-
-
-
 
 .box {
   border: 3px solid #006699;
@@ -258,62 +258,7 @@ body {
 .c-text-quote {
   font-size: to-rem(20);
   font-style: italic;
-
-
 }
-
-
-
-  // .nav-menu {background: rgb(198, 207, 212);}
-
-  // Create burger menu
-  // .nav-menu__button span,
-  // .nav-menu__button span:before,
-  // .nav-menu__button span:after {
-  //   border-radius: 2px;
-  //   height: 5px;
-  //   width: 35px;
-  //   background: $color-white;
-  //   position: absolute;
-  //   display: block;
-  //   content: '';
-  //   transition: all 500ms ease-in-out;
-  // }
-
-  // .nav-menu__button span:before {top: -10px;}
-  // .nav-menu__button span:after {bottom: -10px;}
-
-  // Transition burger to x
-  // .js-nav-trigger.is-open span {
-  //   background-color: transparent;
-
-  //   &:before,
-  //   &:after {top:0;}
-
-  //   &:before {transform: rotate(45deg);}
-  //   &:after {transform: rotate(-45deg);}
-  // }
-
-  // .nav-menu__content {
-  //   @extend %u-s-pe-base;
-  //   display: none;
-
-  //   a {
-  //     display: inherit;
-  //     text-align: center;
-
-  //     @include respond-to(lap) {
-  //       text-align: left;
-  //     }
-  //   }
-  //}
-
-  // Show nav on click
-  //.js-nav-target.is-visible {display:block;}
-
-
-
-
 
 blockquote {
   border-right: 4px solid rgb(198, 207, 212);
@@ -369,24 +314,3 @@ details[open] {
   text-align: center;
   //text-shadow: 0 1px 0 $color-black;
 }
-
-
-// table {
-//   width: 100%;
-//   border: 1px solid #ccc;
-//   border-radius: 4px;
-// }
-// tr {
-//   border-bottom: 1px solid #ccc;
-// }
-
-// td {
-//   padding: to-rem(10);
-// }
-
-// th {
-//   text-align:left;
-//   background: $color-dark-grey;
-//   color: white;
-//   padding: to-rem(10);
-// }
