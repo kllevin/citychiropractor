@@ -11,14 +11,17 @@
  * Headings.
  */
 
-h1 {
-  font-weight: 300;
-  text-align: center;
-}
-
-h2 {
+@include headings(1, 6, true) {
   font-weight: 400;
 }
+
+// h1 {
+//   font-weight: 300;
+// }
+
+// h2 {
+//   font-weight: 400;
+// }
 
 h3 {
   text-transform: uppercase;
@@ -27,5 +30,5 @@ h3 {
 
 h5 {
   text-transform: uppercase;
-  font-weight: 300;
+  //font-weight: 300;
 }

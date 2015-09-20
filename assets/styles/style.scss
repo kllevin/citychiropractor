@@ -5,6 +5,37 @@ $color-charcoal:        #455560;
 $color-dark-grey:       #2f363b;
 $color-cool-grey:       #ADAFB2;
 
+$color-aqua-dark:  #3ea9be;
+$color-aqua-light: #e5fcfe;
+
+/**
+ * Colour combinations based off the brand colour: `#455560`, colours sourced
+ * from: http://htmlcolorcodes.com/color-picker/.
+ */
+
+// Analogous
+$color-brand-analogous-1: #454860;
+$color-brand-analogous-2: #504560;
+$color-brand-analogous-3: #5e4560;
+$color-brand-analogous-4: #604555;
+$color-brand-analogous-5: #604548;
+
+// Tints (from dark to light)
+$color-brand-tint-1: #5c6a74;
+$color-brand-tint-2: #748088;
+$color-brand-tint-3: #8b959c;
+$color-brand-tint-4: #a2aab0;
+$color-brand-tint-5: #b9bfc3;
+$color-brand-tint-6: #d1d5d7;
+$color-brand-tint-7: #e8eaeb;
+
+/**
+ * Fixed header height.
+ */
+
+$fixed-header-height: 67;
+
+
 /* Scally framework
    ========================================================================= */
 
@@ -15,9 +46,10 @@ $color-cool-grey:       #ADAFB2;
  */
 
 // Settings
-//$font-family-headings:        'Open Sans', sans-serif;
 $font-family-base:            "Lato", Geneva, Tahoma, sans-serif;
-$font-size-heading-1:         50;
+$line-height:                 26;
+$font-family-headings:        "Merriweather", serif;
+$font-size-heading-1:         44;
 @import "../../node_modules/scally/core/settings/typography";
 
 @import "../../node_modules/scally/core/settings/spacing";
@@ -29,7 +61,7 @@ $font-size-heading-1:         50;
 @import "../../node_modules/scally/core/settings/widths";
 
 $color-text-base:             $color-dark-grey;
-$color-brand:                 #006699;
+$color-brand:                 $color-charcoal;
 @import "../../node_modules/scally/core/settings/colours";
 
 @import "../../node_modules/scally/core/settings/positioning";
@@ -44,6 +76,8 @@ $color-brand:                 #006699;
 @import "../../node_modules/scally/core/functions/string-replace";
 
 @import "../../node_modules/scally/core/functions/strip-unit";
+
+@import "../../node_modules/scally/core/functions/tint-shade";
 
 // Mixins
 @import "../../node_modules/scally/core/mixins/convert-px-to-em-rem";
@@ -73,12 +107,16 @@ $color-brand:                 #006699;
 @import "../../node_modules/scally/core/reset";
 
 // Base
+
+html {
+  font-weight: 400;
+}
+$html-element-background-color: $color-brand;
 @import "../../node_modules/scally/core/base/root";
 
 @import "../../node_modules/scally/core/base/abbreviation";
 
-$apply-text-input-and-select-rounded-corners:         true;
-
+$apply-text-input-and-select-rounded-corners: true;
 @import "../../node_modules/scally/core/base/forms";
 
 @import "../../node_modules/scally/core/base/details";
@@ -136,6 +174,8 @@ $l-container-maximum-width:             1000;
  * COMPONENTS
  */
 
+$c-button-background-color:   $color-aqua-dark;
+$c-button-apply-hover-styles: false;
 @import "../../node_modules/scally/components/c-button";
 
 /**
@@ -275,8 +315,6 @@ body {
 
 
 
-main {background-color: $color-white;}
-
 blockquote {
   border-right: 4px solid rgb(198, 207, 212);
   font-style: italic;
@@ -309,6 +347,29 @@ details[open] {
     border-bottom: 0;
   }
 }
+
+/**
+ * Page heading component.
+ */
+
+.c-page-heading {
+  background-color: $color-brand-analogous-3;
+  background-color: $color-brand-tint-7;
+  background-color: #344048;
+  padding-top: to-rem($spacing-double);
+  padding-bottom: to-rem($spacing-double);
+  margin-bottom: to-rem($spacing-base);
+}
+
+.c-page-heading__title {
+  //font-family: Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+  //font-style: italic;
+  color: $color-white;
+  //color: $color-brand;
+  text-align: center;
+  //text-shadow: 0 1px 0 $color-black;
+}
+
 
 // table {
 //   width: 100%;

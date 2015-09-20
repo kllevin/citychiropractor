@@ -8,7 +8,8 @@
  */
 
 .c-main-content {
+  background-color: tint($color-brand-tint-7, 50%);
   //offset height of fixed header
-  padding-top: to-rem(70) + to-rem($spacing-base);
-  padding-bottom: to-rem(60);
+  padding-top: to-rem($fixed-header-height);
+  padding-bottom: to-rem($spacing-triple);
 }

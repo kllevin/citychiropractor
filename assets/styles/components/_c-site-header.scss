@@ -13,12 +13,14 @@
 
 $site-header-background-color:          $color-charcoal;
 
-$c-site-header-nav-overline-thickness:  3px;
+$c-site-header-nav-overline-thickness:  2px;
 
 
 .c-site-header {
-  background-color: $color-charcoal;
-  color: $color-white;
+  background-color: $color-white;
+  //border-top: 2px solid $color-brand;
+  border-bottom: 1px solid $color-brand-tint-7;
+  color: $color-brand;
   position: fixed;
   width: 100%;
 }
@@ -32,6 +34,7 @@ $c-site-header-nav-overline-thickness:  3px;
   height: 50px;
 }
 
+
 /**
  * Main navigation.
  */
@@ -40,38 +43,39 @@ $c-site-header-nav-overline-thickness:  3px;
   @extend %o-list-inline;
   // Hack to remove whitespace between the `li`s
   font-size: 0;
+  margin-right: -(to-rem($spacing-two-thirds));
 
   li {
-    @include font-size($font-size-small, none);
-  }
-
-
-  /**
-   * Links.
-   */
-
-  a {
-    padding: to-rem($spacing-base) to-rem($spacing-half);
-    color: $color-white;
-    display: block;
-    position: relative;
-    text-decoration: none;
-
-    &:hover,
-    &:focus {
-      color: $color-white;
-    }
+    font-size: to-rem($font-size-small);
   }
 }
 
 
 /**
- * Main nav item
+ * Main nav items.
  */
 
+// Rewrite this
+.c-site-header__nav__item,
+.c-site-header__nav .c-button {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: to-rem($font-size-xxx-small);
+}
+
 .c-site-header__nav__item {
-  //text-transform: uppercase;
-  font-weight: 300;
+  padding: to-rem($spacing-base) to-rem($spacing-two-thirds);
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: $color-brand;
+
+  &:hover,
+  &:focus {
+    color: $color-brand-tint-4;
+    text-decoration: none;
+  }
+
 
   /**
    * Line that appears at the top of the top level nav items on hover/active
@@ -82,7 +86,7 @@ $c-site-header-nav-overline-thickness:  3px;
       @extend %u-position-pin-sides-top;
       content: "";
       height: $c-site-header-nav-overline-thickness;
-      background-color: $color-white;
+      background-color: $color-brand-tint-4;
       transform: translateY(-100%);
       transition: transform 0.15s linear;
     }

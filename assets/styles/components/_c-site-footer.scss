@@ -8,16 +8,20 @@
  */
 
 .c-site-footer {
-  color: $color-white;
-  background-color: $color-charcoal;
-  padding-top: to-rem($spacing-double);
+
+  &,
+  a {
+    color: $color-white;
+  }
+
+  padding-top: to-rem($spacing-triple);
+  padding-bottom: to-rem($spacing-triple);
 
   /**
    * Links.
    */
 
   a {
-    color: $color-white;
     text-decoration: none;
 
     &:hover,
@@ -25,11 +29,4 @@
       text-decoration: underline;
     }
   }
-}
-
-.c-site-footer__legal {
-  padding-top: to-rem($spacing-quarter);
-  padding-bottom: to-rem($spacing-quarter);
-  background-color: $color-black;
-  opacity: 0.4;
 }
