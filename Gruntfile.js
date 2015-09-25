@@ -86,7 +86,7 @@ module.exports = function(grunt) {
     },
 
     clean: {
-      all: ['./dist/*.html']
+      all: ['./dist/*']
     },
 
     svgmin: {
@@ -108,6 +108,18 @@ module.exports = function(grunt) {
       }
     },
 
+    copy: {
+      main: {
+        files: [{
+            expand: true,
+            cwd: 'assets/images/',
+            src: '**/*.{gif,jpg,jpeg,png,svg,webp}',
+            dest: 'dist/images',
+            filter: 'isFile'
+          }]
+      }
+    },
+
     'gh-pages': {
       options: {
         base: 'dist'
@@ -120,6 +132,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -136,6 +149,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('publish', ['default', 'gh-pages']);
 
-  grunt.registerTask('default', ['style', 'clean', 'html']);
+  grunt.registerTask('default', ['clean', 'style', 'html', 'copy']);
 
 };
