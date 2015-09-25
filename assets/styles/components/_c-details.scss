@@ -7,9 +7,16 @@
  * Details component is used as a basic accordion.
  */
 
+details {
+  background-color: $color-white;
+  border: 1px solid $color-cool-grey;
+  border-radius: 3px;
+  margin-bottom: to-rem($spacing-half);
+}
+
 summary {
-  @extend %u-s-pe-base;
-  border-bottom: 1px solid $color-charcoal;
+  padding-top: to-rem($spacing-base);
+  padding-bottom: to-rem($spacing-base);
   font-weight: 700;
   font-size: to-rem($font-size-x-large);
 }
@@ -20,10 +27,10 @@ summary {
  */
 
 details[open] {
-  @extend %u-s-pb-base;
-  border-bottom: 1px solid $color-charcoal;
+  padding-bottom: to-rem($spacing-base);
 
   summary {
-    border-bottom: 0;
+    border-bottom: 1px solid $color-cool-grey;
+    margin-bottom: to-rem($spacing-half);
   }
 }

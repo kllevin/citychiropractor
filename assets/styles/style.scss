@@ -220,6 +220,8 @@ $u-text-apply-at-breakpoints-for-align-left:    true;
  * COMPONENTS.
  */
 
+@import "components/c-page-heading";
+
 @import "components/c-details";
 
 @import "components/c-site-header";
@@ -230,39 +232,6 @@ $u-text-apply-at-breakpoints-for-align-left:    true;
 
 body {
   height: 100%;
-}
-
-.homepage {
-  background-color: $color-charcoal;
-  color: $color-white;
-}
-
-.box {
-  border: 3px solid #006699;
-  border-radius: 4px;
-  padding: to-rem(20);
-  display: block;
-
-  &:hover,
-  &:focus {
-    text-decoration: none;
-    color: $color-white;
-    background: #006699;
-  }
-}
-.c-avatar {
-  width: 150px;
-  border-radius: 4px;
-  //border-radius: 50%;
-}
-.c-text-quote {
-  font-size: to-rem(20);
-  font-style: italic;
-}
-
-blockquote {
-  border-right: 4px solid rgb(198, 207, 212);
-  font-style: italic;
 }
 
 .caa {
@@ -276,41 +245,4 @@ blockquote {
   @include respond-to(lap) {
     margin: 0;
   }
-}
-
-summary {
-  @extend %u-s-pe-small;
-  border-bottom: 1px solid $color-black;
-  text-transform: uppercase;
-}
-
-details[open] {
-  @extend %u-s-pb-base;
-  @extend %u-s-ps-base;
-  border-bottom: 1px solid $color-black;
-  summary {
-    border-bottom: 0;
-  }
-}
-
-/**
- * Page heading component.
- */
-
-.c-page-heading {
-  background-color: $color-brand-analogous-3;
-  background-color: $color-brand-tint-7;
-  background-color: #344048;
-  padding-top: to-rem($spacing-double);
-  padding-bottom: to-rem($spacing-double);
-  margin-bottom: to-rem($spacing-base);
-}
-
-.c-page-heading__title {
-  //font-family: Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
-  //font-style: italic;
-  color: $color-white;
-  //color: $color-brand;
-  text-align: center;
-  //text-shadow: 0 1px 0 $color-black;
 }
