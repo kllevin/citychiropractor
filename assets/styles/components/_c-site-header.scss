@@ -26,6 +26,19 @@ $c-site-header-nav-overline-thickness:  2px;
 }
 
 
+.c-site-header__inner {
+  position: relative;
+
+  a {
+    display: block;
+    padding: to-rem(20);
+
+    @include respond-to(lap) {
+      display: inline-block;
+    }
+  }
+}
+
 /**
  * Logo.
  */
@@ -40,14 +53,23 @@ $c-site-header-nav-overline-thickness:  2px;
  */
 
 .c-site-header__nav {
-  @extend %o-list-inline;
-  // Hack to remove whitespace between the `li`s
-  font-size: 0;
-  margin-right: -(to-rem($spacing-two-thirds));
-
-  li {
-    font-size: to-rem($font-size-small);
+  @include respond-to(palm, max) {
+    display: block;
+    background: $color-white;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    border-top: 1px solid $color-brand-tint-7;
   }
+
+  @include respond-to(lap) {
+    float: right;
+  }
+
+  //margin-right: -(to-rem($spacing-two-thirds));
 }
 
 
@@ -64,11 +86,16 @@ $c-site-header-nav-overline-thickness:  2px;
 }
 
 .c-site-header__nav__item {
+  border-bottom: 1px solid $color-brand-tint-7;
   padding: to-rem($spacing-base) to-rem($spacing-two-thirds);
   display: block;
   position: relative;
   text-decoration: none;
   color: $color-brand;
+
+  @include respond-to(lap) {
+    border-bottom: 0;
+  }
 
   &:hover,
   &:focus {
@@ -82,8 +109,12 @@ $c-site-header-nav-overline-thickness:  2px;
    * states.
    */
 
+   @include respond-to(lap) {
     &:before {
-      @extend %u-position-pin-sides-top;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
       content: "";
       height: $c-site-header-nav-overline-thickness;
       background-color: $color-brand-tint-4;
@@ -100,5 +131,17 @@ $c-site-header-nav-overline-thickness:  2px;
     &.is-active:before {
       transform: translateY(calc(100% - #{$c-site-header-nav-overline-thickness}));
     }
+  }
 
+}
+
+.c-site-header__nav-trigger {
+  position: absolute;
+  right: to-rem(24);
+  top: 50%;
+  transform: translateY(-50%);
+
+  @include respond-to(lap) {
+    display: none;
+  }
 }
