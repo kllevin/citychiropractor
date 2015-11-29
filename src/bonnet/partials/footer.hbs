@@ -1,56 +1,36 @@
-<footer class="" role="contentinfo" itemscope itemtype="http://schema.org/LocalBusiness">
-  <div class="l-footer">
-    <div class="l-container">
-      <div class="l-grid u-s-mb-large">
-        <div class="l-grid__item u-one-third-from-lap">
-          <img src="images/logo-watermark.svg" alt="">
+<footer class="l-footer" role="contentinfo" itemscope itemtype="http://schema.org/LocalBusiness">
+  <div class="l-container">
+    <div class="l-grid u-s-mb-large">
+      <div class="l-grid__item u-one-third-from-lap">
+        <img src="images/logo-watermark.svg" alt="">
+      </div>
+      <div class="l-grid__item u-one-third-from-lap">
+        <div class="u-text-align-center u-text-align-left-from-lap">
+          <h5>Contact us</h5>
+          <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            <span itemprop="streetAddress">Suite 506<br>66 Hunter Street</span><br>
+            <span itemprop="addressLocality">Sydney</span>
+            <span itemprop="addressRegion">NSW</span>,
+            <span itemprop="postalCode">2000</span><br>
+            <span>Tel: <a href="tel:+0292210771" itemprop="telephone">02 9221 0771</a></span><br>
+            <a href="mailto:info@citychiropractor.com.au" itemprop="email">info@citychiropractor.com.au</a>
+          </p>
+          <p>
+            <a href="http://www.chiropractors.asn.au/" class="c-logo-watermark" rel="external"><span class="u-hide-visually">The Chiropractors’ Association of Australia website</span></a>
+          </p>
+          <small>&copy; Copyright {{formatDate date "%Y"}} City Chiropractor Care.</small>
         </div>
-        <div class="l-grid__item u-one-third-from-lap">
-          <div class="u-text-size-x-small u-text-align-center u-text-align-left-from-lap">
-            <h5>Contact us</h5>
-            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-              <span itemprop="streetAddress">Suite 506 66 Hunter Street</span><br>
-              <span itemprop="addressLocality">Sydney</span>
-              <span itemprop="addressRegion">NSW,</span>
-              <span itemprop="postalCode">2000</span><br>
-              <span>Tel: <a href="tel:+0292210771" itemprop="telephone">02 9221 0771</a></span><br>
-              <a href="mailto:info@citychiropractor.com.au" itemprop="email">info@citychiropractor.com.au</a>
-            </p>
-            <p>
-              <a href="http://www.chiropractors.asn.au/" class="c-logo-watermark" rel="external"><span class="u-hide-visually">The Chiropractors’ Association of Australia website</span></a>
-            </p>
-            <small>&copy; Copyright 2015 City Chiropractor Care.</small>
-          </div>
-        </div>
-        <div class="l-grid__item u-one-third-from-lap">
-          <ul class="u-s-mb-base">
-            <li><a href="about-us.html">About us</a></li>
-            <li><a href="about-chiropractic.html">About Chiropractic</a></li>
-            <li><a href="hours-and-fees.html">Hours &amp; Fees</a></li>
-            <li><a href="contact-us.html">Contact us</a></li>
-          </ul>
-          <a href="book-appointment.html" class="c-button c-button--small">Book Appointment</a>
-        </div>
+      </div>
+      <div class="l-grid__item u-one-third-from-lap">
+        <ul class="u-s-mb-base">
+          <li><a href="about.html">About</a></li>
+          <li><a href="what-to-expect.html">What to Expect</a></li>
+          <li><a href="hours-and-fees.html">Hours &amp; Fees</a></li>
+          <li><a href="faqs.html">FAQs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html" class="c-button c-button--small">Book Appointment</a></li>
+        </ul>
       </div>
     </div>
   </div>
 </footer>
-
-<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
-<script>
-      function initialize() {
-        var mapCanvas = document.getElementById('gmap_canvas');
-        var mapOptions = {
-          center: new google.maps.LatLng(-33.8662468,151.21005390000005),
-          zoom: 16,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        var map = new google.maps.Map(mapCanvas, mapOptions)
-        var marker = new google.maps.Marker({
-          map: map,
-          position: new google.maps.LatLng(-33.8662468,151.21005390000005)
-        });
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-{{!-- <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=efa50a8062a6d280f2025677ffc2672401bd9def'></script><script type='text/javascript'>function init_map(){var myOptions = {zoom:15,center:new google.maps.LatLng(-33.8662468,151.21005390000005),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(-33.8662468,151.21005390000005)});infowindow = new google.maps.InfoWindow({content:'<strong>City Chiropractic Care</strong><br>Suite 506 66 Hunter Street (corner of Bligh St.)<br>2000 Sydney<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script> --}}

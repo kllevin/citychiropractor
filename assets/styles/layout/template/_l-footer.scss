@@ -9,12 +9,8 @@
 
 
 .l-footer {
-
-  &,
-  a {
-    color: $color-white;
-  }
-
+  color: $color-white;
+  font-size: to-rem($font-size-small);
   padding-top: to-rem($spacing-triple);
   padding-bottom: to-rem($spacing-triple);
 
@@ -23,11 +19,12 @@
    */
 
   a {
-    text-decoration: none;
+    color: $color-white;
+    text-decoration: underline;
 
     &:hover,
     &:focus {
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
 }
