@@ -90,7 +90,6 @@ $c-form-select-border-color-active-state: blue;
   &:focus,
   &:active {
     cursor: pointer;
-    border-color: $c-form-select-border-color-active-state;
   }
 }
 
@@ -110,8 +109,7 @@ $c-form-select-border-color-active-state: blue;
 
 .c-form-select__control__icon {
   @extend %u-position-middle;
-  fill: #111;//$color-blue-bismark;
-  //TODO: create modifier for non square icons.
-  height: auto; //12px;
+  fill: $c-form-select-border-color;
+  height: auto;
   width: 14px;
 }
