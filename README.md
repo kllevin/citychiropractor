@@ -31,7 +31,7 @@ To run this project you will need:
   - Self-host fonts and async load them
 
 - Assemble tasks:
-  - `title` element needs to by dynamic including the page name
+  - Rip out the page header from the views
   - Year needs to be dynamic for the copyright statement
 
 - JS tasks:
@@ -71,3 +71,6 @@ To run this project you will need:
   - Microdata
   - editorConfig file
   - browserslist file
+  - `rel="external"` to all external links
+  - Make sure all images have appropiate `alt` attributes
+  - Apply curly quotes
