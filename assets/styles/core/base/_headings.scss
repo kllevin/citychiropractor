@@ -2,9 +2,11 @@
    @CORE -> BASE -> HEADINGS
    ========================================================================= */
 
- /**
-  * Extend base heading styles provided by Scally.
-  */
+/**
+ * Double stranded for greater reuse.
+ *
+ * N.B. this builds on top of the Scally heading base styles.
+*/
 
 
 /**
@@ -12,14 +14,10 @@
  */
 
 @include headings(1, 6, true) {
-  font-weight: 400;
+  font-weight: $font-weight-merriweather;
 }
 
-h3 {
-  text-transform: uppercase;
-  font-size: to-rem($font-size-heading-4);
-}
-
-h5 {
-  text-transform: uppercase;
-}
+// Once the Merriweather custom font has loaded we can show it via this class
+// .has-fonts-loaded {
+//   font-family: $font-family-base-custom;
+// }

@@ -9,7 +9,7 @@
 
 details {
   background-color: $color-white;
-  border: 1px solid $color-cool-grey;
+  border: 1px solid $color-brand-light;
   border-radius: 3px;
   margin-bottom: to-rem($spacing-half);
 }
@@ -30,7 +30,7 @@ details[open] {
   padding-bottom: to-rem($spacing-base);
 
   summary {
-    border-bottom: 1px solid $color-cool-grey;
+    border-bottom: 1px solid $color-brand-light;
     margin-bottom: to-rem($spacing-half);
   }
 }

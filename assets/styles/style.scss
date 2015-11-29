@@ -154,7 +154,7 @@ $html-element-background-color: $color-brand;
 
 $apply-text-input-and-select-rounded-corners: true;
 $text-input-and-select-padding: $spacing-half;
-$text-input-and-select-border-color: $color-cool-grey;
+$text-input-and-select-border-color: $color-brand-light;
 @import "../../node_modules/scally/core/base/forms";
 
 $apply-details-marker: true;
@@ -164,6 +164,8 @@ $apply-details-marker: true;
 
 @import "../../node_modules/scally/core/base/horizontal-rule";
 
+$link-color: #5499C7;
+//$link-color-hover: ;
 @import "../../node_modules/scally/core/base/links";
 
 @import "../../node_modules/scally/core/base/media";
@@ -209,16 +211,8 @@ $l-container-maximum-width: 1000;
 $o-list-inline-apply-at-breakpoints-for-default: true;
 @import "../../node_modules/scally/objects/o-list-inline";
 
+$o-table-border-color: $color-brand-tint;
 @import "../../node_modules/scally/objects/o-table";
-
-
-/**
- * COMPONENTS.
- */
-
-$c-button-background-color: $color-aqua-dark;
-$c-button-apply-hover-styles: false;
-@import "../../node_modules/scally/components/c-button";
 
 
 /**
@@ -249,8 +243,6 @@ $u-text-apply-at-breakpoints-for-align-left: true;
  */
 
 // Base
-@import "core/base/root";
-
 @import "core/base/headings";
 
 

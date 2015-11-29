@@ -11,19 +11,48 @@
 /* Typography
    ========================================================================= */
 
-$line-height: 26;
+/**
+ * Sizes.
+ */
+
+$font-size: 16;
 
 $font-size-heading-1: 44;
 
-$font-family-base: Lato, Geneva, Tahoma, sans-serif;
+$font-size-heading-2: 30;
 
-$font-family-headings: Merriweather, serif;
+$font-size-heading-3: 24;
+
+$font-size-heading-4: 20;
+
+$font-size-heading-5: 16;
+
+$font-size-heading-6: 14;
 
 
 /**
- * Weights for custom fonts: Merriweather & Lato.
+ * Line height.
  */
 
+$line-height: 24;
+
+
+/**
+ * Families.
+ */
+
+$font-family-base: sans-serif;
+
+$font-family-headings: Merriweather, serif;
+
+$font-family-serif: $font-family-headings;
+
+
+/**
+ * Weights.
+ */
+
+$font-weight-merriweather: 400;
 
 
 
@@ -34,58 +63,30 @@ $font-family-headings: Merriweather, serif;
  * Brand.
  */
 
+// Dark charcoal
 $color-brand: #455560;
 
-// Analogous
-$color-brand-analogous-1: #454860;
+// Medium strength grey
+$color-brand-light: #9eabb4;
 
-$color-brand-analogous-2: #504560;
+// Colours based off `$color-brand`, taken from:
+// http://htmlcolorcodes.com/color-picker/
 
-$color-brand-analogous-3: #5e4560;
+// Complementary: brown
+$color-brand-complementary: #605045;
 
-$color-brand-analogous-4: #604555;
+// Shade: dark navy blue
+$color-brand-shade: #232b30;
 
-$color-brand-analogous-5: #604548;
-
-// Tints (from dark to light)
-$color-brand-tint-1: #5c6a74;
-
-$color-brand-tint-2: #748088;
-
-$color-brand-tint-3: #8b959c;
-
-$color-brand-tint-4: #a2aab0;
-
-$color-brand-tint-5: #b9bfc3;
-
-$color-brand-tint-6: #d1d5d7;
-
-$color-brand-tint-7: #e8eaeb;
+// Tint: light grey
+$color-brand-tint: #e8eaeb;
 
 
 /**
  * Text.
  */
 
-$color-text-base: #2f363b;
-
-
-/**
- * Aquas.
- */
-
-$color-aqua-dark: #3ea9be;
-
-$color-aqua-light: #e5fcfe;
-
-
-/**
- * Greys.
- */
-
-$color-dark-grey: $color-text-base;
-
-$color-cool-grey: #adafb2;
+$color-text-base: $color-brand-shade;
 
 
 /**
@@ -110,6 +111,7 @@ $color-cool-grey: #adafb2;
  */
 
 //$color-text-input-placeholder:  #999;
+
 
 
 
