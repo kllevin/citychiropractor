@@ -1,0 +1,117 @@
+/* ============================================================================
+   @COMPONENTS -> FANCY SELECT
+   ========================================================================= */
+
+/**
+ * Applying custom styling to a `select`
+ *
+ * @credit
+ * http://chriswrightdesign.github.io/customforms/select-box-svg/
+ */
+
+
+/**
+ * Settings.
+ */
+
+$c-form-select-font-size:                  14px;
+
+$c-form-select-border-color:               $text-input-and-select-border-color;
+
+$c-form-select-border-color-active-state: blue;
+
+
+/**
+ * Remove default styles for `select`s.
+ */
+
+.c-form-select select {
+  position: relative;
+  z-index: 3; //index($z-index-elements-main, form-select);
+  appearance: none;
+  background-color: transparent;
+  border-color:none;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  font-size: to-rem($c-form-select-font-size);
+  // padding of text inputs minus the border width
+  padding: to-rem(11);
+  padding-right: to-rem(45);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  transition: background 0.4s ease;
+}
+
+
+/**
+ * Hide select arrow on IE 10
+ */
+
+.c-form-select select::-ms-expand {
+  display: none;
+}
+
+
+/**
+ * Remove compensation for fancy select control on IE9
+ */
+
+.lt-ie9 .c-form-select select {
+  padding-right: to-rem(11);
+}
+
+
+/**
+ * The fancy select, where the magic happens
+ */
+
+.c-form-select {
+  background-color: $color-white;
+  border: 1px solid $c-form-select-border-color;
+  border-radius: $border-radius * 1px;
+  cursor: pointer;
+  font-size: to-rem($c-form-select-font-size);
+  line-height: $line-height-ratio;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  transition: background-color 0.4s ease-in-out;
+
+
+  /**
+   * Hover, focus and active states
+   */
+
+  &:hover,
+  &:focus,
+  &:active {
+    cursor: pointer;
+    border-color: $c-form-select-border-color-active-state;
+  }
+}
+
+
+/**
+ * Control.
+ */
+
+.c-form-select__control {
+  @extend %u-position-bottom-right;
+  display: block;
+  width: to-rem(40);
+  border-left: 1px solid $c-form-select-border-color;
+  height: 100%;
+  z-index: 2; //index($z-index-elements-main, form-select-control);
+}
+
+.c-form-select__control__icon {
+  @extend %u-position-middle;
+  fill: #111;//$color-blue-bismark;
+  //TODO: create modifier for non square icons.
+  height: auto; //12px;
+  width: 14px;
+}

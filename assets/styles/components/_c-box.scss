@@ -1,0 +1,14 @@
+/* ============================================================================
+   @COMPONENTS -> Box
+   ========================================================================= */
+
+
+/**
+ * Generic sectioning component giving a section a stylised border.
+ */
+
+.c-box {
+  border: 3px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff;
+}

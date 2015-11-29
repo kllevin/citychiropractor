@@ -1,15 +1,15 @@
 /* ============================================================================
-   @COMPONENTS -> SITE MAIN CONTENT
+   @LAYOUT -> TEMPLATE -> MAIN
    ========================================================================= */
-
 
 /**
  * The main content area of the site.
  */
 
-.c-main-content {
+
+.l-main {
   background-color: tint($color-brand-tint-7, 50%);
-  //offset height of fixed header
+  // Offset height of fixed header
   padding-top: to-rem($fixed-header-height);
-  //padding-bottom: to-rem($spacing-triple);
+  padding-bottom: to-rem($spacing-triple);
 }
