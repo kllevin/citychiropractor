@@ -36,6 +36,7 @@ To run this project you will need:
 - Assemble tasks:
   - Rip out the page header from the views
   - Year needs to be dynamic for the copyright statement
+  - Apply active state to main nav links
 
 - JS tasks:
   - Replace `js` class with `no-js` when JS is disabled
@@ -47,7 +48,6 @@ To run this project you will need:
   - Autoprefixer browser support is accurate
   - Check repaints e.g. fixed header, might need `will-change: transform;`
   - Clean up Scally partials
-  - Make sure they're no rouge hex's
   - Add a nice onload transition for the major structural elements on the home
     page, see: http://htmlcolorcodes.com/color-picker/
   - Print CSS
@@ -55,7 +55,6 @@ To run this project you will need:
 
 - SVG tasks:
   - Manually clean src logo SVG's
-  - Inline all SVG's including logo's
   - Convert CAA logo to an SVG
 
 - SEO tasks:
