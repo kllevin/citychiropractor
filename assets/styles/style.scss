@@ -117,6 +117,8 @@ $html-element-background-color: $color-brand;
 @import "../../node_modules/scally/core/base/abbreviation";
 
 $apply-text-input-and-select-rounded-corners: true;
+$text-input-and-select-padding: $spacing-half;
+$text-input-and-select-border-color: $color-cool-grey;
 @import "../../node_modules/scally/core/base/forms";
 
 $apply-details-marker:                                true;
@@ -222,15 +224,23 @@ $u-text-apply-at-breakpoints-for-align-left:    true;
  * COMPONENTS.
  */
 
+@import "components/c-box";
+
 @import "components/c-page-heading";
 
 @import "components/c-details";
+
+@import "components/c-map";
+
+@import "components/c-profile";
 
 @import "components/c-site-header";
 
 @import "components/c-site-footer";
 
 @import "components/c-main-content";
+
+@import "components/c-form-select";
 
 body {
   height: 100%;
@@ -247,27 +257,4 @@ body {
   @include respond-to(lap) {
     margin: 0;
   }
-}
-
-
-.c-team-profile__image {
-  border-radius: 50%;
-}
-
-.c-team-profile__name {
-  font-size: to-rem(24);
-  margin-bottom: to-rem(5);
-}
-
-.c-team-profile__position {
-  font-size: to-rem(14);
-  text-transform: uppercase;
-  color: #a8a9ac;
-}
-
-.c-box {
-  border: 3px solid #ccc;
-  border-radius: 3px;
-  padding: to-rem(20);
-  background-color: #fff;
 }

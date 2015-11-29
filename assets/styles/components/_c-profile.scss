@@ -1,0 +1,14 @@
+.c-profile__image {
+  border-radius: 50%;
+}
+
+.c-profile__name {
+  font-size: to-rem(24);
+  margin-bottom: to-rem(5);
+}
+
+.c-profile__position {
+  font-size: to-rem(14);
+  text-transform: uppercase;
+  color: #a8a9ac;
+}
