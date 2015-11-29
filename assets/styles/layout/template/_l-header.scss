@@ -11,89 +11,94 @@
  * Settings.
  */
 
-$site-header-background-color: $color-brand;
-
-$l-header-nav-overline-thickness: 2px;
+//$site-header-background-color: $color-brand;
 
 
 .l-header {
   background-color: $color-white;
   //border-bottom: 1px solid $color-brand-tint-7;
-  color: $color-brand;
   //position: fixed;
-  width: 100%;
+  //width: 100%;
 }
 
 
 .l-header__inner {
-  position: relative;
+  display: flex;
+  justify-content: space-between;
 }
 
 
 /**
- * Logo.
+ * The SVG logo.
  */
 
 .l-header__logo {
-  display: inline-block;
-  padding-top: to-rem(10);
-  padding-bottom: to-rem(10);
-}
+  padding-top: to-rem($spacing-half);
+  padding-bottom: to-rem($spacing-half);
 
-.l-header__logo__image {
-  height: 82px;
+  > img {
+    height: 82px;
+  }
 }
 
 
 /**
- * Main navigation.
+ * Main nav (`nav`).
  */
 
 .l-header__nav {
   @include respond-to(palm, max) {
     display: block;
-    background: $color-white;
+    background: rgba($color-white, 0.9);
     position: absolute;
-    top: 100%;
+    top: 0;
     left: 0;
-    width: 100%;
+    width: 100vh;
     height: 100vh;
     overflow-y: scroll;
   }
 
   @include respond-to(lap) {
-    float: right;
+    display: flex;
   }
 }
 
 
 /**
- * Main nav items.
+ * Main nav list (`ul`).
+ */
+
+.l-header__nav__list {
+  @include respond-to(lap) {
+    display: flex;
+  }
+}
+
+
+/**
+ * Main nav items (`li`).
  */
 
 .l-header__nav__item {
   @include respond-to(lap) {
-    display: inline-block;
+    //align-items: center;
+    display: flex;
   }
 }
 
-.l-header__nav__item__link,
-.l-header__nav .c-button {
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: to-rem($font-size-xxx-small);
-}
 
-.l-header__nav__item__link {
-  padding: to-rem($spacing-base-plus-three-quarters) to-rem($spacing-two-thirds);
-  display: block;
-  position: relative;
-  text-decoration: none;
+/**
+ * Main nav links (`a`).
+ */
+
+.l-header__nav__link {
   color: $color-brand;
-
-  @include respond-to(lap) {
-    border-bottom: 0;
-  }
+  display: block;
+  font-weight: bold;
+  font-size: to-rem($font-size-xx-small);
+  padding-left: to-rem($spacing-half);
+  padding-right: to-rem($spacing-half);
+  text-transform: uppercase;
 
   &:hover,
   &:focus {
@@ -101,13 +106,22 @@ $l-header-nav-overline-thickness: 2px;
   }
 }
 
-.l-header__nav-trigger {
-  position: absolute;
-  right: to-rem(24);
-  top: 50%;
-  transform: translateY(-50%);
-
-  @include respond-to(lap) {
-    display: none;
-  }
+.l-header__nav__item:last-child .l-header__nav__link {
+  padding-right: 0;
 }
+
+
+/**
+ * Hamburger main nav toggle (`button`).
+ */
+
+// .l-header__nav-trigger {
+//   position: absolute;
+//   right: to-rem(24);
+//   top: 50%;
+//   transform: translateY(-50%);
+
+//   @include respond-to(lap) {
+//     display: none;
+//   }
+// }
