@@ -155,6 +155,7 @@ $l-container-maximum-width:             1000;
 // Side-by-side
 @import "../../node_modules/scally/layout/l-side-by-side-alt";
 
+@import "../../node_modules/scally/layout/l-side-by-side";
 
 /**
  * OBJECTS.
@@ -246,4 +247,27 @@ body {
   @include respond-to(lap) {
     margin: 0;
   }
+}
+
+
+.c-team-profile__image {
+  border-radius: 50%;
+}
+
+.c-team-profile__name {
+  font-size: to-rem(24);
+  margin-bottom: to-rem(5);
+}
+
+.c-team-profile__position {
+  font-size: to-rem(14);
+  text-transform: uppercase;
+  color: #a8a9ac;
+}
+
+.c-box {
+  border: 3px solid #ccc;
+  border-radius: 3px;
+  padding: to-rem(20);
+  background-color: #fff;
 }

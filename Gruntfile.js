@@ -108,6 +108,17 @@ module.exports = function(grunt) {
       }
     },
 
+    imagemin: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'assets/images/',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'dist/images/'
+        }]
+      }
+    },
+
     copy: {
       main: {
         files: [{
@@ -133,6 +144,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-gh-pages');
@@ -149,6 +161,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('publish', ['default', 'gh-pages']);
 
-  grunt.registerTask('default', ['clean', 'style', 'html', 'copy']);
+  grunt.registerTask('default', ['clean', 'style', 'imagemin', 'html', 'copy']);
 
 };
