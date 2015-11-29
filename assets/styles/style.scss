@@ -1,43 +1,89 @@
 @charset "UTF-8";
 
-//@import "settings";
-$color-charcoal:        #455560;
-$color-dark-grey:       #2f363b;
-$color-cool-grey:       #ADAFB2;
+/* ============================================================================
+   @MASTER STYLESHEET
+   ========================================================================= */
 
-$color-aqua-dark:  #3ea9be;
-$color-aqua-light: #e5fcfe;
 
 /**
- * Colour combinations based off the brand colour: `#455560`, colours sourced
- * from: http://htmlcolorcodes.com/color-picker/.
+ * Scally, being an OO framework, works in keeping with the open/closed
+ * principle. Any custom styles *SHOULD NOT* be added or modified in Scally
+ * directly. This also allows the framework to be updated seamlessly.
+ *
+ * Contents:
+ *
+ * Your settings.........your project-specific settings.
+ * Scally framework......the entire Scally framework including your overrides.
+ * Your styles...........all your project-specific styles.
+ *
+ * N.B. the above order and the order within the Scally framework section must
+ * always be followed.
  */
 
-// Analogous
-$color-brand-analogous-1: #454860;
-$color-brand-analogous-2: #504560;
-$color-brand-analogous-3: #5e4560;
-$color-brand-analogous-4: #604555;
-$color-brand-analogous-5: #604548;
 
-// Tints (from dark to light)
-$color-brand-tint-1: #5c6a74;
-$color-brand-tint-2: #748088;
-$color-brand-tint-3: #8b959c;
-$color-brand-tint-4: #a2aab0;
-$color-brand-tint-5: #b9bfc3;
-$color-brand-tint-6: #d1d5d7;
-$color-brand-tint-7: #e8eaeb;
+
+
+/* Your settings
+   ========================================================================= */
 
 /**
- * Fixed header height.
+ * Your project-specific settings.
+ *
+ * N.B. define first so they can be used throughout your styles.
  */
 
-$fixed-header-height: 67;
+@import "settings";
+
+
 
 
 /* Scally framework
    ========================================================================= */
+
+/**
+ * By default everything is imported. But if you want to be selective and you
+ * definitely should, so your CSS is as lean as possible, then only import what
+ * you want. The Core section is however mandatory.
+ *
+ * Any settings you find set in Scally that you do not wish to keep, simply
+ * redefine above/below the relevant `@import`. This means that if Scally, for
+ * example, sets your `$font-size` at `16px` and you wish it to be `14px`,
+ * simply redeclare it above the relevant `@import`, like so:
+ *
+   $font-size: 14;
+   @import "../../../node_modules/scally/core/settings/typography";
+ *
+ * If you want to use a Scally setting to override something then you need to
+ * define the override below the `@import`, like so:
+ *
+   @import "../../../node_modules/scally/core/settings/colours";
+   $color-text-base: $color-brand;
+ *
+ * If you try to redeclare above the `@import` your Sass won't compile as you
+ * don't have access to the Scally setting at the point of compilation.
+ *
+ * All non-Core settings need to be overridden above the `@import`, like so:
+ *
+   $o-arrow-size-base: 14;
+   $o-arrow-color: orange;
+   @import "../../../node_modules/scally/objects/o-arrow";
+ *
+ * Scally ignores its own settings in favour of using your own, so you can
+ * completely modify how Scally works without ever having to alter the
+ * framework itself.
+ *
+ * N.B. the order specified below must always be followed or Scally will
+ * break.
+ *
+ * Contents:
+ *
+ * CORE
+ * LAYOUT
+ * OBJECTS
+ * COMPONENTS
+ * UTILITIES
+ */
+
 
 /**
  * CORE.
@@ -46,10 +92,6 @@ $fixed-header-height: 67;
  */
 
 // Settings
-$font-family-base:            "Lato", Geneva, Tahoma, sans-serif;
-$line-height:                 26;
-$font-family-headings:        "Merriweather", serif;
-$font-size-heading-1:         44;
 @import "../../node_modules/scally/core/settings/typography";
 
 @import "../../node_modules/scally/core/settings/spacing";
@@ -60,8 +102,6 @@ $font-size-heading-1:         44;
 
 @import "../../node_modules/scally/core/settings/widths";
 
-$color-text-base:             $color-dark-grey;
-$color-brand:                 $color-charcoal;
 @import "../../node_modules/scally/core/settings/colours";
 
 @import "../../node_modules/scally/core/settings/positioning";
@@ -107,10 +147,6 @@ $color-brand:                 $color-charcoal;
 @import "../../node_modules/scally/core/reset";
 
 // Base
-
-html {
-  font-weight: 400;
-}
 $html-element-background-color: $color-brand;
 @import "../../node_modules/scally/core/base/root";
 
@@ -121,7 +157,7 @@ $text-input-and-select-padding: $spacing-half;
 $text-input-and-select-border-color: $color-cool-grey;
 @import "../../node_modules/scally/core/base/forms";
 
-$apply-details-marker:                                true;
+$apply-details-marker: true;
 @import "../../node_modules/scally/core/base/details";
 
 @import "../../node_modules/scally/core/base/headings";
@@ -148,7 +184,7 @@ $apply-details-marker:                                true;
 
 // Main container
 $l-container-apply-breakpoints-for-default: true;
-$l-container-maximum-width:             1000;
+$l-container-maximum-width: 1000;
 @import "../../node_modules/scally/layout/l-container";
 
 // Grid
@@ -158,6 +194,7 @@ $l-container-maximum-width:             1000;
 @import "../../node_modules/scally/layout/l-side-by-side-alt";
 
 @import "../../node_modules/scally/layout/l-side-by-side";
+
 
 /**
  * OBJECTS.
@@ -169,7 +206,7 @@ $l-container-maximum-width:             1000;
 
 @import "../../node_modules/scally/objects/o-list-block";
 
-$o-list-inline-apply-at-breakpoints-for-default:      true;
+$o-list-inline-apply-at-breakpoints-for-default: true;
 @import "../../node_modules/scally/objects/o-list-inline";
 
 @import "../../node_modules/scally/objects/o-table";
@@ -179,9 +216,10 @@ $o-list-inline-apply-at-breakpoints-for-default:      true;
  * COMPONENTS.
  */
 
-$c-button-background-color:   $color-aqua-dark;
+$c-button-background-color: $color-aqua-dark;
 $c-button-apply-hover-styles: false;
 @import "../../node_modules/scally/components/c-button";
+
 
 /**
  * UTILITIES.
@@ -191,8 +229,8 @@ $c-button-apply-hover-styles: false;
 
 @import "../../node_modules/scally/utilities/u-position";
 
-$u-text-apply-at-breakpoints:                   lap;
-$u-text-apply-at-breakpoints-for-align-left:    true;
+$u-text-apply-at-breakpoints: lap;
+$u-text-apply-at-breakpoints-for-align-left: true;
 @import "../../node_modules/scally/utilities/u-text";
 
 @import "../../node_modules/scally/utilities/u-spacing";
@@ -211,13 +249,23 @@ $u-text-apply-at-breakpoints-for-align-left:    true;
  */
 
 // Base
+@import "core/base/root";
+
 @import "core/base/headings";
+
 
 /**
  * LAYOUT.
  */
 
 @import "layout/l-container";
+
+// Template
+@import "layout/template/l-header";
+
+@import "layout/template/l-footer";
+
+@import "layout/template/l-main";
 
 
 /**
@@ -242,19 +290,4 @@ $u-text-apply-at-breakpoints-for-align-left:    true;
 
 @import "components/c-form-select";
 
-body {
-  height: 100%;
-}
-
-.caa {
-  display: block;
-  background: url(../images/caa-logo.png) no-repeat 0 0;
-  background-size: 100px;
-  width: 100px;
-  height: 40px;
-  margin: 0 auto;
-
-  @include respond-to(lap) {
-    margin: 0;
-  }
-}
+@import "components/c-logo-watermark";

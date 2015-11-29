@@ -1,0 +1,123 @@
+/* ============================================================================
+   @SETTINGS
+   ========================================================================= */
+
+
+/**
+ * All project specific settings.
+ */
+
+
+/* Typography
+   ========================================================================= */
+
+$line-height: 26;
+
+$font-size-heading-1: 44;
+
+$font-family-base: Lato, Geneva, Tahoma, sans-serif;
+
+$font-family-headings: Merriweather, serif;
+
+
+/**
+ * Weights for custom fonts: Merriweather & Lato.
+ */
+
+
+
+
+/* Colours
+   ========================================================================= */
+
+/**
+ * Brand.
+ */
+
+$color-brand: #455560;
+
+// Analogous
+$color-brand-analogous-1: #454860;
+
+$color-brand-analogous-2: #504560;
+
+$color-brand-analogous-3: #5e4560;
+
+$color-brand-analogous-4: #604555;
+
+$color-brand-analogous-5: #604548;
+
+// Tints (from dark to light)
+$color-brand-tint-1: #5c6a74;
+
+$color-brand-tint-2: #748088;
+
+$color-brand-tint-3: #8b959c;
+
+$color-brand-tint-4: #a2aab0;
+
+$color-brand-tint-5: #b9bfc3;
+
+$color-brand-tint-6: #d1d5d7;
+
+$color-brand-tint-7: #e8eaeb;
+
+
+/**
+ * Text.
+ */
+
+$color-text-base: #2f363b;
+
+
+/**
+ * Aquas.
+ */
+
+$color-aqua-dark: #3ea9be;
+
+$color-aqua-light: #e5fcfe;
+
+
+/**
+ * Greys.
+ */
+
+$color-dark-grey: $color-text-base;
+
+$color-cool-grey: #adafb2;
+
+
+/**
+ * States.
+ */
+
+// Error
+//$color-state-error: #dc322f;
+
+// Success
+//$color-state-success: #859900;
+
+// Warning
+//$color-state-warning: #b58900;
+
+// Information
+//$color-state-information: #268bd2;
+
+
+/**
+ * Text input placeholder colour.
+ */
+
+//$color-text-input-placeholder:  #999;
+
+
+
+/* Other
+   ========================================================================= */
+
+/**
+ * Fixed site header height.
+ */
+
+$fixed-header-height: 67;

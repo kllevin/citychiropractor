@@ -61,7 +61,7 @@ module.exports = function(grunt) {
           'dist/styles/style.css': 'dist/styles/style.css'
         }
       },
-      options: ['last 2 versions', 'ie 9']
+      options: ['last 2 versions', 'ie 10']
     },
 
     uglify: {
@@ -161,6 +161,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('publish', ['default', 'gh-pages']);
 
-  grunt.registerTask('default', ['clean', 'style', 'imagemin', 'html', 'copy']);
+  grunt.registerTask('default', ['clean', 'style', 'imagemin', 'svgmin', 'html', 'copy']);
 
 };

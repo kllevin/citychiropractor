@@ -1,37 +1,44 @@
 <!doctype html>
-<html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>City Chiropractic Care | Sydney CBD, NSW Australia</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html class="js" lang="en-au">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
+  <head>
+    <meta charset="utf-8">
 
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="styles/style.css">
-    </head>
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    {{!-- Styles --}}
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,300,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
+    {{!-- //Styles --}}
 
-        <!-- Add your site or application content here -->
+    {{!-- Meta --}}
+    <title>City Chiropractic Care | Sydney CBD, NSW Australia</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{!-- //Meta --}}
 
-        {{>header}}
+    {{!-- Resource Hints --}}
 
-        <main role="main" class="c-main-content">
-            {{> body}}
-        </main>
+    {{!-- //Resource Hints --}}
 
-        {{>footer}}
+    {{!-- Favicons --}}
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="scripts/app.js"></script>
+    {{!-- Favicons --}}
+  </head>
 
-    </body>
+  <body>
+    {{>header}}
+
+    <main role="main" class="l-main">
+      {{> body}}
+    </main>
+
+    {{>footer}}
+
+    <!--[if lt IE 9]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" rel="external">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script src="scripts/app.js"></script>
+  </body>
 </html>

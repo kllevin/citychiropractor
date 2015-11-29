@@ -1,0 +1,22 @@
+/* ============================================================================
+   @COMPONENTS -> LOGO WATERMARK
+   ========================================================================= */
+
+
+/**
+ * A component that renders the logo as a watermark.
+ */
+
+
+.c-logo-watermark {
+  display: block;
+  background: url("../images/caa-logo.png") no-repeat 0 0;
+  background-size: 100px;
+  width: 100px;
+  height: 40px;
+  margin: 0 auto;
+
+  @include respond-to(lap) {
+    margin: 0;
+  }
+}

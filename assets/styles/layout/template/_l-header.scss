@@ -1,32 +1,30 @@
 /* ============================================================================
-   @COMPONENTS -> SITE HEADER
+   @LAYOUT -> TEMPLATE -> HEADER
    ========================================================================= */
-
 
 /**
  * Site header which is fixed to the viewport.
  */
 
+
 /**
  * Settings.
  */
 
-$site-header-background-color:          $color-charcoal;
+$site-header-background-color: $color-brand;
 
-$c-site-header-nav-overline-thickness:  2px;
+$l-header-nav-overline-thickness: 2px;
 
 
-.c-site-header {
+.l-header {
   background-color: $color-white;
-  //border-top: 2px solid $color-brand;
   border-bottom: 1px solid $color-brand-tint-7;
   color: $color-brand;
   position: fixed;
   width: 100%;
 }
 
-
-.c-site-header__inner {
+.l-header__inner {
   position: relative;
 
   a {
@@ -39,11 +37,12 @@ $c-site-header-nav-overline-thickness:  2px;
   }
 }
 
+
 /**
  * Logo.
  */
 
-.c-site-header__logo {
+.l-header__logo {
   height: 50px;
 }
 
@@ -52,7 +51,7 @@ $c-site-header-nav-overline-thickness:  2px;
  * Main navigation.
  */
 
-.c-site-header__nav {
+.l-header__nav {
   @include respond-to(palm, max) {
     display: block;
     background: $color-white;
@@ -68,8 +67,6 @@ $c-site-header-nav-overline-thickness:  2px;
   @include respond-to(lap) {
     float: right;
   }
-
-  //margin-right: -(to-rem($spacing-two-thirds));
 }
 
 
@@ -78,14 +75,14 @@ $c-site-header-nav-overline-thickness:  2px;
  */
 
 // Rewrite this
-.c-site-header__nav__item,
-.c-site-header__nav .c-button {
+.l-header__nav__item,
+.l-header__nav .c-button {
   text-transform: uppercase;
   font-weight: 700;
   font-size: to-rem($font-size-xxx-small);
 }
 
-.c-site-header__nav__item {
+.l-header__nav__item {
   border-bottom: 1px solid $color-brand-tint-7;
   padding: to-rem($spacing-base) to-rem($spacing-two-thirds);
   display: block;
@@ -116,7 +113,7 @@ $c-site-header-nav-overline-thickness:  2px;
       left: 0;
       right: 0;
       content: "";
-      height: $c-site-header-nav-overline-thickness;
+      height: $l-header-nav-overline-thickness;
       background-color: $color-brand-tint-4;
       transform: translateY(-100%);
       transition: transform 0.15s linear;
@@ -129,13 +126,13 @@ $c-site-header-nav-overline-thickness:  2px;
     &:hover:before,
     &:focus:before,
     &.is-active:before {
-      transform: translateY(calc(100% - #{$c-site-header-nav-overline-thickness}));
+      transform: translateY(calc(100% - #{$l-header-nav-overline-thickness}));
     }
   }
 
 }
 
-.c-site-header__nav-trigger {
+.l-header__nav-trigger {
   position: absolute;
   right: to-rem(24);
   top: 50%;
