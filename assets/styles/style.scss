@@ -264,7 +264,7 @@ $u-text-apply-at-breakpoints-for-align-left: true;
  * COMPONENTS.
  */
 
-@import "components/c-box";
+@import "components/c-card";
 
 @import "components/c-page-heading";
 
@@ -273,6 +273,8 @@ $u-text-apply-at-breakpoints-for-align-left: true;
 @import "components/c-map";
 
 @import "components/c-profile";
+
+@import "components/c-form";
 
 @import "components/c-form-select";
 

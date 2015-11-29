@@ -1,0 +1,32 @@
+/* ============================================================================
+   @COMPONENTS -> CARD
+   ========================================================================= */
+
+
+/**
+ * Generic sectioning component giving a section a stylised border.
+ */
+
+.c-card {
+  display: flex;
+  margin-bottom: to-rem($spacing-base);
+  border: 1px solid $color-brand-light;
+  background-color: $color-white;
+  border-radius: 6px;
+}
+
+.c-card--alt {
+  display: block;
+}
+
+.c-card__content {
+  padding: to-rem($spacing-base);
+}
+
+.c-card__image {
+
+  img {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+}
