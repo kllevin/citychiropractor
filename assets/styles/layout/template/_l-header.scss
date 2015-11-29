@@ -18,23 +18,15 @@ $l-header-nav-overline-thickness: 2px;
 
 .l-header {
   background-color: $color-white;
-  border-bottom: 1px solid $color-brand-tint-7;
+  //border-bottom: 1px solid $color-brand-tint-7;
   color: $color-brand;
-  position: fixed;
+  //position: fixed;
   width: 100%;
 }
 
+
 .l-header__inner {
   position: relative;
-
-  a {
-    display: block;
-    padding: to-rem(20);
-
-    @include respond-to(lap) {
-      display: inline-block;
-    }
-  }
 }
 
 
@@ -43,7 +35,7 @@ $l-header-nav-overline-thickness: 2px;
  */
 
 .l-header__logo {
-  height: 50px;
+  //height: 50px;
 }
 
 
@@ -61,7 +53,6 @@ $l-header-nav-overline-thickness: 2px;
     width: 100%;
     height: 100vh;
     overflow-y: scroll;
-    border-top: 1px solid $color-brand-tint-7;
   }
 
   @include respond-to(lap) {
@@ -83,7 +74,7 @@ $l-header-nav-overline-thickness: 2px;
 }
 
 .l-header__nav__item {
-  border-bottom: 1px solid $color-brand-tint-7;
+  //border-bottom: 1px solid $color-brand-tint-7;
   padding: to-rem($spacing-base) to-rem($spacing-two-thirds);
   display: block;
   position: relative;
@@ -96,7 +87,7 @@ $l-header-nav-overline-thickness: 2px;
 
   &:hover,
   &:focus {
-    color: $color-brand-tint-4;
+    //color: $color-brand-tint-4;
     text-decoration: none;
   }
 
@@ -114,7 +105,7 @@ $l-header-nav-overline-thickness: 2px;
       right: 0;
       content: "";
       height: $l-header-nav-overline-thickness;
-      background-color: $color-brand-tint-4;
+      //background-color: $color-brand-tint-4;
       transform: translateY(-100%);
       transition: transform 0.15s linear;
     }

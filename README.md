@@ -31,28 +31,43 @@ To run this project you will need:
   - Self-host fonts and async load them
 
 - Assemble tasks:
-  - `title` element
-  - Year (copyright statement -> footer)
+  - `title` element needs to by dynamic including the page name
+  - Year needs to be dynamic for the copyright statement
 
 - JS tasks:
   - Replace `js` class with `no-js` when JS is disabled
   - Toggle menu JS.
+
+- CSS tasks:
+  - Make responsive.
+  - Flexbox feature detection
+  - Autoprefixer browser support is accurate
+  - Check repaints e.g. fixed header, might need `will-change: transform;`
+  - Clean up Scally partials
+  - Make sure they're no rouge hex's
+  - Add a nice onload transition for the major structural elements on the home
+    page, see: http://htmlcolorcodes.com/color-picker/
+  - Print CSS
+  - Style the browser upgrade banner
 
 - SVG tasks:
   - Manually clean src logo SVG's
   - Inline all SVG's including logo's
   - Convert CAA logo to an SVG
 
-- Check repaints e.g. fixed header, might need `will-change: transform;`
-- Autoprefixer browser support is accurate
-- Favicons
-- GA integration
-- WebMaster Tools integration
-- .htaccess
-- Social media meta elements
-- Microdata
-- Browser upgrade banner
-- Meta elements for description and keywords
-- Clean up Scally partials
-- Clean up font-stacks
-- No rouge hex's
+- SEO tasks:
+  - Meta elements for description and keywords
+  - GA integration
+  - WebMaster Tools integration
+  - Google Business Directory
+  - robots.txt
+
+- Other:
+  - Make sure all special characters are encoded e.g. ellipsis
+  - Apply links where required
+  - Favicons
+  - .htaccess
+  - Social media meta elements
+  - Microdata
+  - editorConfig file
+  - browserslist file
