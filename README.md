@@ -30,6 +30,9 @@ To run this project you will need:
   - Add Resource Hints
   - Self-host fonts and async load them
 
+- Grunt tasks:
+  - Copy fonts to `/dist`
+
 - Assemble tasks:
   - Rip out the page header from the views
   - Year needs to be dynamic for the copyright statement

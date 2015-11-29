@@ -93,3 +93,23 @@ desc:
     </div>
   </div>
 </div>
+
+{{!-- Google Maps JS --}}
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script>
+  function initialize() {
+    var mapCanvas = document.getElementById('gmap_canvas');
+    var mapOptions = {
+      center: new google.maps.LatLng(-33.8662468,151.21005390000005),
+      zoom: 16,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map(mapCanvas, mapOptions)
+    var marker = new google.maps.Marker({
+      map: map,
+      position: new google.maps.LatLng(-33.8662468,151.21005390000005)
+    });
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+{{!-- Google Maps JS --}}
