@@ -2,7 +2,13 @@
    @COMPONENTS -> FORM
    ========================================================================= */
 
-   .c-form__label {
-    display: block;
-    margin-bottom: to-rem(12);
-   }
+
+/**
+ * Form component.
+ */
+
+
+.c-form__label {
+  display: block;
+  margin-bottom: to-rem($spacing-half);
+}

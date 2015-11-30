@@ -14,9 +14,4 @@
   background-size: 100px;
   width: 100px;
   height: 40px;
-  margin: 0 auto;
-
-  @include respond-to(lap) {
-    margin: 0;
-  }
 }

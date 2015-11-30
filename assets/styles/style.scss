@@ -168,6 +168,7 @@ $link-color: #5499C7;
 //$link-color-hover: ;
 @import "../../node_modules/scally/core/base/links";
 
+$google-map-selector-to-turn-off-responsive-images: "#gmap_canvas";
 @import "../../node_modules/scally/core/base/media";
 
 @import "../../node_modules/scally/core/base/paragraphs";

@@ -1,9 +1,15 @@
+/* ============================================================================
+   @COMPONENTS -> GOOGLE MAP
+   ========================================================================= */
+
+
+/**
+ * Google map styles.
+ */
+
+
 #gmap_canvas {
   overflow: hidden;
   height: 400px;
   width: 100%;
-}
-#gmap_canvas img {
-  max-width:none!important;
-  background:none!important;
 }

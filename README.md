@@ -74,5 +74,5 @@ To run this project you will need:
   - editorConfig file
   - browserslist file
   - `rel="external"` to all external links
-  - Make sure all images have appropiate `alt` attributes
+  - Make sure all images have appropriate `alt` attributes
   - Apply curly quotes

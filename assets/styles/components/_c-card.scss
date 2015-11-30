@@ -7,12 +7,20 @@
  * Generic sectioning component giving a section a stylised border.
  */
 
+
+/**
+ * Settings.
+ */
+
+$c-card-border-radius: 6px;
+
+
 .c-card {
   display: flex;
   margin-bottom: to-rem($spacing-base);
   border: 1px solid $color-brand-light;
   background-color: $color-white;
-  border-radius: 6px;
+  border-radius: $c-card-border-radius;
 }
 
 .c-card--alt {
@@ -23,10 +31,7 @@
   padding: to-rem($spacing-base);
 }
 
-.c-card__image {
-
-  img {
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-  }
+.c-card__image img {
+  border-top-left-radius: $c-card-border-radius;
+  border-bottom-left-radius: $c-card-border-radius;
 }

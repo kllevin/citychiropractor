@@ -2,15 +2,17 @@
    @COMPONENTS -> PAGE HEADING
    ========================================================================= */
 
+
 /**
- * Page heading component.
+ * Page heading component, a full-bleed strap that sits under the site header,
+ * typically contains a `h1`.
  */
+
 
 .c-page-heading {
   background-color: $color-brand;
   padding-top: to-rem($spacing-double);
   padding-bottom: to-rem($spacing-double);
-  margin-bottom: to-rem($spacing-base);
 }
 
 .c-page-heading__title {

@@ -2,6 +2,7 @@
    @COMPONENTS -> FANCY SELECT
    ========================================================================= */
 
+
 /**
  * Applying custom styling to a `select`
  *
@@ -14,9 +15,9 @@
  * Settings.
  */
 
-$c-form-select-font-size:                  14px;
+$c-form-select-font-size: 14px;
 
-$c-form-select-border-color:               $text-input-and-select-border-color;
+$c-form-select-border-color: $text-input-and-select-border-color;
 
 $c-form-select-border-color-active-state: blue;
 
@@ -27,7 +28,7 @@ $c-form-select-border-color-active-state: blue;
 
 .c-form-select select {
   position: relative;
-  z-index: 3; //index($z-index-elements-main, form-select);
+  z-index: 3;
   appearance: none;
   background-color: transparent;
   border-color:none;
@@ -36,7 +37,6 @@ $c-form-select-border-color-active-state: blue;
   box-shadow: none;
   cursor: pointer;
   font-size: to-rem($c-form-select-font-size);
-  // padding of text inputs minus the border width
   padding: to-rem(11);
   padding-right: to-rem(45);
   overflow: hidden;
@@ -53,15 +53,6 @@ $c-form-select-border-color-active-state: blue;
 
 .c-form-select select::-ms-expand {
   display: none;
-}
-
-
-/**
- * Remove compensation for fancy select control on IE9
- */
-
-.lt-ie9 .c-form-select select {
-  padding-right: to-rem(11);
 }
 
 
@@ -104,7 +95,7 @@ $c-form-select-border-color-active-state: blue;
   width: to-rem(40);
   border-left: 1px solid $c-form-select-border-color;
   height: 100%;
-  z-index: 2; //index($z-index-elements-main, form-select-control);
+  z-index: 2;
 }
 
 .c-form-select__control__icon {
