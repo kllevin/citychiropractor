@@ -43,7 +43,9 @@ $line-height: 24;
 
 $font-family-base: sans-serif;
 
-$font-family-headings: Georgia, Palatino, "Hoefler Text", Baskerville, serif;
+//$font-family-headings: Georgia, Palatino, "Hoefler Text", Baskerville, serif;
+
+$font-family-headings: Merriweather, Georgia, Palatino, "Hoefler Text", Baskerville, serif;
 
 $font-family-headings-loaded: Merriweather, $font-family-headings;
 

@@ -2,6 +2,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    // Watch
     watch: {
       html: {
         files: ['./src/**/*'],
@@ -25,9 +26,9 @@ module.exports = function(grunt) {
         files: ['./dist/**/*'],
         options: {livereload: true}
       }
-
     },
 
+    // Assemble
     assemble: {
       options: {
         layout: 'page.hbs',
@@ -44,6 +45,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // Sass
     sass: {
       dist: {
         options: {
@@ -55,6 +57,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // Autoprefixer
     autoprefixer: {
       dist: {
         files: {
@@ -64,11 +67,12 @@ module.exports = function(grunt) {
       options: ['last 2 versions', 'ie 10']
     },
 
+    // Uglify
     uglify: {
       options: {
           mangle: false,
           beautify: true
-        },
+      },
       dist: {
         files: {
           'dist/scripts/app.js': ['assets/scripts/*.js']
@@ -76,6 +80,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // Connect
     connect: {
       dev: {
         options: {
@@ -85,10 +90,12 @@ module.exports = function(grunt) {
       }
     },
 
+    // Clean
     clean: {
       all: ['./dist/*']
     },
 
+    // SVG Min
     svgmin: {
       options: {
         plugins: [{
@@ -108,7 +115,12 @@ module.exports = function(grunt) {
       }
     },
 
+    // Optimise images
     imagemin: {
+      options: {
+        progressive: true,
+        optimizationLevel: 4
+      },
       dist: {
         files: [{
           expand: true,
@@ -119,6 +131,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // Copy files over to dist
     copy: {
       main: {
         files: [{
@@ -131,13 +144,51 @@ module.exports = function(grunt) {
       }
     },
 
+    // Minify HTML
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true,
+          collapseBooleanAttributes: true,
+          removeAttributeQuotes: true,
+          removeRedundantAttributes: true,
+          removeEmptyAttributes: true,
+          minifyJS: true,
+          minifyCSS: true
+        },
+        files: [{
+          expand: true,
+          cwd: 'dist/',
+          src: '**/*.html',
+          dest: 'dist/'
+        }]
+      }
+    },
+
+    // Minify CSS
+    cssmin: {
+      options: {
+        keepSpecialComments: 0,
+        check: 'gzip'
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= app.dist %>/css',
+          src: ['**/*.css'],
+          dest: '<%= app.dist %>/css'
+        }]
+      }
+    },
+
+    // GH Pages
     'gh-pages': {
       options: {
         base: 'dist'
       },
       src: ['**']
     }
-
   });
 
   grunt.loadNpmTasks('grunt-autoprefixer');
@@ -152,15 +203,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-svgmin');
   grunt.loadNpmTasks('assemble');
 
-
-  grunt.registerTask('style', ['sass', 'autoprefixer']);
-
-  grunt.registerTask('html', ['assemble']);
-
-  grunt.registerTask('serve', ['default', 'connect', 'watch']);
-
-  grunt.registerTask('publish', ['default', 'gh-pages']);
-
   grunt.registerTask('default', ['clean', 'style', 'imagemin', 'svgmin', 'html', 'copy']);
-
+  grunt.registerTask('style', ['sass', 'autoprefixer']);
+  grunt.registerTask('html', ['assemble']);
+  grunt.registerTask('serve', ['default', 'connect', 'watch']);
+  grunt.registerTask('deploy', ['default', 'gh-pages']);
 };

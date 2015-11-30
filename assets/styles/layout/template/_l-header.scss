@@ -11,14 +11,11 @@
  * Settings.
  */
 
-//$site-header-background-color: $color-brand;
+$l-header-padding: $spacing-half;
 
 
 .l-header {
   background-color: $color-white;
-  //border-bottom: 1px solid $color-brand-tint-7;
-  //position: fixed;
-  //width: 100%;
 }
 
 
@@ -33,12 +30,8 @@
  */
 
 .l-header__logo {
-  padding-top: to-rem($spacing-half);
-  padding-bottom: to-rem($spacing-half);
-
-  > img {
-    height: 82px;
-  }
+  padding-top: to-rem($l-header-padding);
+  padding-bottom: to-rem($l-header-padding);
 }
 
 
@@ -49,7 +42,6 @@
 .l-header__nav {
   @include respond-to(palm, max) {
     display: block;
-    background: rgba($color-white, 0.9);
     position: absolute;
     top: 0;
     left: 0;
@@ -71,6 +63,7 @@
 .l-header__nav__list {
   @include respond-to(lap) {
     display: flex;
+    margin-right: -(to-rem($l-header-padding));
   }
 }
 
@@ -81,7 +74,6 @@
 
 .l-header__nav__item {
   @include respond-to(lap) {
-    //align-items: center;
     display: flex;
   }
 }
@@ -96,8 +88,8 @@
   display: block;
   font-weight: bold;
   font-size: to-rem($font-size-xx-small);
-  padding-left: to-rem($spacing-half);
-  padding-right: to-rem($spacing-half);
+  padding-left: to-rem($l-header-padding);
+  padding-right: to-rem($l-header-padding);
   text-transform: uppercase;
 
   &:hover,
@@ -106,9 +98,8 @@
   }
 }
 
-.l-header__nav__item:last-child .l-header__nav__link {
-  padding-right: 0;
-}
+
+
 
 
 /**
