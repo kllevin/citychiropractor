@@ -2,20 +2,30 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    // Setup env vars
+    app: {
+      source:   'app',
+      dist:     'dist'
+    },
+
     // Watch
     watch: {
+
+      // SASS COMPILATION & AUTOPREFIXER
+      sass: {
+        files: '<%= app.source %>/assets/**/*.scss',
+        tasks: [
+          'sass:dev',
+          'autoprefixer'
+        ],
+        options: {
+          spawn: false
+        }
+      },
+
       html: {
         files: ['./src/**/*'],
         tasks: ['html']
-      },
-
-      sass: {
-        files: './assets/**/*.scss',
-        tasks: ['style']
-      },
-
-      css: {
-        files: ['./dist/styles/*.css']
       },
 
       uglify: {
@@ -45,26 +55,53 @@ module.exports = function(grunt) {
       }
     },
 
-    // Sass
+    // Sass Compilation
     sass: {
+      options: {
+        sourceMap: false,
+        precision: 3,
+        // nested, expanded, compact, compressed
+        outputStyle: 'expanded'
+      },
+      dev: {
+        files: [{
+          expand: true,
+          cwd: 'assets/styles',
+          src: '**/*.{scss,sass}',
+          dest: '<%= app.dist %>/styles',
+          ext: '.css'
+        }]
+      },
       dist: {
-        options: {
-          style: 'expanded'
-        },
-        files: {
-          'dist/styles/style.css': 'assets/styles/style.scss'
-        }
+        files: [{
+          expand: true,
+          cwd: 'assets/styles',
+          src: '**/*.{scss,sass}',
+          dest: '<%= app.dist %>/styles',
+          ext: '.css'
+        }]
       }
     },
 
     // Autoprefixer
     autoprefixer: {
-      dist: {
-        files: {
-          'dist/styles/style.css': 'dist/styles/style.css'
-        }
+      options: ['last 2 versions', 'ie 10'],
+      dev: {
+        files: [{
+          expand: true,
+          cwd: '<%= app.dist %>/styles',
+          src: '**/*.css',
+          dest: '<%= app.dist %>/styles'
+        }]
       },
-      options: ['last 2 versions', 'ie 10']
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= app.dist %>/styles',
+          src: '**/*.css',
+          dest: '<%= app.dist %>/styles'
+        }]
+      }
     },
 
     // Uglify
@@ -75,7 +112,9 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'dist/scripts/app.js': ['assets/scripts/*.js']
+          'dist/scripts/app.js': [
+          'assets/scripts/.js'
+          ]
         }
       }
     },
@@ -92,7 +131,17 @@ module.exports = function(grunt) {
 
     // Clean
     clean: {
-      all: ['./dist/*']
+      dev: [
+        '<%= app.dist %>'
+      ],
+      dist: {
+        files: [{
+          dot: true,
+          src: [
+            '<%= app.dist %>/*'
+          ]
+        }]
+      }
     },
 
     // SVG Min
@@ -126,21 +175,39 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'assets/images/',
           src: ['**/*.{png,jpg,gif}'],
-          dest: 'dist/images/'
+          dest: '<%= app.dist %>/images/'
         }]
       }
     },
 
     // Copy files over to dist
     copy: {
-      main: {
+      fonts_dev: {
         files: [{
-            expand: true,
-            cwd: 'assets/images/',
-            src: '**/*.{gif,jpg,jpeg,png,svg,webp}',
-            dest: 'dist/images',
-            filter: 'isFile'
-          }]
+          expand: true,
+          dot: true,
+          cwd: 'assets/fonts',
+          src: '**/*.{woff,woff2}',
+          dest: '<%= app.dist %>/fonts'
+        }]
+      },
+      fonts_dist: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: 'assets/fonts',
+          src: '**/*.{woff,woff2}',
+          dest: '<%= app.dist %>/fonts'
+        }]
+      },
+      images_dev: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: 'assets/images',
+          src: '**/*.{gif,jpg,jpeg,png,webp}',
+          dest: '<%= app.dist %>/images'
+        }]
       }
     },
 
@@ -159,9 +226,9 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          cwd: 'dist/',
+          cwd: '<%= app.dist %>',
           src: '**/*.html',
-          dest: 'dist/'
+          dest: '<%= app.dist %>'
         }]
       }
     },
@@ -175,10 +242,33 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= app.dist %>/css',
+          cwd: '<%= app.dist %>/styles',
           src: ['**/*.css'],
-          dest: '<%= app.dist %>/css'
+          dest: '<%= app.dist %>/styles'
         }]
+      }
+    },
+
+    modernizr: {
+      dist: {
+        "dest": "assets/scripts/modernizr.js",
+        "options": [
+          "setClasses",
+          "addTest",
+          "html5printshiv",
+          "testProp",
+          "fnBind"
+        ],
+        "tests": [
+          "css/flexbox",
+          "css/flexboxtweener"
+        ],
+        "files": {
+          "src": [
+            "assets/**/*.{js,css,scss}"
+          ]
+        },
+        "uglify": true
       }
     },
 
@@ -195,17 +285,51 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-gh-pages');
+  grunt.loadNpmTasks('grunt-modernizr');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-svgmin');
   grunt.loadNpmTasks('assemble');
 
-  grunt.registerTask('default', ['clean', 'style', 'imagemin', 'svgmin', 'html', 'copy']);
-  grunt.registerTask('style', ['sass', 'autoprefixer']);
-  grunt.registerTask('html', ['assemble']);
-  grunt.registerTask('serve', ['default', 'connect', 'watch']);
-  grunt.registerTask('deploy', ['default', 'gh-pages']);
+
+  // Serve
+  grunt.registerTask('serve', [
+    'clean:dev',
+    'sass:dev',
+    'autoprefixer:dev',
+    'imagemin',
+    'svgmin',
+    'copy:fonts_dev',
+    'copy:images_dev',
+    'assemble',
+    'connect',
+    'watch'
+  ]);
+
+  // Build
+  grunt.registerTask('build', [
+    'clean:dist',
+    'sass:dist',
+    'autoprefixer:dist',
+    'cssmin',
+    'imagemin',
+    'svgmin',
+    'copy:fonts_dist',
+    'assemble',
+    'htmlmin'
+  ]);
+
+  // Deploy
+  grunt.registerTask('deploy', [
+    'build',
+    'gh-pages'
+  ]);
+
+  // Default (serve)
+  grunt.registerTask('default', ['serve']);
 };
