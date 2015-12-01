@@ -22,16 +22,10 @@ To run this project you will need:
 ## To Do
 
 - Optimisation tasks:
-  - Add HTML minification
-  - Add CSS minification
-  - Add JS minification
-  - Add SVG minification
   - Add critical CSS
   - Add Resource Hints
-  - Self-host fonts and async load them
 
 - Grunt tasks:
-  - Copy fonts to `/dist`
 
 - Assemble tasks:
   - Rip out the page header from the views
@@ -44,17 +38,14 @@ To run this project you will need:
 
 - CSS tasks:
   - Make responsive.
-  - Flexbox feature detection
   - Autoprefixer browser support is accurate
   - Check repaints e.g. fixed header, might need `will-change: transform;`
   - Clean up Scally partials
-  - Add a nice onload transition for the major structural elements on the home
-    page, see: http://htmlcolorcodes.com/color-picker/
+  - Add a nice onload transition, see: http://htmlcolorcodes.com/color-picker/
   - Print CSS
   - Style the browser upgrade banner
 
 - SVG tasks:
-  - Manually clean src logo SVG's
   - Convert CAA logo to an SVG
 
 - SEO tasks:
@@ -75,4 +66,3 @@ To run this project you will need:
   - browserslist file
   - `rel="external"` to all external links
   - Make sure all images have appropriate `alt` attributes
-  - Apply curly quotes
