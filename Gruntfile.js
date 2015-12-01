@@ -13,10 +13,10 @@ module.exports = function(grunt) {
 
       // SASS COMPILATION & AUTOPREFIXER
       sass: {
-        files: '<%= app.source %>/assets/**/*.scss',
+        files: 'assets/styles/**/*.scss',
         tasks: [
           'sass:dev',
-          'autoprefixer'
+          'autoprefixer:dev'
         ],
         options: {
           spawn: false
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 
       html: {
         files: ['./src/**/*'],
-        tasks: ['html']
+        tasks: ['assemble']
       },
 
       uglify: {
@@ -68,7 +68,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'assets/styles',
           src: '**/*.{scss,sass}',
-          dest: '<%= app.dist %>/styles',
+          dest: 'dist/styles',
           ext: '.css'
         }]
       },
@@ -77,7 +77,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'assets/styles',
           src: '**/*.{scss,sass}',
-          dest: '<%= app.dist %>/styles',
+          dest: 'dist/styles',
           ext: '.css'
         }]
       }
@@ -89,17 +89,17 @@ module.exports = function(grunt) {
       dev: {
         files: [{
           expand: true,
-          cwd: '<%= app.dist %>/styles',
+          cwd: 'dist/styles',
           src: '**/*.css',
-          dest: '<%= app.dist %>/styles'
+          dest: 'dist/styles'
         }]
       },
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= app.dist %>/styles',
+          cwd: 'dist/styles',
           src: '**/*.css',
-          dest: '<%= app.dist %>/styles'
+          dest: 'dist/styles'
         }]
       }
     },
@@ -132,13 +132,13 @@ module.exports = function(grunt) {
     // Clean
     clean: {
       dev: [
-        '<%= app.dist %>'
+        'dist'
       ],
       dist: {
         files: [{
           dot: true,
           src: [
-            '<%= app.dist %>/*'
+            'dist/*'
           ]
         }]
       }
@@ -175,7 +175,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'assets/images/',
           src: ['**/*.{png,jpg,gif}'],
-          dest: '<%= app.dist %>/images/'
+          dest: 'dist/images/'
         }]
       }
     },
@@ -188,7 +188,7 @@ module.exports = function(grunt) {
           dot: true,
           cwd: 'assets/fonts',
           src: '**/*.{woff,woff2}',
-          dest: '<%= app.dist %>/fonts'
+          dest: 'dist/fonts'
         }]
       },
       fonts_dist: {
@@ -197,7 +197,7 @@ module.exports = function(grunt) {
           dot: true,
           cwd: 'assets/fonts',
           src: '**/*.{woff,woff2}',
-          dest: '<%= app.dist %>/fonts'
+          dest: 'dist/fonts'
         }]
       },
       images_dev: {
@@ -206,7 +206,7 @@ module.exports = function(grunt) {
           dot: true,
           cwd: 'assets/images',
           src: '**/*.{gif,jpg,jpeg,png,webp}',
-          dest: '<%= app.dist %>/images'
+          dest: 'dist/images'
         }]
       }
     },
@@ -226,9 +226,9 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          cwd: '<%= app.dist %>',
+          cwd: 'dist',
           src: '**/*.html',
-          dest: '<%= app.dist %>'
+          dest: 'dist'
         }]
       }
     },
@@ -242,9 +242,9 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= app.dist %>/styles',
+          cwd: 'dist/styles',
           src: ['**/*.css'],
-          dest: '<%= app.dist %>/styles'
+          dest: 'dist/styles'
         }]
       }
     },

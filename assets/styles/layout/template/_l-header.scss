@@ -84,8 +84,9 @@ $l-header-padding: $spacing-half;
  */
 
 .l-header__nav__link {
+  align-items: center;
   color: $color-brand;
-  display: block;
+  display: flex;
   font-weight: bold;
   font-size: to-rem($font-size-xx-small);
   padding-left: to-rem($l-header-padding);
