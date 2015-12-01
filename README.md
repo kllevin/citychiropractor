@@ -28,7 +28,8 @@ To run this project you will need:
 - Grunt tasks:
 
 - Assemble tasks:
-  - Rip out the page header from the views
+  - Main nav to be its own partial shared in header and footer partials
+  - Rip out the main content header (`.c-page-heading`) from the views
   - Year needs to be dynamic for the copyright statement
   - Apply active state to main nav links
 
@@ -37,7 +38,8 @@ To run this project you will need:
   - Toggle menu JS.
 
 - CSS tasks:
-  - Make responsive.
+  - Clean up the components
+  - Make responsive
   - Autoprefixer browser support is accurate
   - Check repaints e.g. fixed header, might need `will-change: transform;`
   - Clean up Scally partials
@@ -61,7 +63,7 @@ To run this project you will need:
   - Favicons
   - .htaccess
   - Social media meta elements
-  - Microdata
+  - Microdata (Schema.org)
   - editorConfig file
   - browserslist file
   - `rel="external"` to all external links
