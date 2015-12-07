@@ -15,13 +15,14 @@ $l-header-padding: $spacing-half;
 
 
 .l-header {
-  background-color: $color-brand-light;
-}
-
-
-.l-header__inner {
+  background-color: $color-brand;
+  background-image: linear-gradient(45deg, shade($color-brand, 6%), tint($color-brand, 16%));
+  padding-left: 4%;
+  padding-right: 4%;
   display: flex;
   justify-content: space-between;
+  max-width: to-rem(2000);
+  margin: 0 auto;
 }
 
 
@@ -30,8 +31,8 @@ $l-header-padding: $spacing-half;
  */
 
 .l-header__logo {
-  padding-top: to-rem($l-header-padding);
-  padding-bottom: to-rem($l-header-padding);
+  padding-top: to-rem($spacing-base);
+  padding-bottom: to-rem($spacing-base);
 }
 
 
@@ -85,16 +86,24 @@ $l-header-padding: $spacing-half;
 
 .l-header__nav__link {
   align-items: center;
-  color: $color-brand;
+  color: $color-brand-tint;
   display: flex;
-  font-weight: bold;
-  font-size: to-rem($font-size-xx-small);
+  font-size: to-rem($font-size-small);
   padding-left: to-rem($l-header-padding);
   padding-right: to-rem($l-header-padding);
-  text-transform: uppercase;
+  text-shadow: 0 1px 0 shade($color-brand, 20%);
+
+  &.c-button {
+    //color: $link-color;
+    //font-weight: bold;
+    text-decoration: underline wavy $link-color;
+    //text-decoration: underline overline;
+  }
 
   &:hover,
   &:focus {
+    background-color: rgba($color-brand, 0.3);
+    color: $color-brand-tint;
     text-decoration: none;
   }
 }

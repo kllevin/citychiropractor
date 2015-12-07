@@ -41,7 +41,7 @@ $line-height: 24;
  * Families.
  */
 
-$font-family-base: sans-serif;
+$font-family-base: "Merriweather Sans", sans-serif;;
 
 $font-family-headings: Georgia, Palatino, "Hoefler Text", Baskerville, serif;
 
@@ -88,7 +88,7 @@ $color-brand-tint: #e8eaeb;
  * Text.
  */
 
-$color-text-base: $color-brand-shade;
+$color-text-base: lighten($color-brand-shade, 20%);
 
 
 /**

@@ -148,6 +148,9 @@
 
 // Base
 $html-element-background-color: $color-brand;
+html {
+   font-weight: 300;
+}
 @import "../../node_modules/scally/core/base/root";
 
 @import "../../node_modules/scally/core/base/abbreviation";
