@@ -1,0 +1,21 @@
+/* ============================================================================
+   @CORE -> BASE -> ROOT
+   ========================================================================= */
+
+
+/**
+ * The root element: `html`.
+ *
+ * N.B. this builds on top of the Scally heading base styles.
+ */
+
+
+html {
+  font-family: $font-family-base-fallback;
+  font-weight: $font-weight-base;
+
+  // Once “Merriweather Sans” font has loaded we can show it via this class
+  &.has-fonts-loaded {
+    font-family: $font-family-base;
+  }
+}

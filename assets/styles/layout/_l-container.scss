@@ -3,9 +3,16 @@
    ========================================================================= */
 
 /**
- * Extends the container component provided by Scally
+ * Extends the container component provided by Scally.
  */
 
+
+// Narrow
 .l-container--narrow {
   max-width: to-rem(640);
+}
+
+// Wide
+.l-container--wide {
+  max-width: to-rem(2000);
 }

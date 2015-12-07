@@ -148,9 +148,6 @@
 
 // Base
 $html-element-background-color: $color-brand;
-html {
-   font-weight: 300;
-}
 @import "../../node_modules/scally/core/base/root";
 
 @import "../../node_modules/scally/core/base/abbreviation";
@@ -248,6 +245,10 @@ $u-text-apply-at-breakpoints-for-align-left: true;
 
 // Base
 @import "core/base/@font-face";
+
+@import "core/base/root";
+
+@import "core/base/strong";
 
 @import "core/base/headings";
 
