@@ -18,3 +18,9 @@ To run this project you will need:
 - `grunt html` packages up site templates
 - `grunt serve` packages up the site and serves it at `localhost:8000`
 - `grunt publish` publishes to github pages
+
+## Helena feedback
+
+- Reorder the main nav, have the CTA on a line above the main nav.
+- Full-bleed imagery.
+- Review content e.g. Our Philosophy.

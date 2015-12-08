@@ -9,13 +9,15 @@
  * N.B. this builds on top of the Scally heading base styles.
  */
 
+// Whilst “Merriweather Sans” is loading we use a fall-back font that tried to
+// match the “Merriweather Sans” font
+// html:not(.has-fonts-loaded) {
+//   font-weight: 400;
+//   letter-spacing: 0.035em;
+// }
 
-html {
-  font-family: $font-family-base-fallback;
+// Once “Merriweather Sans” font has loaded we can show it via this class
+.has-fonts-loaded {
+  font-family: $font-family-base-webfont;
   font-weight: $font-weight-base;
-
-  // Once “Merriweather Sans” font has loaded we can show it via this class
-  &.has-fonts-loaded {
-    font-family: $font-family-base;
-  }
 }

@@ -41,13 +41,13 @@ $line-height: 24;
  * Families.
  */
 
-$font-family-base-fallback: sans-serif;
+$font-family-base: "Helvetica Neue", sans-serif;
 
-$font-family-base: "Merriweather Sans", $font-family-base-fallback;
+$font-family-base-webfont: "Merriweather Sans", $font-family-base;
 
-$font-family-headings-fallback: Georgia, Palatino, "Hoefler Text", Baskerville, serif;
+$font-family-headings: Georgia, Palatino, "Hoefler Text", Baskerville, serif;
 
-$font-family-headings: "Merriweather Sans-serif", $font-family-headings-fallback;
+$font-family-headings-webfont: "Merriweather Sans-serif", $font-family-headings;
 
 
 /**

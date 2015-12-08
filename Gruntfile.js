@@ -4,19 +4,18 @@ module.exports = function(grunt) {
 
     // Setup env vars
     app: {
-      source:   'app',
-      dist:     'dist'
+      source: 'app',
+      dist: 'dist'
     },
 
     // Watch
     watch: {
 
-      // SASS COMPILATION & AUTOPREFIXER
       sass: {
         files: 'assets/styles/**/*.scss',
         tasks: [
-          'sass:dev',
-          'autoprefixer:dev'
+          'sass',
+          'autoprefixer'
         ],
         options: {
           spawn: false
@@ -28,13 +27,25 @@ module.exports = function(grunt) {
         tasks: ['assemble']
       },
 
-      uglify: {
-        files:['./dist/scripts/*.js']
+      scripts: {
+        files: [
+          'assets/scripts/script.js',
+          'assets/scripts/fontfaceobserver.js',
+        ],
+        tasks: [
+          'uglify:dev',
+          'uglify:fontfaceobserver_dev'
+        ],
+        options: {
+          spawn: false
+        }
       },
 
       livereload: {
         files: ['./dist/**/*'],
-        options: {livereload: true}
+        options: {
+          livereload: true
+        }
       }
     },
 
@@ -60,17 +71,7 @@ module.exports = function(grunt) {
       options: {
         sourceMap: false,
         precision: 3,
-        // nested, expanded, compact, compressed
         outputStyle: 'expanded'
-      },
-      dev: {
-        files: [{
-          expand: true,
-          cwd: 'assets/styles',
-          src: '**/*.{scss,sass}',
-          dest: 'dist/styles',
-          ext: '.css'
-        }]
       },
       dist: {
         files: [{
@@ -85,15 +86,10 @@ module.exports = function(grunt) {
 
     // Autoprefixer
     autoprefixer: {
-      options: ['last 2 versions', 'ie 10'],
-      dev: {
-        files: [{
-          expand: true,
-          cwd: 'dist/styles',
-          src: '**/*.css',
-          dest: 'dist/styles'
-        }]
-      },
+      options: [
+        'last 2 versions',
+        'ie 10'
+      ],
       dist: {
         files: [{
           expand: true,
@@ -106,15 +102,34 @@ module.exports = function(grunt) {
 
     // Uglify
     uglify: {
-      options: {
+      dev: {
+        options: {
           mangle: false,
           beautify: true
+        },
+        files: {
+          'dist/scripts/script.js': ['assets/scripts/script.js']
+        }
+      },
+      fontfaceobserver_dev: {
+        options: {
+          compress: true,
+          preserveComments: false,
+          report: 'gzip',
+          mangle: false
+        },
+        files: {
+          'assets/scripts/fontfaceobserver.min.js': ['assets/scripts/fontfaceobserver.js']
+        }
       },
       dist: {
+        options: {
+          compress: true,
+          preserveComments: false,
+          report: 'gzip'
+        },
         files: {
-          'dist/scripts/app.js': [
-          'assets/scripts/.js'
-          ]
+          'dist/scripts/script.js': ['assets/scripts/script.js']
         }
       }
     },
@@ -180,33 +195,15 @@ module.exports = function(grunt) {
       }
     },
 
-    // Copy files over to dist
+    // Copy
     copy: {
-      fonts_dev: {
+      fonts: {
         files: [{
           expand: true,
           dot: true,
           cwd: 'assets/fonts',
           src: '**/*.{woff,woff2}',
           dest: 'dist/fonts'
-        }]
-      },
-      fonts_dist: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: 'assets/fonts',
-          src: '**/*.{woff,woff2}',
-          dest: 'dist/fonts'
-        }]
-      },
-      images_dev: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: 'assets/images',
-          src: '**/*.{gif,jpg,jpeg,png,webp}',
-          dest: 'dist/images'
         }]
       }
     },
@@ -249,6 +246,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // Modernizr
     modernizr: {
       dist: {
         "dest": "assets/scripts/modernizr.js",
@@ -296,16 +294,16 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-svgmin');
   grunt.loadNpmTasks('assemble');
 
-
   // Serve
   grunt.registerTask('serve', [
     'clean:dev',
-    'sass:dev',
-    'autoprefixer:dev',
+    'sass',
+    'autoprefixer',
     'imagemin',
     'svgmin',
-    'copy:fonts_dev',
-    'copy:images_dev',
+    'copy',
+    'uglify:dev',
+    'uglify:fontfaceobserver_dev',
     'assemble',
     'connect',
     'watch'
@@ -314,12 +312,13 @@ module.exports = function(grunt) {
   // Build
   grunt.registerTask('build', [
     'clean:dist',
-    'sass:dist',
-    'autoprefixer:dist',
+    'sass',
+    'autoprefixer',
     'cssmin',
     'imagemin',
     'svgmin',
-    'copy:fonts_dist',
+    'uglify:dist',
+    'copy',
     'assemble',
     'htmlmin'
   ]);
