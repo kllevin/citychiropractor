@@ -103,6 +103,10 @@ $l-header-padding: $spacing-half;
     color: $color-brand-tint;
     text-decoration: none;
   }
+
+  &.is-active {
+    text-decoration: underline;
+  }
 }
 
 

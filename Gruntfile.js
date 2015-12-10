@@ -56,7 +56,7 @@ module.exports = function(grunt) {
         layoutdir: './src/bonnet/layouts/',
         partials: './src/bonnet/partials/**/*'
       },
-      posts: {
+      pages: {
         files: [{
           cwd: './src/content/_pages/',
           dest: './dist/',
