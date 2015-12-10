@@ -1,22 +1,24 @@
 <header role="banner" class="l-header">
-  <a href="/" class="l-header__logo" rel="home">
-    <img src="images/logo.svg" alt="City Chiropractor Care">
-  </a>
-  {{!-- <button class="l-header__nav-trigger" type="button">Open menu</button> --}}
-  <nav class="l-header__nav" role="navigation" aria-label="Main navigation">
-    <ul class="l-header__nav__list">
+  <div class="l-header__inner  l-container l-container--wide">
+    <a href="/" class="l-header__logo" rel="home">
+      <img src="images/logo.svg" alt="City Chiropractor Care">
+    </a>
+    {{!-- <button class="l-header__nav-trigger" type="button">Open menu</button> --}}
+    <nav class="l-header__nav" role="navigation" aria-label="Main navigation">
+      <ul class="l-header__nav__list">
 
-      {{#each pages}}
-          {{#if data.slug}}
-           <li class="l-header__nav__item">
-            <a href="{{relative ../../page.dest this.dest}}" class="l-header__nav__link {{#is ../../page.dest this.dest}}is-active{{/is}}">{{data.navTitle}}</a>
-          </li>
-          {{/if}}
-      {{/each}}
+        {{#each pages}}
+            {{#if data.slug}}
+             <li class="l-header__nav__item">
+              <a href="{{relative ../../page.dest this.dest}}" class="l-header__nav__link {{#is ../../page.dest this.dest}}is-active{{/is}}">{{data.navTitle}}</a>
+            </li>
+            {{/if}}
+        {{/each}}
 
-      <li class="l-header__nav__item">
-        <a href="contact.html" class="l-header__nav__link c-button c-button--small">Book Appointment</a>
-      </li>
-    </ul>
-  </nav>
+        <li class="l-header__nav__item">
+          <a href="contact.html" class="l-header__nav__link c-button c-button--small">Book Appointment</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </header>
