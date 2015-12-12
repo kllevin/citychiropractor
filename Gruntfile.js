@@ -57,12 +57,10 @@ module.exports = function(grunt) {
         partials: './src/bonnet/partials/**/*'
       },
       pages: {
-        files: [{
-          cwd: './src/content/_pages/',
-          dest: './dist/',
-          expand: true,
-          src: '**/*.hbs'
-        }]
+        cwd: './src/content/_pages/',
+        dest: './dist/',
+        expand: true,
+        src: '**/*.hbs'
       }
     },
 
