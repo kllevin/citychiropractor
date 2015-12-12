@@ -25,7 +25,7 @@
         <ul>
           {{#withSort pages 'data.navOrder'}}
             {{#if data.slug}}
-            <li class="l-header__nav__item">
+            <li>
               <a href="{{relative ../../page.dest this.dest}}" class="{{#is ../../page.dest this.dest}}is-active{{/is}}">{{data.navTitle}}</a>
             </li>
             {{/if}}

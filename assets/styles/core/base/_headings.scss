@@ -3,15 +3,15 @@
    ========================================================================= */
 
 /**
- * Double stranded for greater reuse.
+ * All the `hx` headings.
  *
  * N.B. this builds on top of the Scally heading base styles.
  */
 
 
 @include headings(1, 6, true) {
+  font-family: $font-family-headings;
   font-weight: $font-weight-headings;
-  line-height: 1.25;
 }
 
 // Once “Merriweather Sans-serif” font has loaded we can show it via this class

@@ -164,7 +164,7 @@ $apply-details-marker: true;
 
 @import "../../node_modules/scally/core/base/horizontal-rule";
 
-$link-color: #5499C7;
+$link-color: $color-brand-alt;
 //$link-color-hover: red;
 @import "../../node_modules/scally/core/base/links";
 
@@ -327,3 +327,5 @@ td.tabular {
 @import "components/c-form-select";
 
 @import "components/c-logo-watermark";
+
+@import "components/c-button";

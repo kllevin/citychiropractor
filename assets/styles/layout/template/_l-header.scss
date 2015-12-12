@@ -11,7 +11,11 @@
  * Settings.
  */
 
-$l-header-padding: $spacing-half;
+$l-header-spacing-amount: $spacing-half;
+
+$l-header-spacing-amount-small: $spacing-half / 2;
+
+$l-header-spacing-amount-large: $spacing-half * 2;
 
 
 .l-header {
@@ -30,8 +34,13 @@ $l-header-padding: $spacing-half;
  */
 
 .l-header__logo {
-  padding-top: to-rem($l-header-padding * 2);
-  padding-bottom: to-rem($l-header-padding * 2);
+  padding-top: to-rem($l-header-spacing-amount-large);
+  padding-bottom: to-rem($l-header-spacing-amount-large);
+}
+
+
+.l-header__nav__cta {
+  margin-right: -(to-em(21));
 }
 
 
@@ -51,7 +60,10 @@ $l-header-padding: $spacing-half;
   }
 
   @include respond-to(lap) {
+    align-items: flex-end;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
@@ -63,7 +75,8 @@ $l-header-padding: $spacing-half;
 .l-header__nav__list {
   @include respond-to(lap) {
     display: flex;
-    margin-right: -(to-rem($l-header-padding));
+    margin-right: -(to-rem($l-header-spacing-amount-small));
+    margin-top: to-rem($l-header-spacing-amount-large);
   }
 }
 
@@ -72,11 +85,7 @@ $l-header-padding: $spacing-half;
  * Main nav items (`li`).
  */
 
-.l-header__nav__item {
-  @include respond-to(lap) {
-    display: flex;
-  }
-}
+.l-header__nav__item {}
 
 
 /**
@@ -84,28 +93,23 @@ $l-header-padding: $spacing-half;
  */
 
 .l-header__nav__link {
-  align-items: center;
-  color: $color-brand-tint;
-  display: flex;
+  border-radius: $border-radius-pill;
+  display: block;
   font-size: to-rem($font-size-small);
-  padding-left: to-rem($l-header-padding);
-  padding-right: to-rem($l-header-padding);
-  text-shadow: 0 1px 0 shade($color-brand, 20%);
+  padding: to-rem($l-header-spacing-amount-small) to-rem($l-header-spacing-amount);
+  margin-left: to-rem($l-header-spacing-amount-small);
 
-  &.c-button {
-    //color: $link-color;
-    //font-weight: bold;
-  }
-
+  &,
   &:hover,
   &:focus {
-    background-color: rgba($color-brand, 0.3);
-    color: $color-brand-tint;
+    color: $color-white;
     text-decoration: none;
   }
 
+  &:hover,
+  &:focus,
   &.is-active {
-    text-decoration: underline;
+    background-color: rgba($color-brand, 0.4);
   }
 }
 

@@ -89,6 +89,13 @@ $color-brand-tint: #e8eaeb;
 
 
 /**
+ * Brand alternate.
+ */
+
+$color-brand-alt: #5499c7;
+
+
+/**
  * Text.
  */
 
@@ -117,3 +124,15 @@ $color-text-base: lighten($color-brand-shade, 20%);
  */
 
 //$color-text-input-placeholder:  #999;
+
+
+
+
+/* Other
+   ========================================================================= */
+
+/**
+ * Pill border radius.
+ */
+
+$border-radius-pill: 28px;
