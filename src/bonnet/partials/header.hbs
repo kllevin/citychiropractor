@@ -6,11 +6,11 @@
     <nav class="l-header__nav" role="navigation" aria-label="Main navigation">
       <a href="contact.html" class="l-header__nav__cta  c-button c-button--small">Book Appointment</a>
       {{!-- <button class="l-header__nav-trigger" type="button">Open menu</button> --}}
-      <ul class="l-header__nav__list">
+      <ul class="l-header__nav__list l-nav-main">
         {{#withSort pages 'data.navOrder'}}
           {{#if data.slug}}
-            <li class="l-header__nav__item">
-              <a href="{{relative ../../page.dest this.dest}}" class="l-header__nav__link {{#is ../../page.dest this.dest}}is-active{{/is}}">{{data.navTitle}}</a>
+            <li>
+              <a href="{{relative ../../page.dest this.dest}}" class="l-header__nav__link l-nav-main__link {{#is ../../page.dest this.dest}}is-active{{/is}}">{{data.navTitle}}</a>
             </li>
           {{/if}}
         {{/withSort}}

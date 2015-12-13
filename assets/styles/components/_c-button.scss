@@ -13,8 +13,20 @@
   @extend %o-button;
   background-color: $color-brand-alt;
   border-radius: $border-radius-pill;
-  color: $color-white;
   display: inline-block;
   font-weight: 600;
-  padding: to-em(9) to-em(21);
+  padding: to-em(9) to-em($c-button-padding-sides);
+
+  &,
+  &:hover,
+  &:focus {
+    color: $color-white;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus,
+  &.is-active {
+    background-color: tint($color-brand-alt, 10%);
+  }
 }

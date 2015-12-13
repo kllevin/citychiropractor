@@ -165,7 +165,7 @@ $apply-details-marker: true;
 @import "../../node_modules/scally/core/base/horizontal-rule";
 
 $link-color: $color-brand-alt;
-//$link-color-hover: red;
+$link-color-hover: shade($color-brand-alt, 10%);
 @import "../../node_modules/scally/core/base/links";
 
 $google-map-selector-to-turn-off-responsive-images: "#gmap_canvas";
@@ -301,6 +301,8 @@ td.tabular {
 @import "layout/l-container";
 
 // Template
+@import "layout/template/l-nav-main";
+
 @import "layout/template/l-header";
 
 @import "layout/template/l-footer";

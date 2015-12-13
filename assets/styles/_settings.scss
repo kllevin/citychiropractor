@@ -79,7 +79,7 @@ $color-brand-light: #9eabb4;
 // http://htmlcolorcodes.com/color-picker/
 
 // Complementary: brown
-$color-brand-complementary: #605045;
+$color-brand-complementary: burlywood;
 
 // Shade: dark navy blue
 $color-brand-shade: #232b30;
@@ -89,7 +89,7 @@ $color-brand-tint: #e8eaeb;
 
 
 /**
- * Brand alternate.
+ * Brand alternate, light blue.
  */
 
 $color-brand-alt: #5499c7;
@@ -136,3 +136,11 @@ $color-text-base: lighten($color-brand-shade, 20%);
  */
 
 $border-radius-pill: 28px;
+
+
+/**
+ * Button component padding, stored here as it needs to referenced outside of
+ * the Button component partial.
+ */
+
+$c-button-padding-sides: 21;

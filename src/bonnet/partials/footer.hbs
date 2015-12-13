@@ -1,38 +1,35 @@
 <footer class="l-footer" role="contentinfo" itemscope itemtype="http://schema.org/LocalBusiness">
   <div class="l-container">
     <div class="l-grid u-s-mb-large">
-      <div class="l-grid__item u-one-third-from-lap">
+      <div class="l-grid__item  u-one-third-from-lap">
         <img src="images/logo-watermark.svg" alt="">
       </div>
-      <div class="l-grid__item u-one-third-from-lap">
-        <div class="">
-          <h5>Contact us</h5>
-          <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-            <span itemprop="streetAddress">Suite 506<br>66 Hunter Street</span><br>
-            <span itemprop="addressLocality">Sydney</span>
-            <span itemprop="addressRegion">NSW</span>,
-            <span itemprop="postalCode">2000</span><br>
-            <span>Tel: <a href="tel:+0292210771" itemprop="telephone">02 9221 0771</a></span><br>
-            <a href="mailto:info@citychiropractor.com.au" itemprop="email">info@citychiropractor.com.au</a>
-          </p>
-          <p>
-            <a href="http://www.chiropractors.asn.au/" class="c-logo-watermark" rel="external"><span class="u-hide-visually">The Chiropractors’ Association of Australia website</span></a>
-          </p>
-          <small>&copy; Copyright 2015 City Chiropractor Care.</small>
-        </div>
+      <div class="l-grid__item  u-one-third-from-lap">
+        <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+          <span itemprop="streetAddress">Suite 506<br>66 Hunter Street</span><br>
+          <span itemprop="addressLocality">Sydney</span>
+          <span itemprop="addressRegion">NSW</span>,
+          <span itemprop="postalCode">2000</span><br>
+          <span>Tel: <a href="tel:+0292210771" itemprop="telephone">02 9221 0771</a></span><br>
+          <a href="mailto:info@citychiropractor.com.au" itemprop="email">info@citychiropractor.com.au</a>
+        </p>
+        <p>
+          <a href="http://www.chiropractors.asn.au/" class="c-logo-watermark" rel="external"><span class="u-hide-visually">The Chiropractors’ Association of Australia website</span></a>
+        </p>
+        <small>&copy; Copyright 2015 City Chiropractor Care. <em>Built by <a href="http://chris-pearce.me" rel="external">Chris</a> &amp; <a href="http://chris-pearce.me" rel="external">Kate</a></em>.</small>
       </div>
-      <div class="l-grid__item u-one-third-from-lap">
-        <ul>
+      <nav class="l-grid__item  u-one-third-from-lap" role="navigation">
+        <a href="contact.html" class="c-button c-button--small">Book Appointment</a>
+        <ul class="l-footer-nav l-nav-main">
           {{#withSort pages 'data.navOrder'}}
             {{#if data.slug}}
             <li>
-              <a href="{{relative ../../page.dest this.dest}}" class="{{#is ../../page.dest this.dest}}is-active{{/is}}">{{data.navTitle}}</a>
+              <a href="{{relative ../../page.dest this.dest}}" class="l-footer-nav__link l-nav-main__link {{#is ../../page.dest this.dest}}is-active{{/is}}">{{data.navTitle}}</a>
             </li>
             {{/if}}
           {{/withSort}}
-          <li><a href="contact.html" class="c-button c-button--small">Book Appointment</a></li>
         </ul>
-      </div>
+      </nav>
     </div>
   </div>
 </footer>

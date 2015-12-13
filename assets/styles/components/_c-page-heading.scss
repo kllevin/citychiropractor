@@ -15,12 +15,10 @@
   //border-bottom: 1px solid $color-brand-light;
   padding-top: to-rem($spacing-double);
   padding-bottom: to-rem($spacing-double);
-  margin-bottom: to-rem($spacing-double);
 }
 
 .c-page-heading__title {
   color: $color-white;
   color: $color-brand;
   text-align: center;
-  //text-shadow: 0 1px 1px rgba($color-black, 0.9);
 }

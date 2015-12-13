@@ -9,22 +9,23 @@
 
 
 .l-footer {
+  background-color: $color-brand;
+  background-image: linear-gradient(45deg, shade($color-brand, 6%), tint($color-brand, 16%));
+  border-top: 5px solid $color-brand-complementary;
   color: $color-white;
   font-size: to-rem($font-size-small);
   padding-top: to-rem($spacing-triple);
   padding-bottom: to-rem($spacing-triple);
+}
 
-  /**
-   * Links.
-   */
 
-  a {
-    color: $color-white;
-    text-decoration: underline;
+/**
+ * Main nav.
+ *
+ * Extends `l-nav-main` from Layout -> Template -> Nav Main.
+ */
 
-    &:hover,
-    &:focus {
-      text-decoration: none;
-    }
-  }
+.l-footer-nav__link {
+  display: inline-block;
+  margin-bottom: to-rem($spacing-quarter);
 }
