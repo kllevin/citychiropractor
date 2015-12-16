@@ -9,18 +9,9 @@ To run this project you will need:
 - [Node](http://nodejs.org/)
 - [Node-Sass](https://npmjs.org/package/node-sass)
 - [Grunt-cli](http://gruntjs.com/)
-- Bower?
 
 ## Grunt Tasks
 
-- `grunt` compile your site into `./dist` directory
-- `grunt style` compile SASS and autoprefix
-- `grunt html` packages up site templates
 - `grunt serve` packages up the site and serves it at `localhost:8000`
+- `grunt build` compile the site into `./dist` directory
 - `grunt publish` publishes to github pages
-
-## Helena feedback
-
-- Reorder the main nav, have the CTA on a line above the main nav.
-- Full-bleed imagery.
-- Review content e.g. Our Philosophy.
