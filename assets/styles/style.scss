@@ -220,6 +220,8 @@ $o-table-border-color: $color-brand-tint;
  * UTILITIES.
  */
 
+$u-hide-apply-at-breakpoints: (palm max, lap);
+$u-hide-apply-at-breakpoints-for-hide: true;
 @import "../../node_modules/scally/utilities/u-hide";
 
 @import "../../node_modules/scally/utilities/u-position";

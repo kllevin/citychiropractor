@@ -9,9 +9,7 @@
 
 
 .l-footer {
-  background-color: $color-brand;
-  background-image: linear-gradient(45deg, shade($color-brand, 6%), tint($color-brand, 16%));
-  border-top: 5px solid $color-brand-complementary;
+  border-top: 5px solid $color-brand-light;
   color: $color-white;
   font-size: to-rem($font-size-small);
   padding-top: to-rem($spacing-triple);

@@ -19,15 +19,16 @@ $l-nav-main-spacing-amount-large: $spacing-half * 2;
 
 
 /**
- * Main nav (`ul`).
+ * Main nav.
  */
 
 .l-nav-main {
   margin-top: to-rem($l-nav-main-spacing-amount-large);
 }
 
+
 /**
- * Main nav links (`a`).
+ * Main nav links.
  */
 
 .l-nav-main__link {

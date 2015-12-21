@@ -19,14 +19,17 @@ $l-header-spacing-amount-large: $spacing-half * 2;
 
 
 .l-header {
-  background-color: $color-brand;
-  background-image: linear-gradient(45deg, shade($color-brand, 6%), tint($color-brand, 16%));
-  border-bottom: 5px solid $color-brand-complementary;
+  border-bottom: 5px solid $color-brand-light;
 }
 
 .l-header__inner {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+
+  @include respond-to(lap) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 
@@ -37,6 +40,7 @@ $l-header-spacing-amount-large: $spacing-half * 2;
 .l-header__logo {
   padding-top: to-rem($l-header-spacing-amount-large);
   padding-bottom: to-rem($l-header-spacing-amount-large);
+  //text-align: center;
 
   &:hover,
   &:focus {
@@ -45,25 +49,50 @@ $l-header-spacing-amount-large: $spacing-half * 2;
 }
 
 
-.l-header__nav__cta {
-  margin-right: -(to-em($c-button-padding-sides));
+/**
+ * CTA’s.
+ */
+
+.l-header__ctas {
+  text-align: center;
+
+  @include respond-to(lap) {
+    margin-right: -(to-em($c-button-padding-sides));
+    text-align: left;
+  }
+}
+
+// Phone CTA
+.l-header .l-header__cta-phone {
+  margin-right: to-rem($spacing-micro);
+
+  // Make it not look like a button at non-phone size
+  @include respond-to(lap) {
+    cursor: default;
+
+    &,
+    &:hover,
+    &:focus {
+      background: transparent;
+    }
+  }
 }
 
 
 /**
- * Main nav (`nav`).
+ * Main nav and CTA’s.
  */
 
-.l-header__nav {
-  @include respond-to(palm, max) {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vh;
-    height: 100vh;
-    overflow-y: scroll;
-  }
+.l-header__nav__ctas {
+  // @include respond-to(palm, max) {
+  //   display: block;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100vh;
+  //   height: 100vh;
+  //   overflow-y: scroll;
+  // }
 
   @include respond-to(lap) {
     align-items: flex-end;
@@ -73,26 +102,44 @@ $l-header-spacing-amount-large: $spacing-half * 2;
   }
 }
 
+
 /**
- * Main nav list (`ul`).
- *
- * Extends `l-nav-main` from Layout -> Template -> Nav Main.
+ * Main nav.
  */
 
-.l-header__nav__list {
+.l-header__nav {
+  display: flex;
+
+  @include respond-to(palm, max) {
+    background-color: rgba($color-brand, 0.9);
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+
   @include respond-to(lap) {
-    display: flex;
     margin-right: -(to-rem($l-header-spacing-amount));
   }
-}
 
-/**
- * Main nav links (`a`).
- */
+  /**
+   * Extends `l-nav-main` from Layout -> Template -> Nav Main.
+   */
 
-.l-header__nav__link {
-  font-size: to-rem($font-size-small);
-  margin-left: to-rem($l-header-spacing-amount-small);
+  @include respond-to(lap) {
+    .l-nav-main {
+      display: flex;
+    }
+
+    .l-nav-main__link {
+      font-size: to-rem($font-size-small);
+      margin-left: to-rem($l-header-spacing-amount-small);
+    }
+  }
 }
 
 
