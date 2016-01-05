@@ -19,7 +19,8 @@
       {{!-- //CTA’s --}}
 
       {{!-- Main nav --}}
-      <nav class="l-header__nav" role="navigation" aria-label="Main navigation">
+      <button class="l-header__menu-btn  js-menu-toggle-trigger" type="button"><span class="u-hide-visually">Open </span>menu</button>
+      <nav class="l-header__nav  js-menu-toggle-target" role="navigation" aria-label="Main navigation">
         <ul class="l-nav-main">
           {{#withSort pages 'data.navOrder'}}
             {{#if data.slug}}
