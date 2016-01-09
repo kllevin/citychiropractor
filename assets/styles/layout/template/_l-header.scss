@@ -17,9 +17,11 @@ $l-header-spacing-amount-small: $l-header-spacing-amount / 2;
 
 $l-header-spacing-amount-large: $l-header-spacing-amount * 2;
 
+$l-header-logo-padding-ends: $l-header-spacing-amount + 3;
+
 
 .l-header {
-  border-bottom: 5px solid $color-brand-light;
+  //border-bottom: 5px solid $color-brand-light;
   position: relative;
 }
 
@@ -40,8 +42,8 @@ $l-header-spacing-amount-large: $l-header-spacing-amount * 2;
 
 .l-header__logo {
   display: inline-block;
-  padding-top: to-rem($l-header-spacing-amount + 3);
-  padding-bottom: to-rem($l-header-spacing-amount + 3);
+  padding-top: to-rem($l-header-logo-padding-ends);
+  padding-bottom: to-rem($l-header-logo-padding-ends);
   text-align: center;
 
   @include respond-to(lap) {
@@ -52,7 +54,7 @@ $l-header-spacing-amount-large: $l-header-spacing-amount * 2;
 
   &:hover,
   &:focus {
-    opacity: 0.6;
+    opacity: 0.8;
   }
 }
 
@@ -86,7 +88,7 @@ $l-header-spacing-amount-large: $l-header-spacing-amount * 2;
 }
 
 // Phone CTA
-.l-header .l-header__cta-phone {
+.l-header__cta-phone {
   margin-right: to-rem($l-header-spacing-amount);
 
   // Make it not look like a button at non-phone size
@@ -104,6 +106,11 @@ $l-header-spacing-amount-large: $l-header-spacing-amount * 2;
 
 /**
  * Main nav.
+ *
+ * At small viewports the nav is a full viewport overlay with the nav items
+ * aligned in the center, both vertically and horizontally.
+ *
+ * 1. Keep underneath the header in order for pointer events for happen.
  */
 
 .l-header__nav {
@@ -111,20 +118,21 @@ $l-header-spacing-amount-large: $l-header-spacing-amount * 2;
 
   @include respond-to(palm, max) {
     align-items: center;
-    background-color: rgba($color-brand, 0.95);
+    background-color: rgba($color-brand, 0.96);
     bottom: 0;
-    font-size: to-rem($font-size-large);
     justify-content: center;
     left: 0;
     opacity: 0;
+    pointer-events: none; // [1]
     position: fixed;
     right: 0;
     top: 0;
-    transition: opacity 0.4s;
-    z-index: -1;
+    transition: opacity 0.2s;
+    z-index: -1; // [1]
 
     &.is-visible {
       opacity: 1;
+      pointer-events: all;
       z-index: 1;
     }
   }
@@ -141,15 +149,30 @@ $l-header-spacing-amount-large: $l-header-spacing-amount * 2;
     .l-nav-main {
       display: flex;
     }
+  }
 
-    .l-nav-main__link {
-      font-size: to-rem($font-size-small);
-      margin-left: to-rem($l-header-spacing-amount-small);
-    }
+  .l-nav-main__link {
+      font-size: to-rem(22);
+
+      @include respond-to(palm, max) {
+        &:hover,
+        &:focus,
+        &.is-active {
+          background-color: shade($color-brand, 9%);
+          display: inline-block;
+        }
+      }
+
+      @include respond-to(lap) {
+        font-size: to-rem($font-size-small);
+        margin-left: to-rem($l-header-spacing-amount-small);
+      }
   }
 }
 
-.is-none-scrolling {
+// Used on the `<body>` element to prevent vertical scrolling when Nav Main
+// is a full viewport overlay at smaller viewports
+.has-no-scrolling {
   overflow-y: hidden;
 }
 

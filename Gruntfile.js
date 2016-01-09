@@ -106,7 +106,7 @@ module.exports = function(grunt) {
           beautify: true
         },
         files: {
-          'dist/scripts/script.js': ['assets/scripts/script.js']
+          'dist/scripts/script.js': ['assets/scripts/helpers.js', 'assets/scripts/toggle-menu.js', 'assets/scripts/script.js']
         }
       },
       fontfaceobserver_dev: {

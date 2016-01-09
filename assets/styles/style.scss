@@ -254,47 +254,6 @@ $u-text-apply-at-breakpoints-for-align-left: true;
 
 @import "core/base/headings";
 
-/* Use small-cap alternate glyphs */
-.smallcaps {
-   font-feature-settings: "smcp" on;
-}
-
-/* Convert both upper and lowercase to small caps (affects punctuation also) */
-.allsmallcaps {
-   font-feature-settings: "c2sc", "smcp";
-}
-
-/* Enable historical forms */
-.hist {
-   font-feature-settings: "hist";
-}
-
-/* Disable common ligatures, usually on by default */
-.noligs {
-   font-feature-settings: "liga" 0;
-}
-
-/* Enable tabular (monospaced) figures */
-td.tabular {
-   font-feature-settings: "tnum";
-}
-
-/* Enable automatic fractions */
-.fractions {
-   font-feature-settings: "frac";
-}
-
-/* Use the second available swash character */
-.swash {
-   font-feature-settings: "swsh" 2;
-}
-
-/* Enable stylistic set 7 */
-.fancystyle {
-  font-family: Gabriola;
-  font-feature-settings: "ss07";
-}
-
 
 /**
  * LAYOUT.
