@@ -1,4 +1,6 @@
 # Browsers that City Chiropractor supports
 # https://github.com/ai/browserslist
 
+ie 10
+ie 11
 last 2 versions
