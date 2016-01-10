@@ -29,12 +29,12 @@ module.exports = function(grunt) {
 
       scripts: {
         files: [
-          'assets/scripts/script.js',
-          'assets/scripts/fontfaceobserver.js',
+          'assets/scripts/script.js'
+          //'assets/scripts/fontfaceobserver.js',
         ],
         tasks: [
-          'uglify:dev',
-          'uglify:fontfaceobserver_dev'
+          'uglify:dev'
+          //'uglify:fontfaceobserver_dev'
         ],
         options: {
           spawn: false
@@ -75,7 +75,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'assets/styles',
-          src: '**/*.{scss,sass}',
+          src: '**/*.scss',
           dest: 'dist/styles',
           ext: '.css'
         }]
@@ -86,7 +86,8 @@ module.exports = function(grunt) {
     autoprefixer: {
       options: [
         'last 2 versions',
-        'ie 10'
+        'ie 10',
+        'ie 11'
       ],
       dist: {
         files: [{
@@ -106,10 +107,15 @@ module.exports = function(grunt) {
           beautify: true
         },
         files: {
-          'dist/scripts/script.js': ['assets/scripts/helpers.js', 'assets/scripts/toggle-menu.js', 'assets/scripts/script.js']
+            'dist/scripts/script.js':
+            [
+              'assets/scripts/helpers.js',
+              'assets/scripts/toggle-menu.js',
+              'assets/scripts/script.js'
+            ]
         }
       },
-      fontfaceobserver_dev: {
+      /*fontfaceobserver_dev: {
         options: {
           compress: true,
           preserveComments: false,
@@ -119,7 +125,7 @@ module.exports = function(grunt) {
         files: {
           'assets/scripts/fontfaceobserver.min.js': ['assets/scripts/fontfaceobserver.js']
         }
-      },
+      },*/
       dist: {
         options: {
           compress: true,
@@ -171,7 +177,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'assets/images/',
-          src: ['*.svg'],
+          src: ['**/*.svg'],
           dest: 'dist/images/'
         }]
       }
@@ -251,7 +257,6 @@ module.exports = function(grunt) {
         "options": [
           "setClasses",
           "addTest",
-          "html5printshiv",
           "testProp",
           "fnBind"
         ],
@@ -301,7 +306,7 @@ module.exports = function(grunt) {
     'svgmin',
     'copy',
     'uglify:dev',
-    'uglify:fontfaceobserver_dev',
+    //'uglify:fontfaceobserver_dev',
     'assemble',
     'connect',
     'watch'

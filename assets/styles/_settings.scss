@@ -14,7 +14,7 @@
  * Sizes.
  */
 
-$font-size: 16;
+$font-size: 18;
 
 $font-size-heading-1: 44;
 
@@ -33,7 +33,7 @@ $font-size-heading-6: 14;
  * Line height.
  */
 
-$line-height: 24;
+$line-height: 28;
 
 
 /**
@@ -71,6 +71,9 @@ $font-weight-bold: 700;
 // Slate
 $color-brand: #455560;
 
+// Alternate, light blue.
+$color-brand-alt: #5499c7;
+
 // Medium strength grey
 $color-brand-light: #9eabb4;
 
@@ -88,17 +91,10 @@ $color-brand-tint: #e8eaeb;
 
 
 /**
- * Brand alternate, light blue.
- */
-
-$color-brand-alt: #5499c7;
-
-
-/**
  * Text.
  */
 
-$color-text-base: lighten($color-brand-shade, 20%);
+$color-text-base: #4e606b;
 
 
 /**

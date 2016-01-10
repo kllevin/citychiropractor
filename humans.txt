@@ -1,0 +1,26 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+
+/* TEAM */
+Your title: Chris Pearce.
+Site: chris[at]chris-pearce[dot]me / chris-pearce[dot]me.
+Twitter: [at]chris__pearce.
+
+Your title: Kate Levin.
+Site: kllevin[at]gmail[dot]com / kllevin[dot]com.
+Twitter: [at]katielevin.
+
+
+/* THANKS */
+
+Name: Phone SVG icon used in the site header created by Icomatic from the Noun
+      Project
+
+
+/* SITE */
+
+Last update: 2016/01/18
+Standards: HTML5, CSS3, JavaScript
+Components: Sass, Google Fonts (Merriweather), EditorConfig, Browserslist, Apache Server Configs
+Software: Grunt, Assemble, Handlebars, NPM

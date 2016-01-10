@@ -110,7 +110,7 @@ $l-header-logo-padding-ends: $l-header-spacing-amount + 3;
  * At small viewports the nav is a full viewport overlay with the nav items
  * aligned in the center, both vertically and horizontally.
  *
- * 1. Keep underneath the header in order for pointer events for happen.
+ * 1. Keep underneath the header in order for pointer events to happen.
  */
 
 .l-header__nav {
@@ -191,11 +191,10 @@ $l-header-logo-padding-ends: $l-header-spacing-amount + 3;
   right: to-rem($l-header-spacing-amount);
   text-transform: uppercase;
   top: to-rem($l-header-spacing-amount);
+  // Ensures it sits above the Nav Main full viewport overlay
+  z-index: 2;
 
-  &.is-visible {
-    z-index: 2;
-  }
-
+  // Not needed at larger viewports
   @include respond-to(lap) {
     display: none;
   }
