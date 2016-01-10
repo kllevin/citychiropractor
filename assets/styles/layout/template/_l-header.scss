@@ -174,34 +174,46 @@ $l-header-bp-large: 880 + 1;
     margin-top: to-rem($l-header-spacing-amount + 4);
     margin-right: -(to-rem($l-header-spacing-amount));
   }
+}
 
-  /**
-   * Extends `l-nav-main` from Layout -> Template -> Nav Main.
-   */
+@include respond-to($l-header-bp-large) {
+  .l-nav-main {
+    display: flex;
+  }
+}
 
-  @include respond-to($l-header-bp-large) {
-    .l-nav-main {
-      display: flex;
+.l-nav-main__link {
+  border-radius: $border-radius-pill;
+  display: block;
+  padding: to-rem($spacing-half / 2) to-rem($spacing-half);
+
+  &,
+  &:hover,
+  &:focus {
+    color: $color-white;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus,
+  &.is-active {
+    background-color: rgba($color-brand, 0.4);
+  }
+
+  @include respond-to($l-header-bp-small, max) {
+    display: inline-block;
+    font-size: to-rem($font-size-xxx-large);
+    margin-bottom: to-rem($spacing-micro);
+
+    &:hover,
+    &:focus,
+    &.is-active {
+      background-color: shade($color-brand, 7%);
     }
   }
 
-  .l-nav-main__link {
-
-    @include respond-to($l-header-bp-small, max) {
-      display: inline-block;
-      font-size: to-rem($font-size-xxx-large);
-      margin-bottom: to-rem($spacing-micro);
-
-      &:hover,
-      &:focus,
-      &.is-active {
-        background-color: shade($color-brand, 7%);
-      }
-    }
-
-    @include respond-to($l-header-bp-large) {
-      margin-left: to-rem($spacing-third);
-    }
+  @include respond-to($l-header-bp-large) {
+    margin-left: to-rem($spacing-quarter);
   }
 }
 

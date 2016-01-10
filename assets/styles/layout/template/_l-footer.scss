@@ -9,7 +9,14 @@
 
 .l-footer {
   border-top: 1px solid $color-brand-light;
+  font-family: $font-family-serif;
   font-size: to-rem($font-size-small);
   padding-top: to-rem($spacing-base);
   padding-bottom: to-rem($spacing-base);
+}
+
+
+.l-footer__copy {
+  display: block;
+  font-size: to-rem($font-size-x-small);
 }
