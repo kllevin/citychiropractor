@@ -187,6 +187,7 @@ $google-map-selector-to-turn-off-responsive-images: "#gmap_canvas";
 
 // Main container
 $l-container-apply-breakpoints-for-default: true;
+$l-container-width: 90%;
 $l-container-maximum-width: 1000;
 @import "../../node_modules/scally/layout/l-container";
 

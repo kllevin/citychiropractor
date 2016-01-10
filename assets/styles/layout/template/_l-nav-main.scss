@@ -15,17 +15,6 @@ $l-nav-main-spacing-amount: $spacing-half;
 
 $l-nav-main-spacing-amount-small: $spacing-half / 2;
 
-$l-nav-main-spacing-amount-large: $spacing-half * 2;
-
-
-/**
- * Main nav.
- */
-
-.l-nav-main {
-  margin-top: to-rem($l-nav-main-spacing-amount-large);
-}
-
 
 /**
  * Main nav links.

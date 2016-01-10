@@ -13,24 +13,29 @@
 
 $l-header-spacing-amount: $spacing-half;
 
-$l-header-spacing-amount-small: $l-header-spacing-amount / 2;
-
-$l-header-spacing-amount-large: $l-header-spacing-amount * 2;
-
-$l-header-logo-padding-ends: $l-header-spacing-amount + 3;
-
 
 .l-header {
-  //border-bottom: 5px solid $color-brand-light;
+  font-size: to-rem($font-size-x-small);
+  line-height: 24 / $font-size-x-small;
+  padding-top: to-rem($l-header-spacing-amount);
+  padding-bottom: to-rem($l-header-spacing-amount);
   position: relative;
+
+  @include respond-to(lap) {
+    padding-top: to-rem($l-header-spacing-amount + 3);
+    padding-bottom: to-rem($l-header-spacing-amount + 3);
+  }
 }
 
 .l-header__inner {
-  text-align: center;
+
+  @include respond-to(palm, max) {
+    // To make the logo at small viewports center aligned
+    text-align: center;
+  }
 
   @include respond-to(lap) {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
   }
 }
@@ -42,14 +47,10 @@ $l-header-logo-padding-ends: $l-header-spacing-amount + 3;
 
 .l-header__logo {
   display: inline-block;
-  padding-top: to-rem($l-header-logo-padding-ends);
-  padding-bottom: to-rem($l-header-logo-padding-ends);
   text-align: center;
 
   @include respond-to(lap) {
     display: flex;
-    padding-top: to-rem($l-header-spacing-amount-large);
-    padding-bottom: to-rem($l-header-spacing-amount-large);
   }
 
   &:hover,
@@ -78,20 +79,46 @@ $l-header-logo-padding-ends: $l-header-spacing-amount + 3;
  */
 
 .l-header__ctas {
-  padding-bottom: to-rem($l-header-spacing-amount);
-  text-align: center;
+  // Needed to make the buttons equal height
+  display: flex;
+
+  @include respond-to(palm, max) {
+    justify-content: center;
+    margin-top: to-rem($l-header-spacing-amount);
+  }
 
   @include respond-to(lap) {
     margin-right: -(to-em($c-button-padding-sides));
-    padding-bottom: 0;
   }
 }
 
-// Phone CTA
-.l-header__cta-phone {
-  margin-right: to-rem($l-header-spacing-amount);
+/**
+ * The CTA’s.
+ *
+ * N.B. need to boost specificity with the `l-header` selector to override the
+ * Button component.
+ */
 
-  // Make it not look like a button at non-phone size
+.l-header .l-header__cta {
+  display: flex;
+
+  // Any SVG icons
+  .icon {
+    fill: $color-white;
+    height: 20px;
+    margin-right: to-rem($spacing-micro);
+    width: 20px;
+  }
+}
+
+/**
+ * Phone CTA.
+ */
+
+.l-header .l-header__cta-phone {
+  margin-right: to-rem($l-header-spacing-amount / 2);
+
+  // Make it not look like a button at larger viewports size
   @include respond-to(lap) {
     cursor: default;
 
@@ -138,6 +165,7 @@ $l-header-logo-padding-ends: $l-header-spacing-amount + 3;
   }
 
   @include respond-to(lap) {
+    margin-top: to-rem($l-header-spacing-amount + 4);
     margin-right: -(to-rem($l-header-spacing-amount));
   }
 
@@ -152,21 +180,22 @@ $l-header-logo-padding-ends: $l-header-spacing-amount + 3;
   }
 
   .l-nav-main__link {
-      font-size: to-rem(22);
 
-      @include respond-to(palm, max) {
-        &:hover,
-        &:focus,
-        &.is-active {
-          background-color: shade($color-brand, 9%);
-          display: inline-block;
-        }
-      }
+    @include respond-to(palm, max) {
+      display: inline-block;
+      font-size: to-rem($font-size-xxx-large);
+      margin-bottom: to-rem($spacing-micro);
 
-      @include respond-to(lap) {
-        font-size: to-rem($font-size-small);
-        margin-left: to-rem($l-header-spacing-amount-small);
+      &:hover,
+      &:focus,
+      &.is-active {
+        background-color: shade($color-brand, 7%);
       }
+    }
+
+    @include respond-to(lap) {
+      margin-left: to-rem($spacing-third);
+    }
   }
 }
 
