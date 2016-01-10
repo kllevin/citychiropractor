@@ -13,6 +13,10 @@
 
 $l-header-spacing-amount: $spacing-half;
 
+$l-header-bp-small: 880;
+
+$l-header-bp-large: 880 + 1;
+
 
 .l-header {
   font-size: to-rem($font-size-x-small);
@@ -21,7 +25,7 @@ $l-header-spacing-amount: $spacing-half;
   padding-bottom: to-rem($l-header-spacing-amount);
   position: relative;
 
-  @include respond-to(lap) {
+  @include respond-to($l-header-bp-large) {
     padding-top: to-rem($l-header-spacing-amount + 3);
     padding-bottom: to-rem($l-header-spacing-amount + 3);
   }
@@ -29,12 +33,12 @@ $l-header-spacing-amount: $spacing-half;
 
 .l-header__inner {
 
-  @include respond-to(palm, max) {
+  @include respond-to($l-header-bp-small, max) {
     // To make the logo at small viewports center aligned
     text-align: center;
   }
 
-  @include respond-to(lap) {
+  @include respond-to($l-header-bp-large) {
     display: flex;
     justify-content: space-between;
   }
@@ -49,7 +53,7 @@ $l-header-spacing-amount: $spacing-half;
   display: inline-block;
   text-align: center;
 
-  @include respond-to(lap) {
+  @include respond-to($l-header-bp-large) {
     display: flex;
   }
 
@@ -64,7 +68,7 @@ $l-header-spacing-amount: $spacing-half;
  * Main nav and CTA’s.
  */
 
-@include respond-to(lap) {
+@include respond-to($l-header-bp-large) {
   .l-header__nav__ctas {
     align-items: flex-end;
     display: flex;
@@ -82,12 +86,12 @@ $l-header-spacing-amount: $spacing-half;
   // Needed to make the buttons equal height
   display: flex;
 
-  @include respond-to(palm, max) {
+  @include respond-to($l-header-bp-small, max) {
     justify-content: center;
     margin-top: to-rem($l-header-spacing-amount);
   }
 
-  @include respond-to(lap) {
+  @include respond-to($l-header-bp-large) {
     margin-right: -(to-em($c-button-padding-sides));
   }
 }
@@ -116,10 +120,10 @@ $l-header-spacing-amount: $spacing-half;
  */
 
 .l-header .l-header__cta-phone {
-  margin-right: to-rem($l-header-spacing-amount / 2);
+  margin-right: to-rem($l-header-spacing-amount);
 
   // Make it not look like a button at larger viewports size
-  @include respond-to(lap) {
+  @include respond-to($l-header-bp-large) {
     cursor: default;
 
     &,
@@ -143,7 +147,7 @@ $l-header-spacing-amount: $spacing-half;
 .l-header__nav {
   display: flex;
 
-  @include respond-to(palm, max) {
+  @include respond-to($l-header-bp-small, max) {
     align-items: center;
     background-color: rgba($color-brand, 0.96);
     bottom: 0;
@@ -164,7 +168,7 @@ $l-header-spacing-amount: $spacing-half;
     }
   }
 
-  @include respond-to(lap) {
+  @include respond-to($l-header-bp-large) {
     margin-top: to-rem($l-header-spacing-amount + 4);
     margin-right: -(to-rem($l-header-spacing-amount));
   }
@@ -173,7 +177,7 @@ $l-header-spacing-amount: $spacing-half;
    * Extends `l-nav-main` from Layout -> Template -> Nav Main.
    */
 
-  @include respond-to(lap) {
+  @include respond-to($l-header-bp-large) {
     .l-nav-main {
       display: flex;
     }
@@ -181,7 +185,7 @@ $l-header-spacing-amount: $spacing-half;
 
   .l-nav-main__link {
 
-    @include respond-to(palm, max) {
+    @include respond-to($l-header-bp-small, max) {
       display: inline-block;
       font-size: to-rem($font-size-xxx-large);
       margin-bottom: to-rem($spacing-micro);
@@ -193,7 +197,7 @@ $l-header-spacing-amount: $spacing-half;
       }
     }
 
-    @include respond-to(lap) {
+    @include respond-to($l-header-bp-large) {
       margin-left: to-rem($spacing-third);
     }
   }
@@ -224,7 +228,7 @@ $l-header-spacing-amount: $spacing-half;
   z-index: 2;
 
   // Not needed at larger viewports
-  @include respond-to(lap) {
+  @include respond-to($l-header-bp-large) {
     display: none;
   }
 }
