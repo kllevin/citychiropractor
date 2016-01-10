@@ -10,14 +10,6 @@
 
 
 @include headings(1, 6, true) {
-  //font-family: $font-family-headings;
-  font-family: $font-family-headings-webfont;
+  font-family: $font-family-headings;
   font-weight: $font-weight-headings;
 }
-
-// Once “Merriweather Sans-serif” font has loaded we can show it via this class
-// .has-fonts-loaded {
-//   @include headings(1, 6, true) {
-//     font-family: $font-family-headings-webfont;
-//   }
-// }

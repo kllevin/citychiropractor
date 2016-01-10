@@ -147,7 +147,6 @@
 @import "../../node_modules/scally/core/reset";
 
 // Base
-$html-element-background-color: $color-brand;
 @import "../../node_modules/scally/core/base/root";
 
 @import "../../node_modules/scally/core/base/abbreviation";
@@ -186,7 +185,6 @@ $google-map-selector-to-turn-off-responsive-images: "#gmap_canvas";
  */
 
 // Main container
-$l-container-apply-breakpoints-for-default: true;
 $l-container-width: 90%;
 $l-container-maximum-width: 1000;
 @import "../../node_modules/scally/layout/l-container";
@@ -208,9 +206,6 @@ $l-container-maximum-width: 1000;
 
 @import "../../node_modules/scally/objects/o-list";
 
-$o-list-inline-apply-at-breakpoints-for-default: true;
-@import "../../node_modules/scally/objects/o-list-inline";
-
 $o-table-border-color: $color-brand-tint;
 @import "../../node_modules/scally/objects/o-table";
 
@@ -222,12 +217,6 @@ $o-table-border-color: $color-brand-tint;
 $u-hide-apply-at-breakpoints: (palm max, lap);
 $u-hide-apply-at-breakpoints-for-hide: true;
 @import "../../node_modules/scally/utilities/u-hide";
-
-@import "../../node_modules/scally/utilities/u-position";
-
-$u-text-apply-at-breakpoints: lap;
-$u-text-apply-at-breakpoints-for-align-left: true;
-@import "../../node_modules/scally/utilities/u-text";
 
 @import "../../node_modules/scally/utilities/u-spacing";
 
@@ -253,6 +242,8 @@ $u-text-apply-at-breakpoints-for-align-left: true;
 
 @import "core/base/headings";
 
+@import "core/base/details";
+
 
 /**
  * LAYOUT.
@@ -274,11 +265,7 @@ $u-text-apply-at-breakpoints-for-align-left: true;
  * COMPONENTS.
  */
 
-@import "components/c-card";
-
 @import "components/c-page-heading";
-
-@import "components/c-details";
 
 @import "components/c-map";
 
@@ -287,7 +274,5 @@ $u-text-apply-at-breakpoints-for-align-left: true;
 @import "components/c-form";
 
 @import "components/c-form-select";
-
-@import "components/c-logo-watermark";
 
 @import "components/c-button";

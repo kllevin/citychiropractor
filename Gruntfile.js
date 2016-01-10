@@ -30,11 +30,9 @@ module.exports = function(grunt) {
       scripts: {
         files: [
           'assets/scripts/script.js'
-          //'assets/scripts/fontfaceobserver.js',
         ],
         tasks: [
           'uglify:dev'
-          //'uglify:fontfaceobserver_dev'
         ],
         options: {
           spawn: false
@@ -117,17 +115,6 @@ module.exports = function(grunt) {
             ]
         }
       },
-      /*fontfaceobserver_dev: {
-        options: {
-          compress: true,
-          preserveComments: false,
-          report: 'gzip',
-          mangle: false
-        },
-        files: {
-          'assets/scripts/fontfaceobserver.min.js': ['assets/scripts/fontfaceobserver.js']
-        }
-      },*/
       dist: {
         options: {
           compress: true,
@@ -178,9 +165,9 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: 'assets/images/',
+          cwd: 'assets/images',
           src: ['**/*.svg'],
-          dest: 'dist/images/'
+          dest: 'dist/images'
         }]
       }
     },
@@ -284,7 +271,6 @@ module.exports = function(grunt) {
     }
   });
 
-  //grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -310,7 +296,6 @@ module.exports = function(grunt) {
     'modernizr',
     'copy',
     'uglify:dev',
-    //'uglify:fontfaceobserver_dev',
     'assemble',
     'connect',
     'watch'

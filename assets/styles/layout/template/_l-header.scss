@@ -19,6 +19,8 @@ $l-header-bp-large: 880 + 1;
 
 
 .l-header {
+  background-color: $color-brand;
+  background-image: linear-gradient(45deg, shade($color-brand, 6%), tint($color-brand, 16%));
   font-size: to-rem($font-size-x-small);
   line-height: 24 / $font-size-x-small;
   padding-top: to-rem($l-header-spacing-amount);

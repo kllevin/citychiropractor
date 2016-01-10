@@ -1,7 +1,7 @@
 <svg width="226px" height="96px" viewBox="0 0 226 96" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Chiro-logo-+-logo-watermark" sketch:type="MSLayerGroup" transform="translate(0.000000, -1.000000)">
-            <g id="Chiro-logo" transform="translate(78.000000, 41.000000)" fill="#fff" sketch:type="MSShapeGroup">
+        <g sketch:type="MSLayerGroup" transform="translate(0.000000, -1.000000)">
+            <g transform="translate(78.000000, 41.000000)" fill="#fff" sketch:type="MSShapeGroup">
                 <g id="Group">
                     <path d="M29.5,9.3 L31.2,9.7 C30.9,11.1 30.2,12.1 29.3,12.8 C28.4,13.5 27.3,13.9 26,13.9 C24.6,13.9 23.6,13.6 22.7,13.1 C21.9,12.6 21.2,11.8 20.8,10.7 C20.4,9.7 20.1,8.5 20.1,7.3 C20.1,6 20.3,4.9 20.8,3.9 C21.3,2.9 22,2.2 22.9,1.7 C23.8,1.2 24.8,0.9 25.9,0.9 C27.2,0.9 28.2,1.2 29.1,1.9 C30,2.5 30.6,3.4 30.9,4.6 L29.3,5 C29,4.1 28.6,3.4 28,3 C27.4,2.6 26.8,2.4 25.9,2.4 C24.9,2.4 24.1,2.6 23.5,3.1 C22.9,3.6 22.4,4.2 22.1,5 C21.8,5.8 21.7,6.6 21.7,7.4 C21.7,8.5 21.9,9.4 22.2,10.2 C22.5,11 23,11.6 23.6,12 C24.3,12.4 25,12.6 25.7,12.6 C26.6,12.6 27.4,12.3 28.1,11.8 C28.9,11.1 29.3,10.3 29.5,9.3 L29.5,9.3 Z" id="Shape"></path>
                     <path d="M33.5,13.7 L33.5,1.2 L35.2,1.2 L35.2,13.7 L33.5,13.7 L33.5,13.7 Z" id="Shape"></path>

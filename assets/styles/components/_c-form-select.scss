@@ -14,7 +14,7 @@
  * Settings.
  */
 
-$c-form-select-font-size: 14px;
+$c-form-select-font-size: 14;
 
 $c-form-select-border-color: $text-input-and-select-border-color;
 
@@ -89,7 +89,9 @@ $c-form-select-border-color-active-state: blue;
  */
 
 .c-form-select__control {
-  @extend %u-position-bottom-right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   display: block;
   width: to-rem(40);
   border-left: 1px solid $c-form-select-border-color;
@@ -98,7 +100,10 @@ $c-form-select-border-color-active-state: blue;
 }
 
 .c-form-select__control__icon {
-  @extend %u-position-middle;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   fill: $c-form-select-border-color;
   height: auto;
   width: 14px;

@@ -15,6 +15,7 @@
   display: inline-block;
   font-weight: 600;
   padding: to-em(9) to-em($c-button-padding-sides);
+  transition: all 0.15s ease;
 
   &,
   &:hover,
