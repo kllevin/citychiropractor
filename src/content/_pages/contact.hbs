@@ -77,12 +77,16 @@ navOrder: 5
       </form>
     </div>
 
-    <div class="l-grid__item u-one-half">
+    <div class="l-grid__item u-one-half" itemscope itemtype="http://schema.org/LocalBusiness">
       <h3>Give us a call or send us a message</h3>
       <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-        <span>Tel: <a href="tel:+0292210771" itemprop="telephone">02 9221 0771</a></span><br>
-        <a href="mailto:info@citychiropractor.com.au" itemprop="email">info@citychiropractor.com.au</a>
-      </p>
+          <span itemprop="streetAddress">Suite 506<br>66 Hunter Street</span><br>
+          <span itemprop="addressLocality">Sydney</span>
+          <span itemprop="addressRegion">NSW</span>,
+          <span itemprop="postalCode">2000</span><br>
+          <span>Tel: <a href="tel:+0292210771" itemprop="telephone">02 9221 0771</a></span><br>
+          <a href="mailto:info@citychiropractor.com.au" itemprop="email">info@citychiropractor.com.au</a>
+        </p>
       <div id="gmap_canvas" style="height: 400px; width: 100%;"></div>
     </div>
   </div>
@@ -106,4 +110,4 @@ navOrder: 5
   }
   google.maps.event.addDomListener(window, 'load', initialize);
 </script>
-{{!-- Google Maps JS --}}
+{{!-- //Google Maps JS --}}
