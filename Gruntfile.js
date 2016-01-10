@@ -15,7 +15,7 @@ module.exports = function(grunt) {
         files: 'assets/styles/**/*.scss',
         tasks: [
           'sass',
-          'autoprefixer'
+          'postcss'
         ],
         options: {
           spawn: false
@@ -82,13 +82,14 @@ module.exports = function(grunt) {
       }
     },
 
-    // Autoprefixer
-    autoprefixer: {
-      options: [
-        'last 2 versions',
-        'ie 10',
-        'ie 11'
-      ],
+    // PostCSS - Autoprefixer
+    postcss: {
+      options: {
+          map: true,
+          processors: [
+              require('autoprefixer')()
+          ]
+      },
       dist: {
         files: [{
           expand: true,
@@ -109,6 +110,7 @@ module.exports = function(grunt) {
         files: {
             'dist/scripts/script.js':
             [
+              'assets/scripts/modernizr.js',
               'assets/scripts/helpers.js',
               'assets/scripts/toggle-menu.js',
               'assets/scripts/script.js'
@@ -282,7 +284,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-autoprefixer');
+  //grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -293,6 +295,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-gh-pages');
   grunt.loadNpmTasks('grunt-modernizr');
+  grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-svgmin');
   grunt.loadNpmTasks('assemble');
@@ -301,9 +304,10 @@ module.exports = function(grunt) {
   grunt.registerTask('serve', [
     'clean:dev',
     'sass',
-    'autoprefixer',
+    'postcss',
     'imagemin',
     'svgmin',
+    'modernizr',
     'copy',
     'uglify:dev',
     //'uglify:fontfaceobserver_dev',
@@ -316,10 +320,11 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'sass',
-    'autoprefixer',
+    'postcss',
     'cssmin',
     'imagemin',
     'svgmin',
+    'modernizr',
     'uglify:dist',
     'copy',
     'assemble',
