@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 
     // Setup env vars
     app: {
-      source: 'app',
+      source: 'src',
       dist: 'dist'
     },
 
@@ -22,27 +22,16 @@ module.exports = function(grunt) {
         }
       },
 
-      html: {
-        files: ['./src/**/*'],
+      assemble: {
+        files: ['src/**/*'],
         tasks: ['assemble']
       },
 
       scripts: {
-        files: [
-          'assets/scripts/script.js'
-        ],
-        tasks: [
-          'uglify:dev'
-        ],
+        files: ['assets/scripts/**/*.js'],
+        tasks: ['uglify:dev'],
         options: {
           spawn: false
-        }
-      },
-
-      livereload: {
-        files: ['./dist/**/*'],
-        options: {
-          livereload: true
         }
       }
     },
@@ -51,12 +40,13 @@ module.exports = function(grunt) {
     assemble: {
       options: {
         layout: 'page.hbs',
-        layoutdir: './src/bonnet/layouts/',
-        partials: './src/bonnet/partials/**/*'
+        layoutdir: 'src/bonnet/layouts/',
+        partials: 'src/bonnet/partials/**/*',
+        helpers: ['helper-moment', 'foo/*.js' ]
       },
       pages: {
-        cwd: './src/content/_pages/',
-        dest: './dist/',
+        cwd: 'src/content/_pages/',
+        dest: 'dist/',
         expand: true,
         src: '**/*.hbs'
       }
@@ -83,10 +73,10 @@ module.exports = function(grunt) {
     // PostCSS - Autoprefixer
     postcss: {
       options: {
-          map: true,
-          processors: [
-              require('autoprefixer')()
-          ]
+        map: true,
+        processors: [
+          require('autoprefixer')()
+        ]
       },
       dist: {
         files: [{
@@ -103,26 +93,36 @@ module.exports = function(grunt) {
       dev: {
         options: {
           mangle: false,
-          beautify: true
+          beautify: {
+            width: 80,
+            beautify: true
+          },
+          screwIE8: true
         },
         files: {
-            'dist/scripts/script.js':
-            [
-              'assets/scripts/modernizr.js',
-              'assets/scripts/helpers.js',
-              'assets/scripts/toggle-menu.js',
-              'assets/scripts/script.js'
-            ]
+          'dist/scripts/script.js':
+          [
+            'assets/scripts/modernizr.js',
+            'assets/scripts/helpers.js',
+            'assets/scripts/toggle-menu.js',
+            'assets/scripts/script.js'
+          ]
         }
       },
       dist: {
         options: {
           compress: true,
           preserveComments: false,
-          report: 'gzip'
+          report: 'gzip',
         },
         files: {
-          'dist/scripts/script.js': ['assets/scripts/script.js']
+          'dist/scripts/script.js':
+          [
+            'assets/scripts/modernizr.js',
+            'assets/scripts/helpers.js',
+            'assets/scripts/toggle-menu.js',
+            'assets/scripts/script.js'
+          ]
         }
       }
     },
@@ -132,22 +132,18 @@ module.exports = function(grunt) {
       dev: {
         options: {
           port: 8000,
-          base: './dist/'
+          base: 'dist/'
         }
       }
     },
 
     // Clean
     clean: {
-      dev: [
-        'dist'
-      ],
+      dev: ['dist'],
       dist: {
         files: [{
           dot: true,
-          src: [
-            'dist/*'
-          ]
+          src: ['dist/*']
         }]
       }
     },
@@ -254,9 +250,7 @@ module.exports = function(grunt) {
           "css/flexboxtweener"
         ],
         "files": {
-          "src": [
-            "assets/**/*.{js,css,scss}"
-          ]
+          "src": ["assets/**/*.{js,css,scss}"]
         },
         "uglify": true
       }
@@ -310,8 +304,8 @@ module.exports = function(grunt) {
     'imagemin',
     'svgmin',
     'modernizr',
-    'uglify:dist',
     'copy',
+    'uglify:dist',
     'assemble',
     'htmlmin'
   ]);

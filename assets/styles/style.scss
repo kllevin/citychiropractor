@@ -204,6 +204,7 @@ $l-container-maximum-width: 1000;
 
 @import "../../node_modules/scally/objects/o-button";
 
+$o-list-apply-hanging-bullets: true;
 @import "../../node_modules/scally/objects/o-list";
 
 $o-table-border-color: $color-brand-tint;
@@ -263,8 +264,6 @@ $u-hide-apply-at-breakpoints-for-hide: true;
  * COMPONENTS.
  */
 
-@import "components/c-page-heading";
-
 @import "components/c-map";
 
 @import "components/c-profile";
@@ -274,3 +273,5 @@ $u-hide-apply-at-breakpoints-for-hide: true;
 @import "components/c-form-select";
 
 @import "components/c-button";
+
+@import "components/c-view-title";

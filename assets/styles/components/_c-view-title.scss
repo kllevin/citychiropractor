@@ -1,0 +1,15 @@
+/* ============================================================================
+   @COMPONENTS -> VIEW TITLE
+   ========================================================================= */
+
+/**
+ * The main title of a view typically the `<h1>`.
+ */
+
+
+.c-view-title {
+  border-bottom: 1px solid $color-brand-tint;
+  padding-bottom: to-rem($spacing-half);
+  margin-bottom: to-rem($spacing-double);
+  text-align: center;
+}

@@ -21,6 +21,7 @@
     "grunt-postcss": "^0.7.1",
     "grunt-sass": "^1.1.0",
     "grunt-svgmin": "^2.0.1",
+    "helper-moment": "^0.1.0",
     "scally": "latest"
   }
 }

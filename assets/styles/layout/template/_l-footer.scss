@@ -8,15 +8,29 @@
 
 
 .l-footer {
-  border-top: 1px solid $color-brand-light;
-  font-family: $font-family-serif;
+  border-top: 1px solid $color-brand-tint;
   font-size: to-rem($font-size-small);
   padding-top: to-rem($spacing-base);
   padding-bottom: to-rem($spacing-base);
+  text-align: center;
 }
 
 
+/**
+ * Copyright text and site credit.
+ */
+
 .l-footer__copy {
   display: block;
-  font-size: to-rem($font-size-x-small);
+  font-size: to-rem($font-size-xx-small);
+  margin-top: to-rem($spacing-third);
+}
+
+/**
+ * The copyright symbol: ©.
+ */
+
+.l-footer__copyright-symbol {
+  position: relative;
+  top: to-rem(2);
 }
