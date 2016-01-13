@@ -1,0 +1,15 @@
+/* ============================================================================
+   @COMPONENTS -> BROWSER UPGRADE
+   ========================================================================= */
+
+/**
+ * The browser upgrade banner that is shown to users of older versions of IE.
+ */
+
+
+.c-browser-upgrade {
+  background-color: beige;
+  padding-top: to-rem($spacing-half);
+  padding-bottom: to-rem($spacing-half);
+  text-align: center;
+}
