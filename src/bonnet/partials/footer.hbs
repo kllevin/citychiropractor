@@ -1,11 +1,24 @@
 <footer class="l-footer" role="contentinfo">
-  <div class="l-container">
-    <a href="http://www.chiropractors.asn.au/" rel="external" title="Visit the Chiropractors' Association of Australia">
-      <img src="images/logos/caa.svg" alt="A member of the Chiropractors' Association of Australia" width="106" height="61">
-    </a>
-    <small class="l-footer__copy">
-      <span class="l-footer__copyright-symbol">&copy;</span> Copyright 2016 City Chiropractor Care.
-      <span>Website by <a href="http://chris-pearce.me" rel="external">Chris</a> &amp; <a href="http://kllevin.com/" rel="external">Kate</a>.</span>
-    </small>
+  <div class="l-container{{#unless data.wide-content}} l-container--narrow{{/unless}}">
+    <div class="l-side-by-side-alt l-side-by-side-alt--remove l-side-by-side-alt--gutter-small">
+      <div class="l-side-by-side-alt__left">
+        <a href="http://www.chiropractors.asn.au/" rel="external" title="Visit the Chiropractors’ Association of Australia">
+          <img src="images/logos/caa.svg" alt="A member of the Chiropractors’ Association of Australia" width="106" height="61">
+        </a>
+      </div>
+      <div class="l-side-by-side-alt__right">
+        <small class="l-footer__copyright">
+          <span class="l-footer__copyright-symbol">&copy;</span>
+          Copyright 2016 City Chiropractor Care.
+          <span class="l-footer__credits">Website by <a href="http://chris-pearce.me" rel="external">Chris</a> &amp; <a href="http://kllevin.com/" rel="external">Kate</a>.</span>
+        </small>
+        {{!-- <a href="https://www.facebook.com/CityChiropracticCare/" rel="external" class="l-footer__ctas__item l-footer__facebook-icon" title="Visit our Facebook page">
+          <span class="u-hide-visually">Visit our Facebook page</span>
+          <svg aria-hidden="true" class="l-footer__cta-item-icon">
+            <use xlink:href="#facebook-icon" />
+          </svg>
+        </a> --}}
+      </div>
+    </div>
   </div>
 </footer>

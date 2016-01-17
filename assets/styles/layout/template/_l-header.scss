@@ -107,32 +107,38 @@ $l-header-bp-large: 880 + 1;
 
 .l-header .l-header__cta {
   display: flex;
+  margin-right: to-rem($l-header-spacing-amount);
 
-  // Any SVG icons
-  .icon {
-    fill: $color-white;
-    height: 20px;
-    margin-right: to-rem($spacing-micro);
-    width: 20px;
+  &:last-child {
+    margin-right: 0;
   }
 }
 
 /**
- * Phone CTA.
+ * Modifier: phone CTA.
  */
 
-.l-header .l-header__cta-phone {
-  margin-right: to-rem($l-header-spacing-amount);
-
+.l-header .l-header__cta--phone {
   // Make it not look like a button at larger viewports size
   @include respond-to($l-header-bp-large) {
     cursor: default;
+    padding-left: 0;
+    padding-right: 0;
 
     &,
     &:hover,
     &:focus {
       background: transparent;
     }
+  }
+
+  // The SVG icon
+  svg {
+    fill: $color-white;
+    height: 20px;
+    margin-top: to-rem($spacing-micro);
+    margin-right: to-rem($spacing-micro);
+    width: 20px;
   }
 }
 

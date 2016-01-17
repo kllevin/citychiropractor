@@ -13,3 +13,14 @@
   font-family: $font-family-headings;
   font-weight: $font-weight-headings;
 }
+
+
+h2,
+.h2 {
+  line-height: 1.3;
+  margin-top: to-rem($spacing-double);
+
+  &:first-child {
+    margin-top: 0;
+  }
+}

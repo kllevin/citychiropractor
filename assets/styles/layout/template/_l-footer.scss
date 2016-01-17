@@ -9,21 +9,27 @@
 
 .l-footer {
   border-top: 1px solid $color-brand-tint;
-  font-size: to-rem($font-size-small);
   padding-top: to-rem($spacing-base);
   padding-bottom: to-rem($spacing-base);
-  text-align: center;
+
+  // To center align the CAA logo
+  @include respond-to(palm, max) {
+    text-align: center;
+  }
 }
 
 
 /**
- * Copyright text and site credit.
+ * Copyright text.
  */
 
-.l-footer__copy {
+.l-footer__copyright {
   display: block;
-  font-size: to-rem($font-size-xx-small);
-  margin-top: to-rem($spacing-third);
+  font-size: to-rem($font-size-xxx-small);
+
+  @include respond-to(lap) {
+    text-align: right;
+  }
 }
 
 /**
@@ -33,4 +39,12 @@
 .l-footer__copyright-symbol {
   position: relative;
   top: to-rem(2);
+}
+
+/**
+ * Site credits.
+ */
+
+.l-footer__credits {
+  display: block;
 }

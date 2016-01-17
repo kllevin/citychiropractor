@@ -9,7 +9,15 @@
 
 .c-view-title {
   border-bottom: 1px solid $color-brand-tint;
-  padding-bottom: to-rem($spacing-half);
+  //padding-bottom: to-rem($spacing-half);
   margin-bottom: to-rem($spacing-double);
   text-align: center;
+
+  //background: $color-brand-alt;
+  //border-top: 5px solid $color-brand-alt;
+  //color: #fff;
+  padding-top: to-rem($spacing-base);
+  padding-bottom: to-rem($spacing-base);
+  background-color: $color-brand-tint;
+  //border-bottom: 1px solid darken($color-brand-tint, 6%);
 }
