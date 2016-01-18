@@ -9,30 +9,71 @@
  */
 
 
-details {
-  background-color: $color-white;
-  border: 1px solid $color-brand-light;
-  border-radius: 3px;
-  margin-bottom: to-rem($spacing-half);
-}
+/**
+ * Settings.
+ */
 
-summary {
-  padding-top: to-rem($spacing-base);
-  padding-bottom: to-rem($spacing-base);
-  font-weight: 700;
-  font-size: to-rem($font-size-x-large);
+$details-padding-ends: $spacing-half;
+
+$details-padding-sides: $spacing-base;
+
+$details-spacing-bottom: $spacing-base;
+
+$details-border-color: $color-brand-tint;
+
+$details-border-color-hover: $color-brand;
+
+$details-border-radius: 3px;
+
+
+details {
+  border: 1px solid $details-border-color;
+  border-radius: $details-border-radius;
+  margin-bottom: to-rem($details-spacing-bottom);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  /**
+   * Set list bullets to be on the inside.
+   */
+
+  .o-list {
+    list-style-position: inside;
+  }
 }
 
 
 /**
- * Open.
+ * The summary.
  */
 
-details[open] {
-  padding-bottom: to-rem($spacing-base);
+summary {
+  border: 1px solid transparent;
+  border-radius: $details-border-radius;
+  padding: to-rem($details-padding-ends) to-rem($details-padding-sides);
+  font-weight: $font-weight-bold;
+  transition: border-color 0.08s ease-in;
 
-  summary {
-    border-bottom: 1px solid $color-brand-light;
-    margin-bottom: to-rem($spacing-half);
+  &:hover,
+  &:focus,
+  details[open] & {
+    border-color: $details-border-color-hover;
   }
+
+  details[open] & {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+
+/**
+ * Content piece.
+ */
+
+summary + div {
+  font-size: to-rem($font-size-small);
+  padding: to-rem($details-padding-ends) to-rem($details-padding-sides);
 }

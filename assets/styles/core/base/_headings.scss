@@ -18,9 +18,24 @@
 h2,
 .h2 {
   line-height: 1.3;
+}
+
+
+h2,
+.h2,
+h3,
+.h3 {
   margin-top: to-rem($spacing-double);
 
   &:first-child {
     margin-top: 0;
   }
+}
+
+
+h4,
+.h4 {
+  font-size: to-rem($font-size-x-small);
+  text-transform: uppercase;
+  color: $color-brand-light;
 }

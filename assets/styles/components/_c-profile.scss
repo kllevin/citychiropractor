@@ -12,14 +12,3 @@
   height: 120px;
   width: 120px;
 }
-
-.c-profile__name {
-  //font-size: to-rem(24);
-  margin-bottom: to-rem($spacing-fifth);
-}
-
-.c-profile__position {
-  font-size: to-rem($font-size-x-small);
-  text-transform: uppercase;
-  color: $color-brand-light;
-}

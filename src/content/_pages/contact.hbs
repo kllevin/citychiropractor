@@ -4,89 +4,85 @@ nav-title: Contact
 slug: contact
 desc:
 nav-order: 5
+footer-width: widest
 ---
 
 {{>view-title}}
 
 <div class="l-container">
-  <div class="l-grid l-grid--gutter-large">
-    <div class="l-grid__item u-one-half">
+
+  <div class="l-grid l-grid--gutter-huge">
+    <div class="l-grid__item  u-one-half">
       <form>
         <fieldset>
-          <legend class="h3">Book an Appointment</legend>
+          <legend class="h2">Book an Appointment</legend>
           <div>
-            <ul>
-              <li class="u-s-mb-base">
-                <label class="c-form__label" for="name">Name</label>
-                <input class="text-input" id="name" type="text" aria-required="true" required maxlength="200">
-              </li>
-              <li class="u-s-mb-base">
-                <label class="c-form__label" for="email">Email</label>
-                <input class="text-input" id="email" type="email" aria-required="true" required maxlength="200" maxlength="200">
-              </li>
-              <li class="u-s-mb-base">
-                <label class="c-form__label" for="phone">Phone</label>
-                <input class="text-input" id="phone" type="text" aria-required="true" required maxlength="50">
-              </li>
-              <li class="u-s-mb-base">
-                <ul class="l-grid">
-                  <li class="l-grid__item u-one-half">
-                    <label class="c-form__label" for="preferred-day">Preferred day</label>
-                    <div class="c-form-select">
-                      <select id="preferred-day">
-                        <option>Please select one…</option>
-                        <option value="Monday">Monday</option>
-                        <option value="Wednesday">Wednesday</option>
-                        <option value="Thursday">Thursday</option>
-                        <option value="Friday">Friday</option>
-                        <option value="Don’t mind">Don’t mind</option>
-                      </select>
-                      <div class="c-form-select__control">
-                        <svg class="c-form-select__control__icon" viewBox="0 0 29.4 15.9"><path d="M14.6 15.9c-.3 0-.5-.1-.7-.3L.3 1.7C-.1 1.3-.1.7.3.3c.4-.4 1-.4 1.4 0l12.9 13.1L27.7.3c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4L15.3 15.6c-.2.2-.5.3-.7.3z"/></svg>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="l-grid__item u-one-half">
-                    <label class="c-form__label" for="preferred-time">Preferred time</label>
-                    <div class="c-form-select">
-                      <select id="preferred-time">
-                        <option>Please select one…</option>
-                        <option value="Morning">Morning</option>
-                        <option value="lunch time">Lunch time</option>
-                        <option value="Afternoon">Afternoon</option>
-                        <option value="Early evening">Early evening</option>
-                        <option value="Don’t mind">Don’t mind</option>
-                      </select>
-                      <div class="c-form-select__control">
-                        <svg class="c-form-select__control__icon" viewBox="0 0 29.4 15.9"><path d="M14.6 15.9c-.3 0-.5-.1-.7-.3L.3 1.7C-.1 1.3-.1.7.3.3c.4-.4 1-.4 1.4 0l12.9 13.1L27.7.3c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4L15.3 15.6c-.2.2-.5.3-.7.3z"/></svg>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li class="u-s-mb-base">
-                <label class="c-form__label" for="additional-info">Additional information</label>
-                <textarea id="additional-info"></textarea>
-              </li>
-              <li class="u-text-align-right">
-                <button type="submit" class="c-button">Submit</button>
-              </li>
-            </ul>
+            <label for="name">Name</label>
+            <input class="text-input" id="name" type="text" aria-required="true" required maxlength="200">
           </div>
+          <div>
+            <label for="email">Email</label>
+            <input class="text-input" id="email" type="email" aria-required="true" required maxlength="200">
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input class="text-input" id="phone" type="phone" aria-required="true" required maxlength="50">
+          </div>
+          <div>
+            <div class="l-grid">
+              <div class="l-grid__item  u-one-half">
+                <label for="preferred-day">Preferred day</label>
+                <div class="c-form-select">
+                  <select id="preferred-day">
+                    <option>Please select one…</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Don’t mind">Don’t mind</option>
+                  </select>
+                  <div class="c-form-select__control">
+                    <svg class="c-form-select__control__icon" viewBox="0 0 29.4 15.9"><path d="M14.6 15.9c-.3 0-.5-.1-.7-.3L.3 1.7C-.1 1.3-.1.7.3.3c.4-.4 1-.4 1.4 0l12.9 13.1L27.7.3c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4L15.3 15.6c-.2.2-.5.3-.7.3z"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="l-grid__item  u-one-half">
+                <label for="preferred-time">Preferred time</label>
+                <div class="c-form-select">
+                  <select id="preferred-time">
+                    <option>Please select one…</option>
+                    <option value="Morning">Morning</option>
+                    <option value="lunch time">Lunch time</option>
+                    <option value="Afternoon">Afternoon</option>
+                    <option value="Early evening">Early evening</option>
+                    <option value="Don’t mind">Don’t mind</option>
+                  </select>
+                  <div class="c-form-select__control">
+                    <svg class="c-form-select__control__icon" viewBox="0 0 29.4 15.9"><path d="M14.6 15.9c-.3 0-.5-.1-.7-.3L.3 1.7C-.1 1.3-.1.7.3.3c.4-.4 1-.4 1.4 0l12.9 13.1L27.7.3c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4L15.3 15.6c-.2.2-.5.3-.7.3z"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <label for="additional-info">Additional information</label>
+            <textarea id="additional-info"></textarea>
+          </div>
+          <button type="submit" class="c-button">Submit</button>
         </fieldset>
       </form>
     </div>
 
-    <div class="l-grid__item u-one-half" itemscope itemtype="http://schema.org/LocalBusiness">
-      <h3>Give us a call or send us a message</h3>
+    <div class="l-grid__item  u-one-half" itemscope itemtype="http://schema.org/LocalBusiness">
+      <h2>Get in Touch</h2>
       <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-          <span itemprop="streetAddress">Suite 506<br>66 Hunter Street</span><br>
-          <span itemprop="addressLocality">Sydney</span>
-          <span itemprop="addressRegion">NSW</span>,
-          <span itemprop="postalCode">2000</span><br>
-          <span>Tel: <a href="tel:+0292210771" itemprop="telephone">02 9221 0771</a></span><br>
-          <a href="mailto:info@citychiropractor.com.au" itemprop="email">info@citychiropractor.com.au</a>
-        </p>
+        <span itemprop="streetAddress">Suite 506<br>66 Hunter Street</span><br>
+        <span itemprop="addressLocality">Sydney</span>
+        <span itemprop="addressRegion">NSW</span>,
+        <span itemprop="postalCode">2000</span><br>
+        <span>Tel: <a href="tel:+0292210771" itemprop="telephone">02 9221 0771</a></span><br>
+        <a href="mailto:info@citychiropractor.com.au" itemprop="email">info@citychiropractor.com.au</a>
+      </p>
       <div id="gmap_canvas" style="height: 400px; width: 100%;"></div>
     </div>
   </div>
