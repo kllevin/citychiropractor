@@ -8,16 +8,38 @@
 
 
 .c-view-title {
-  border-bottom: 1px solid $color-brand-tint;
-  //padding-bottom: to-rem($spacing-half);
-  margin-bottom: to-rem($spacing-double);
-  text-align: center;
-
-  //background: $color-brand-alt;
-  //border-top: 5px solid $color-brand-alt;
-  //color: #fff;
+  background-color: $color-brand-tint;
+  border-bottom: 1px solid darken($color-brand-tint, 6%);
   padding-top: to-rem($spacing-base);
   padding-bottom: to-rem($spacing-base);
-  //background-color: $color-brand-tint;
-  //border-bottom: 1px solid darken($color-brand-tint, 6%);
+  margin-bottom: to-rem($spacing-base-plus-half);
+  text-align: center;
+
+  @include respond-to(lap) {
+    margin-bottom: to-rem($spacing-double);
+  }
+
+  @include respond-to(desk) {
+    padding-top: to-rem($spacing-base-plus-half);
+    padding-bottom: to-rem($spacing-base-plus-half);
+  }
+}
+
+
+/**
+ * The `h1`.
+ */
+
+.c-view-title__text {
+  font-size: to-rem(43);
+  line-height: 1.25;
+  margin-bottom: 0;
+
+  @include respond-to(lap) {
+    font-size: to-rem(46);
+  }
+
+  @include respond-to(desk) {
+    font-size: to-rem(50);
+  }
 }

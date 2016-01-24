@@ -1,0 +1,40 @@
+/* ============================================================================
+   @LAYOUT -> TEMPLATE -> VIEWS -> HOME
+   ========================================================================= */
+
+/**
+ * The bespoke layout used in the main content area of the home page.
+ */
+
+.l-view-home {
+  display: flex;
+  align-items: center;
+}
+
+
+/**
+ * Declare widths for each container.
+ */
+
+.l-view-home__intro,
+.l-view-home__photos {
+  flex: 1 50vw;
+}
+
+
+/**
+ * Intro text.
+ */
+
+.l-view-home__intro {
+  padding: to-rem($spacing-double);
+}
+
+
+/**
+ * Photos.
+ */
+
+.l-view-home__photos img:first-child {
+  border-bottom: 1px solid $color-white;
+}

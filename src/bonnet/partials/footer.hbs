@@ -1,5 +1,5 @@
 <footer class="l-footer" role="contentinfo">
-  <div class="l-container{{#unless data.wide-content}} l-container--narrow{{/unless}}">
+  <div class="l-container{{#if wide-content}} l-container--wide{{/if}}">
     <div class="l-side-by-side-alt l-side-by-side-alt--remove l-side-by-side-alt--gutter-small">
       <div class="l-side-by-side-alt__left">
         <a href="http://www.chiropractors.asn.au/" rel="external" title="Visit the Chiropractors’ Association of Australia">
@@ -9,8 +9,10 @@
       <div class="l-side-by-side-alt__right">
         <small class="l-footer__copyright">
           <span class="l-footer__copyright-symbol">&copy;</span>
-          Copyright 2016 City Chiropractor Care.
+          Copyright 2016
+          <span class="l-footer__copyright-brand">City Chiropractor Care.</span>
           <span class="l-footer__credits">Website by <a href="http://chris-pearce.me" rel="external">Chris</a> &amp; <a href="http://kllevin.com/" rel="external">Kate</a>.</span>
+          <a href="#" class="c-button">Back to top</a>
         </small>
         {{!-- <a href="https://www.facebook.com/CityChiropracticCare/" rel="external" class="l-footer__ctas__item l-footer__facebook-icon" title="Visit our Facebook page">
           <span class="u-hide-visually">Visit our Facebook page</span>

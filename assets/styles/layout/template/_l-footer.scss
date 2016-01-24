@@ -30,6 +30,18 @@
   @include respond-to(lap) {
     text-align: right;
   }
+
+  /**
+   * Extend the “Button” component in “_c-button.scss”.
+   */
+
+  .c-button {
+    margin-top: to-rem($spacing-half);
+
+    @include respond-to(lap) {
+      display: none;
+    }
+  }
 }
 
 /**
@@ -40,6 +52,19 @@
   position: relative;
   top: to-rem(2);
 }
+
+/**
+ * The company name.
+ */
+
+.l-footer__copyright-brand {
+  display: block;
+
+  @include respond-to(360) {
+    display: inline;
+  }
+}
+
 
 /**
  * Site credits.

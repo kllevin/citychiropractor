@@ -8,6 +8,22 @@
 
 
 .l-main {
-  //padding-top: to-rem($spacing-double);
-  padding-bottom: to-rem($spacing-triple);
+  padding-bottom: to-rem($spacing-base-plus-half);
+
+  @include respond-to(340) {
+    padding-bottom: to-rem($spacing-double);
+  }
+
+  @include respond-to(lap-large) {
+    padding-bottom: to-rem($spacing-triple);
+  }
+
+  /**
+   * Home page specific styles.
+   */
+
+  .view-index & {
+    border-bottom: 1px solid $color-white;
+    padding-bottom: 0;
+  }
 }

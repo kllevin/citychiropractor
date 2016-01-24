@@ -259,6 +259,20 @@ $u-hide-apply-at-breakpoints-for-hide: true;
 
 @import "layout/template/l-main";
 
+// Views
+@import "layout/template/views/l-view-home";
+
+
+/**
+ * OBJECTS.
+ */
+
+@include respond-to(palm, max) {
+  .o-list {
+    list-style-position: inside;
+  }
+}
+
 
 /**
  * COMPONENTS.
@@ -278,25 +292,4 @@ $u-hide-apply-at-breakpoints-for-hide: true;
 
 @import "components/c-browser-upgrade";
 
-.hero {
-  filter: blur(1px) sepia(0.1);
-}
-
-.c-banner-image {
-  position: relative;
-  margin-bottom: to-rem($spacing-base);
-  margin-top: to-rem($spacing-base);
-
-  figcaption {
-    color: $color-white;
-    font-size: to-rem($font-size-small);
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    //right: 0;
-    background: rgba($color-brand-alt, 0.9);
-    text-align: center;
-    padding: to-rem($spacing-fifth) to-rem($spacing-half);
-  }
-}
+@import "components/c-drop-cap";

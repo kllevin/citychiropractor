@@ -31,6 +31,14 @@ $l-header-bp-large: 880 + 1;
     padding-top: to-rem($l-header-spacing-amount + 3);
     padding-bottom: to-rem($l-header-spacing-amount + 3);
   }
+
+  /**
+   * Home page specific styles.
+   */
+
+  .view-index & {
+    border-bottom: 1px solid $color-white;
+  }
 }
 
 .l-header__inner {
@@ -136,9 +144,12 @@ $l-header-bp-large: 880 + 1;
   svg {
     fill: $color-white;
     height: 20px;
-    margin-top: to-rem($spacing-micro);
     margin-right: to-rem($spacing-micro);
     width: 20px;
+
+    @include respond-to($l-header-bp-large) {
+      margin-top: to-rem($spacing-micro);
+    }
   }
 }
 

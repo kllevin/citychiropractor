@@ -1,0 +1,22 @@
+/* ============================================================================
+   @COMPONENTS -> DROP CAP
+   ========================================================================= */
+
+/**
+ * Styling a drop cap.
+ */
+
+
+.c-drop-cap::first-letter {
+  color: $color-brand;
+  font-family: $font-family-serif;
+  font-size: to-rem(100);
+  float: left;
+  line-height: 0.5;
+  margin-right: to-rem($spacing-third);
+  margin-top: to-rem(26);
+}
+
+.c-drop-cap-remaining-word {
+  margin-left: -(to-rem($spacing-third));
+}
