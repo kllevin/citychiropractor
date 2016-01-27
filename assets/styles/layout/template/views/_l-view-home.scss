@@ -30,6 +30,16 @@
   padding: to-rem($spacing-double);
 }
 
+// Inner container
+.l-view-home__intro-inner {
+  max-width: to-rem(540);
+  margin: auto;
+
+  @include respond-to(desk-large) {
+    font-size: to-rem($font-size-x-large);
+  }
+}
+
 
 /**
  * Photos.

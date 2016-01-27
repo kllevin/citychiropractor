@@ -16,10 +16,3 @@
 .l-container--wide {
   max-width: to-rem(2000);
 }
-
-// TV
-// N.B. is not a modifier of `l-container`
-.l-container-tv {
-  margin: 0 auto;
-  max-width: to-rem(3000);
-}
