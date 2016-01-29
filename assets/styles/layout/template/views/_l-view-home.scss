@@ -19,6 +19,7 @@
 .l-view-home__intro,
 .l-view-home__photos {
   flex: 1 50vw;
+  //background-color: $color-brand;
 }
 
 
@@ -27,6 +28,7 @@
  */
 
 .l-view-home__intro {
+  //background-color: $color-brand-alt;
   padding: to-rem($spacing-double);
 }
 
@@ -35,7 +37,7 @@
   max-width: to-rem(540);
   margin: auto;
 
-  @include respond-to(desk-large) {
+  @include respond-to(1600) {
     font-size: to-rem($font-size-x-large);
   }
 }
