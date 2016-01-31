@@ -12,18 +12,18 @@
 
 .c-drop-cap::first-letter {
   color: $color-brand;
-  font-family: $font-family-serif;
-  font-size: to-rem(100);
+  font-size: to-rem(106);
+  font-weight: $font-weight-base;
   float: left;
   line-height: 0.5;
-  margin-right: to-rem($spacing-third);
-  margin-top: to-rem(26);
+  margin-right: to-rem(8);
+  margin-top: to-rem(14);
   text-shadow:  1px 1px 0 $color-white,
                 2px 2px 0 $color-brand-alt;
 }
 
 .c-drop-cap::first-line {
-  font-weight: $font-weight-bold;
+  //font-weight: $font-weight-bold;
 }
 
 

@@ -8,12 +8,17 @@
 
 
 .c-view-title {
-  background-color: $color-brand-tint;
+  background: $color-brand-tint url("../images/logos/ccc-watermark.svg") 0 50%;
+  background: $color-brand-tint;
+  background-size: 5%;
   border-bottom: 1px solid darken($color-brand-tint, 6%);
   padding-top: to-rem($spacing-base);
   padding-bottom: to-rem($spacing-base);
+  position: relative;
   margin-bottom: to-rem($spacing-base-plus-half);
   text-align: center;
+
+  //clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
 
   @include respond-to(lap) {
     margin-bottom: to-rem($spacing-double);
@@ -31,15 +36,17 @@
  */
 
 .c-view-title__text {
-  font-size: to-rem(43);
+  font-size: to-rem(60);
+  font-weight: 600;
   line-height: 1.25;
   margin-bottom: 0;
+  text-transform: none;
 
   @include respond-to(lap) {
-    font-size: to-rem(46);
+    //font-size: to-rem(46);
   }
 
   @include respond-to(desk) {
-    font-size: to-rem(50);
+    //font-size: to-rem(50);
   }
 }

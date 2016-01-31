@@ -6,47 +6,27 @@
  * The bespoke layout used in the main content area of the home page.
  */
 
-.l-view-home {
+
+.l-view-home-banner {
   display: flex;
-  align-items: center;
+  max-height: 314px;
+}
+
+.l-view-home-banner__item {
+  flex-basis: auto;
+  width: 50%;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+}
+
+.l-view-home-banner__item:last-child {
+  border-left: 1px solid white;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
 }
 
 
-/**
- * Declare widths for each container.
- */
-
-.l-view-home__intro,
-.l-view-home__photos {
-  flex: 1 50vw;
-  //background-color: $color-brand;
-}
-
-
-/**
- * Intro text.
- */
-
-.l-view-home__intro {
-  //background-color: $color-brand-alt;
-  padding: to-rem($spacing-double);
-}
-
-// Inner container
-.l-view-home__intro-inner {
-  max-width: to-rem(540);
-  margin: auto;
-
-  @include respond-to(1600) {
-    font-size: to-rem($font-size-x-large);
-  }
-}
-
-
-/**
- * Photos.
- */
-
-.l-view-home__photos img:first-child {
-  border-bottom: 1px solid $color-white;
+.l-view-home-content {
+  position: relative;
+  background-color: $color-white;
+  margin-top: -(to-rem($spacing-triple));
+  padding: to-rem($spacing-base-plus-half);
 }
