@@ -17,30 +17,4 @@
   @include respond-to(lap-large) {
     padding-bottom: to-rem($spacing-triple);
   }
-
-  /**
-   * Home page specific styles.
-   */
-
-  .view-index & {
-    border-bottom: 1px solid $color-white;
-    padding-bottom: 0;
-  }
 }
-
-
-/**
- * Logo watermark.
- */
-
-// .l-main__logo-watermark {
-//   background: no-repeat url("../images/logos/ccc-watermark.svg") 50% 0;
-//   background-size: 327px 326px;
-//   position: absolute;
-//   left: 50%;
-//   top: 0;
-//   width: 470px;
-//   height: 468px;
-//   opacity: 0.05;
-//   transform: translate(-50%, -35%);
-// }

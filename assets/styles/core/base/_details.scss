@@ -15,7 +15,7 @@
 
 $details-padding-ends: $spacing-half;
 
-$details-padding-sides: $spacing-base;
+$details-padding-sides: $spacing-base-plus-half;
 
 $details-spacing-bottom: $spacing-base;
 
@@ -54,6 +54,7 @@ summary {
   border-radius: $details-border-radius;
   padding: to-rem($details-padding-ends) to-rem($details-padding-sides);
   font-weight: $font-weight-bold;
+  position: relative;
   transition: border-color 0.08s ease-in;
 
   &:hover,
@@ -65,6 +66,32 @@ summary {
   details[open] & {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+  }
+
+  /**
+   * The plus and minus icons.
+   */
+
+  svg {
+    position: absolute;
+    left: ($spacing-base-plus-half / 2 - 4) * 1px;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    fill: $color-brand;
+    transform: translateY(-50%);
+
+    &:last-child {
+      display: none;
+
+      details[open] & {
+        display: block;
+      }
+    }
+
+    details[open] &:first-child {
+      display: none;
+    }
   }
 }
 

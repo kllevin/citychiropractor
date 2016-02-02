@@ -7,6 +7,10 @@
  */
 
 
+/**
+ * The banner.
+ */
+
 .l-view-home-banner {
   display: flex;
   max-height: 314px;
@@ -24,9 +28,14 @@
 }
 
 
+/**
+ * Content area.
+ */
+
 .l-view-home-content {
   position: relative;
   background-color: $color-white;
   margin-top: -(to-rem($spacing-triple));
   padding: to-rem($spacing-base-plus-half);
+  padding-bottom: 0;
 }

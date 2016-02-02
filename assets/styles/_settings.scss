@@ -14,7 +14,7 @@
  * Sizes.
  */
 
-$font-size: 18;
+$font-size: 19;
 
 $font-size-heading-1: 46;
 
@@ -33,20 +33,16 @@ $font-size-heading-6: 14;
  * Line height.
  */
 
-$line-height: 28;
+$line-height: 29;
 
 
 /**
  * Families.
  */
 
-$font-family-base: "Merriweather Sans";
-
 $font-family-base: "Source Sans Pro";
 
-$font-family-headings: "Source Sans Pro";
-
-$font-family-serif: $font-family-headings;
+$font-family-headings: $font-family-base;
 
 
 /**
@@ -55,9 +51,10 @@ $font-family-serif: $font-family-headings;
 
 $font-weight-base: 400;
 
-$font-weight-headings: 600;
+$font-weight-bold: 600;
 
-$font-weight-bold: 700;
+$font-weight-headings: $font-weight-bold;
+
 
 
 

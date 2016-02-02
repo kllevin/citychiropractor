@@ -16,6 +16,10 @@ Twitter: [at]katielevin.
 
 Name: Phone SVG icon used in the site header created by Icomatic from the Noun
       Project
+Name: Plus sign SVG icon used in the FAQs page created by Icomatic from the
+      Noun Project
+Name: Minus sign SVG icon used in the FAQs page created by Morten Marius from
+      the Noun Project
 Name: Facebook SVG icon used in the site header created by Niels Gesquiere
       from the Noun Project
 
