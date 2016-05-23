@@ -105,6 +105,7 @@ module.exports = function(grunt) {
             'assets/scripts/modernizr.js',
             'assets/scripts/helpers.js',
             'assets/scripts/toggle-menu.js',
+            'assets/scripts/contact.js',
             'assets/scripts/script.js'
           ]
         }
@@ -273,12 +274,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-assemble');
   grunt.loadNpmTasks('grunt-gh-pages');
   grunt.loadNpmTasks('grunt-modernizr');
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-svgmin');
+  //grunt.loadNpmTasks('grunt-assemble' );
+  grunt.loadNpmTasks('assemble' );
 
   // Serve
   grunt.registerTask('serve', [
