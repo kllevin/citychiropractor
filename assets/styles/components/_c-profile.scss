@@ -6,9 +6,41 @@
  * Team profiles.
  */
 
+.c-profile {
+  padding-top: to-rem($spacing-base);
+  padding-bottom: to-rem($spacing-base);
+  // padding-left: to-rem($spacing-half);
+  // padding-right: to-rem($spacing-half);
+
+  @include respond-to(lap) {
+    padding-top: to-rem($spacing-double);
+    padding-bottom: to-rem($spacing-double);
+    // padding-left: to-rem($spacing-triple);
+    // padding-right: to-rem($spacing-triple);
+  }
+}
+
+.c-profile--featured {
+  background-color: #f1f1f1;
+  border-top: 2px solid #ddd;
+  border-bottom:2px solid #ddd;
+}
 
 .c-profile__image {
-  border-radius: 100%;
-  height: 120px;
-  width: 120px;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: to-rem(20);
+}
+
+.c-profile__name,
+.c-profile__title {
+  text-align: center;
+}
+
+.c-profile__name {
+  margin-top: 0;
+  margin-bottom: 0;
 }

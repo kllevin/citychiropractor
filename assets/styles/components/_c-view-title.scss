@@ -17,8 +17,6 @@
   margin-bottom: to-rem($spacing-base-plus-half);
   text-align: center;
 
-  //clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
-
   @include respond-to(lap) {
     margin-bottom: to-rem($spacing-double);
   }
@@ -40,12 +38,4 @@
   line-height: 1.25;
   margin-bottom: 0;
   text-transform: none;
-
-  @include respond-to(lap) {
-    //font-size: to-rem(46);
-  }
-
-  @include respond-to(desk) {
-    //font-size: to-rem(50);
-  }
 }

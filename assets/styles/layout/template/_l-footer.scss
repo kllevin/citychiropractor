@@ -60,7 +60,7 @@
 .l-footer__copyright-brand {
   display: block;
 
-  @include respond-to(360) {
+  @include respond-to(320) {
     display: inline;
   }
 }

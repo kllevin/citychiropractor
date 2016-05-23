@@ -6,8 +6,12 @@
  * Form component.
  */
 
+.c-form__row {
+  margin-bottom: to-rem($spacing-base);
+}
+
 
 .c-form__label {
   display: block;
-  margin-bottom: to-rem($spacing-half);
+  margin-bottom: to-rem($spacing-quarter);
 }

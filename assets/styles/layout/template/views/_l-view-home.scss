@@ -18,13 +18,20 @@
 
 .l-view-home-banner__item {
   flex-basis: auto;
-  width: 50%;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+
+  @include respond-to(lap) {
+    width: 50%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+  }
 }
 
 .l-view-home-banner__item:last-child {
   border-left: 1px solid white;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+
+  @include respond-to(palm, max) {
+    display: none;
+  }
 }
 
 
@@ -35,7 +42,16 @@
 .l-view-home-content {
   position: relative;
   background-color: $color-white;
-  margin-top: -(to-rem($spacing-triple));
-  padding: to-rem($spacing-base-plus-half);
+  margin-top: 0;
+  padding-top: to-rem($spacing-base-plus-half);
   padding-bottom: 0;
+
+  @include respond-to(400) {
+    margin-top: -(to-rem($spacing-double));
+    padding: to-rem($spacing-base-plus-half);
+  }
+
+  @include respond-to(lap-large) {
+    margin-top: -(to-rem($spacing-triple));
+  }
 }
