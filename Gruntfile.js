@@ -105,7 +105,6 @@ module.exports = function(grunt) {
             'assets/scripts/modernizr.js',
             'assets/scripts/helpers.js',
             'assets/scripts/toggle-menu.js',
-            'assets/scripts/contact.js',
             'assets/scripts/script.js'
           ]
         }

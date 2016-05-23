@@ -7,24 +7,19 @@
  */
 
 .c-profile {
-  padding-top: to-rem($spacing-base);
-  padding-bottom: to-rem($spacing-base);
-  // padding-left: to-rem($spacing-half);
-  // padding-right: to-rem($spacing-half);
-
-  @include respond-to(lap) {
-    padding-top: to-rem($spacing-double);
-    padding-bottom: to-rem($spacing-double);
-    // padding-left: to-rem($spacing-triple);
-    // padding-right: to-rem($spacing-triple);
-  }
+  border: 1px solid #ddd;
+  border-radius: to-rem($border-radius);
+  padding: to-rem($spacing-half);
 }
 
 .c-profile--featured {
-  background-color: #f1f1f1;
-  border-top: 2px solid #ddd;
-  border-bottom:2px solid #ddd;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+  border-radius: 0;
+  margin-bottom: to-rem($spacing-base);
 }
+
 
 .c-profile__image {
   border-radius: 50%;
