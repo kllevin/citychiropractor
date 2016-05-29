@@ -16,8 +16,7 @@ $font-face-source-sans-pro-file-path: "../fonts/source-sans-pro/sourcesanspro-";
   local("SourceSansPro-Regular"),
   local("Source-Sans-Pro-Regular"),
   url("#{$font-face-source-sans-pro-file-path}regular.woff2") format("woff2"),
-  url("#{$font-face-source-sans-pro-file-path}regular.woff") format("woff"),
-  url("#{$font-face-source-sans-pro-file-path}regular.ttf") format("ttf");
+  url("#{$font-face-source-sans-pro-file-path}regular.woff") format("woff");
   font-weight: $font-weight-base;
   font-style: normal;
 }
@@ -30,8 +29,7 @@ $font-face-source-sans-pro-file-path: "../fonts/source-sans-pro/sourcesanspro-";
   local("SourceSansPro-Italic"),
   local("Source-Sans-Pro-Italic"),
   url("#{$font-face-source-sans-pro-file-path}italic.woff2") format("woff2"),
-  url("#{$font-face-source-sans-pro-file-path}italic.woff") format("woff"),
-  url("#{$font-face-source-sans-pro-file-path}italic.ttf") format("ttf");
+  url("#{$font-face-source-sans-pro-file-path}italic.woff") format("woff");
   font-weight: $font-weight-base;
   font-style: italic;
 }
@@ -44,8 +42,7 @@ $font-face-source-sans-pro-file-path: "../fonts/source-sans-pro/sourcesanspro-";
   local("SourceSansPro-Semi-bold"),
   local("Source-Sans-Pro-Semi-bold"),
   url("#{$font-face-source-sans-pro-file-path}semibold.woff2") format("woff2"),
-  url("#{$font-face-source-sans-pro-file-path}semibold.woff") format("woff"),
-  url("#{$font-face-source-sans-pro-file-path}semibold.ttf") format("ttf");
+  url("#{$font-face-source-sans-pro-file-path}semibold.woff") format("woff");
   font-weight: $font-weight-bold;
   font-style: normal;
 }

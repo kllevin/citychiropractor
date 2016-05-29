@@ -41,8 +41,7 @@ module.exports = function(grunt) {
       options: {
         layout: 'page.hbs',
         layoutdir: 'src/bonnet/layouts/',
-        partials: 'src/bonnet/partials/**/*',
-        helpers: ['helper-moment', 'foo/*.js' ]
+        partials: 'src/bonnet/partials/**/*'
       },
       pages: {
         cwd: 'src/content/_pages/',
@@ -212,6 +211,15 @@ module.exports = function(grunt) {
           src: '**/*.htaccess',
           dest: 'dist'
         }]
+      },
+      sitemap: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: 'src/',
+          src: '**/*sitemap.xml',
+          dest: 'dist'
+        }]
       }
     },
 
@@ -329,10 +337,10 @@ module.exports = function(grunt) {
   ]);
 
   // Deploy
-  grunt.registerTask('deploy', [
-    'build',
-    'gh-pages'
-  ]);
+  // grunt.registerTask('deploy', [
+  //   'build',
+  //   'gh-pages'
+  // ]);
 
   // Default (serve)
   grunt.registerTask('default', ['serve']);

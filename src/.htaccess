@@ -982,3 +982,33 @@ FileETag None
 #     RewriteCond %{REQUEST_FILENAME} !-f
 #     RewriteRule ^(.+)\.(\d+)\.(bmp|css|cur|gif|ico|jpe?g|js|png|svgz?|webp|webmanifest)$ $1.$3 [L]
 # </IfModule>
+
+
+# 301 Redirects
+Redirect 301 /index.shtml http://www.citychiropractor.com.au
+Redirect 301 /about-us.shtml http://www.citychiropractor.com.au/about.html
+Redirect 301 /what-to-expect.shtml http://www.citychiropractor.com.au/what-to-expect.html
+Redirect 301 /about-chiropractic.shtml http://www.citychiropractor.com.au/about.html
+Redirect 301 /fees-hours.shtml http://www.citychiropractor.com.au/hours-and-fees.html
+Redirect 301 /testimonials.shtml http://www.citychiropractor.com.au
+Redirect 301 /faq.shtml http://www.citychiropractor.com.au/faqs.html
+Redirect 301 /contact-us.shtml http://www.citychiropractor.com.au/contact.html
+Redirect 301 /book-appointment.shtml http://www.citychiropractor.com.au/contact.html
+Redirect 301 /sitemap.shtml http://www.citychiropractor.com.au/sitemap.html
+Redirect 301 /links.shtml http://www.citychiropractor.com.au/about.html
+Redirect 301 /accessibility.shtml http://www.citychiropractor.com.au
+Redirect 301 /the-team.shtml http://www.citychiropractor.com.au/about.html
+Redirect 301 /neck-pain.shtml http://www.citychiropractor.com.au/faqs.html
+Redirect 301 /low-back-pain.shtml http://www.citychiropractor.com.au/faqs.html
+Redirect 301 /shoulder-pain.shtml http://www.citychiropractor.com.au/faqs.html
+Redirect 301 /hip-pain.shtml http://www.citychiropractor.com.au/faqs.html
+Redirect 301 /posture.shtml http://www.citychiropractor.com.au/faqs.html
+Redirect 301 /knee-injuries.shtml http://www.citychiropractor.com.au/faqs.html
+Redirect 301 /sports-injuries.shtml http://www.citychiropractor.com.au/faqs.html
+Redirect 301 /disc-injuries.shtml http://www.citychiropractor.com.au/faqs.html
+Redirect 301 /whiplash.shtml http://www.citychiropractor.com.au/faqs.html
+Redirect 301 /headaches.shtml http://www.citychiropractor.com.au/faqs.html
+Redirect 301 /referred-pain.shtml http://www.citychiropractor.com.au/faqs.html
+Redirect 301 /testimonials-all.shtml http://www.citychiropractor.com.au
+Redirect 301 /testimonials-anna.shtml http://www.citychiropractor.com.au
+Redirect 301 /testimonials-chris.shtml http://www.citychiropractor.com.au
