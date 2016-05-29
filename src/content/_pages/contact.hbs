@@ -14,7 +14,8 @@ view-class: view-contact
 
   <div class="l-grid l-grid--gutter-huge">
     <div class="l-grid__item  u-one-half-from-lap-large u-s-mb-base">
-      <form id="contactForm" name="contactForm">
+      <form id="contactForm" name="contactForm" action="https://formspree.io/kllevin@gmail.com"
+      method="POST">
         <fieldset>
           <legend class="h2">Book an Appointment</legend>
           <div class="c-form__row">
@@ -34,7 +35,7 @@ view-class: view-contact
               <div class="l-grid__item u-one-half-from-500 u-s-mb-base-up-to-500">
                 <label class="c-form__label" for="preferred-day">Preferred day</label>
                 <div class="c-form-select">
-                  <select id="preferred-day">
+                  <select id="preferred-day" name="preferred-day">
                     <option>Please select one…</option>
                     <option value="Monday">Monday</option>
                     <option value="Wednesday">Wednesday</option>
@@ -50,7 +51,7 @@ view-class: view-contact
               <div class="l-grid__item u-one-half-from-500">
                 <label class="c-form__label" for="preferred-time">Preferred time</label>
                 <div class="c-form-select">
-                  <select id="preferred-time">
+                  <select id="preferred-time" name="preferred-time">
                     <option>Please select one…</option>
                     <option value="Morning">Morning</option>
                     <option value="lunch time">Lunch time</option>
