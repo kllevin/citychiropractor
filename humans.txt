@@ -28,5 +28,5 @@ Name: Facebook SVG icon used in the site header created by Niels Gesquiere
 
 Last update: 2016/01/18
 Standards: HTML5, CSS3, JavaScript
-Components: Sass, Google Fonts (Merriweather), EditorConfig, Browserslist, Apache Server Configs
+Components: Sass, EditorConfig, Browserslist, Apache Server Configs
 Software: Grunt, Assemble, Handlebars, NPM
