@@ -194,6 +194,15 @@ module.exports = function(grunt) {
           src: '**/*.{woff,woff2}',
           dest: 'dist/fonts'
         }]
+      },
+      favicons: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: 'assets/images/favicons',
+          src: '**/*.**',
+          dest: 'dist'
+        }]
       }
     },
 
