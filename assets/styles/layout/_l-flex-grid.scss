@@ -1,0 +1,298 @@
+/* ============================================================================
+   @LAYOUT -> FLEX GRID
+   ========================================================================= */
+
+/**
+ * A powerful Flexbox-based grid that is responsive ready (all
+ * grid column widths are fluid using the `%` unit), nestable, and comes with
+ * a bunch of handy modifiers. This makes the grid the workhorse of your UI
+ * builds, any layout you need always look to the grid first—including within
+ * your "Components", it exists so you don't have to write redundant CSS to
+ * construct layouts.
+ *
+ * As nicely put by Harry Roberts:
+ *
+ * "Grid systems grid should be thought of as shelves. They contain content but
+ * are not content in themselves. You put up your shelves then fill them with
+ * your stuff. By setting up our grids separately to our components you can
+ * move components around a lot more easily than if they had dimensions
+ * applied to them; this makes our front-ends a lot more adaptable and quick
+ * to work with."
+ *
+ * N.B. they're are a number of Flexbox bugs captured here:
+ * https://github.com/philipwalton/flexbugs.
+ */
+
+
+/**
+ * Settings.
+ */
+
+$l-flex-grid-gutter-base:                       $spacing-base !default;
+
+$l-flex-grid-gutter-tiny:                       $spacing-third !default;
+
+$l-flex-grid-gutter-small:                      $spacing-half !default;
+
+$l-flex-grid-gutter-large:                      $spacing-base-plus-half !default;
+
+$l-flex-grid-gutter-huge:                       $spacing-double !default;
+
+$l-flex-grid-apply-at-breakpoints-for-default:  false !default;
+
+$l-flex-grid-apply-at-breakpoints:              $default-breakpoints !default;
+
+
+/**
+ * Grid container.
+ *
+ * 1. Negative left margin to negate the horizontal gutters.
+ */
+
+.l-flex-grid {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: -(to-rem($l-flex-grid-gutter-base)); // [1]
+
+  html:not(.flexboxtweener).no-flexbox & {
+    display: block;
+  }
+}
+
+
+/**
+ * Grid items.
+ *
+ * 1. Allows the use of widths.
+ * 2. Horizontal gutter.
+ */
+
+.l-flex-grid__item {
+  flex-basis: auto; // [1]
+  padding-left: to-rem($l-flex-grid-gutter-base); // [2]
+
+  html:not(.flexboxtweener).no-flexbox & {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+
+/**
+ * Modifier: gutterless for both horizontal and vertical gutters.
+ *
+ * N.B. we boost the specificity by chaining the base class to the modifier
+ * class to make sure we're always overriding any gutter modifier classes.
+ */
+
+.l-flex-grid.l-flex-grid--gutterless {
+  margin-left: 0;
+
+  > .l-flex-grid__item {
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+}
+
+
+/**
+ * Modifiers: gutter sizes.
+ */
+
+// Base
+// N.B. having to reinstate the default so that any nested grids that inherit
+// a "Gutterless" modifier can be easily reapplied
+.l-flex-grid--gutter-horizontal-base {
+  margin-left: -(to-rem($l-flex-grid-gutter-base));
+
+  > .l-flex-grid__item {
+    padding-left:  to-rem($l-flex-grid-gutter-base);
+  }
+}
+
+// Tiny
+.l-flex-grid--gutter-horizontal-tiny {
+  margin-left: -(to-rem($l-flex-grid-gutter-tiny));
+
+  > .l-flex-grid__item {
+    padding-left:  to-rem($l-flex-grid-gutter-tiny);
+  }
+}
+
+// Small
+.l-flex-grid--gutter-horizontal-small {
+  margin-left: -(to-rem($l-flex-grid-gutter-small));
+
+  > .l-flex-grid__item {
+    padding-left:  to-rem($l-flex-grid-gutter-small);
+  }
+}
+
+// Large
+.l-flex-grid--gutter-horizontal-large {
+  margin-left: -(to-rem($l-flex-grid-gutter-large));
+
+  > .l-flex-grid__item {
+    padding-left:  to-rem($l-flex-grid-gutter-large);
+  }
+}
+
+// Huge
+.l-flex-grid--gutter-horizontal-huge {
+  margin-left: -(to-rem($l-flex-grid-gutter-huge));
+
+  > .l-flex-grid__item {
+    padding-left:  to-rem($l-flex-grid-gutter-huge);
+  }
+}
+
+
+/**
+ * Modifiers: vertical gutters.
+ */
+
+// Base
+.l-flex-grid--gutter-vertical-base > .l-flex-grid__item {
+  margin-bottom: to-rem($spacing-base);
+}
+
+// Tiny
+.l-flex-grid--gutter-vertical-tiny > .l-flex-grid__item {
+  margin-bottom: to-rem($spacing-third);
+}
+
+// Small
+.l-flex-grid--gutter-vertical-small > .l-flex-grid__item {
+  margin-bottom: to-rem($spacing-half);
+}
+
+// Large
+.l-flex-grid--gutter-vertical-large > .l-flex-grid__item {
+  margin-bottom: to-rem($spacing-base-plus-half);
+}
+
+// Huge
+.l-flex-grid--gutter-vertical-huge > .l-flex-grid__item {
+  margin-bottom: to-rem($spacing-double);
+}
+
+
+/**
+ * Modifier: Equal height columns
+ */
+
+.l-flex-grid--equal-height > .l-flex-grid__item {
+  display: flex;
+}
+
+@if $l-flex-grid-apply-at-breakpoints-for-default {
+  @include generate-at-breakpoints('.l-flex-grid--equal-height{bp} > .l-flex-grid__item',
+  $l-flex-grid-apply-at-breakpoints) {
+    display: flex;
+  }
+}
+
+
+
+/**
+ * Modifier: no wrap
+ */
+
+.l-flex-grid--nowrap {
+  flex-flow: row nowrap;
+}
+
+
+@if $l-flex-grid-apply-at-breakpoints-for-default {
+  @include generate-at-breakpoints('.l-flex-grid--nowrap{bp}',
+  $l-flex-grid-apply-at-breakpoints) {
+    flex-flow: row nowrap;
+  }
+}
+
+
+/**
+ * Modifiers: alignments.
+ */
+
+// Middle
+.l-flex-grid--align-middle {
+  align-items: center;
+}
+
+// Bottom
+.l-flex-grid--align-bottom {
+  align-items: flex-end;
+}
+
+// Center
+.l-flex-grid--align-center {
+  justify-content: center;
+}
+
+// Right
+.l-flex-grid--align-right {
+  justify-content: flex-end;
+}
+
+
+/**
+ * Modifiers: "space between" and "space around".
+ */
+
+// Space between
+.l-flex-grid--space-between {
+  justify-content: space-between;
+}
+
+// Space around
+.l-flex-grid--space-around {
+  justify-content: space-around;
+}
+
+
+/**
+ * Modifier: fit, all grid items have an equal width.
+ *
+ * 1. Provide all values to avoid IE 10 bug with the shorthand `flex`
+ *    property, see: http://git.io/vllC7.
+ *    Use `0%` to avoid bug in IE 10/11 with unitless `flex-basis`, see:
+ *    http://git.io/vllWx.
+ */
+
+.l-flex-grid--fit .l-flex-grid__item {
+  flex: 1 1 0%;  // [1]
+}
+
+.l-flex-grid__item--allow-grow {
+  flex-grow: 1;
+}
+
+
+.l-flex-grid--allow-grow .l-flex-grid__item {
+  flex-grow: 1;
+}
+
+/**
+ * Modifiers: Alignment of individual grid items.
+ */
+
+// Stretch horizontally
+.l-flex-grid__item--stretch-horizontal {
+  flex: 1 1 0%;
+}
+
+// Center vertically
+.l-flex-grid__item--align-middle {
+  align-self: center;
+}
+
+// Bottom
+.l-flex-grid__item--align-bottom {
+  align-self: flex-end;
+}
+
+// Center horizontally
+.l-flex-grid__item--align-center {
+  margin: 0 auto;
+}

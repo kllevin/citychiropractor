@@ -1,0 +1,32 @@
+/* ============================================================================
+   @UTILITIES -> WIDTHS
+   ========================================================================= */
+
+/**
+ * Apply different width treatments to elements.
+ *
+ * N.B. this extends the Scally width utilities.
+ */
+
+
+/**
+ * Settings
+ */
+
+$u-width-apply-at-breakpoints-for-auto: false !default;
+
+
+/**
+ * Width auto
+ */
+
+.u-width-auto {
+  width: auto;
+}
+
+@if $u-width-apply-at-breakpoints-for-auto {
+  @include generate-at-breakpoints('.u-width-auto{bp}',
+  $l-flex-grid-apply-at-breakpoints) {
+    width: auto;
+  }
+}
