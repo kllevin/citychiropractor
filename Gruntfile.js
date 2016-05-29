@@ -203,6 +203,15 @@ module.exports = function(grunt) {
           src: '**/*.**',
           dest: 'dist'
         }]
+      },
+      htaccess: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: 'src/',
+          src: '**/*.htaccess',
+          dest: 'dist'
+        }]
       }
     },
 
@@ -287,8 +296,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-svgmin');
-  //grunt.loadNpmTasks('grunt-assemble' );
-  grunt.loadNpmTasks('assemble' );
+  grunt.loadNpmTasks('assemble');
 
   // Serve
   grunt.registerTask('serve', [

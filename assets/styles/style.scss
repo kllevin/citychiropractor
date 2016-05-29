@@ -192,8 +192,6 @@ $l-container-maximum-width: 1000;
 // Grid
 @import "../../node_modules/scally/layout/l-grid";
 
-@import "layout/l-flex-grid";
-
 // Side-by-side
 @import "../../node_modules/scally/layout/l-side-by-side-alt";
 
@@ -236,9 +234,6 @@ $u-text-apply-at-breakpoints:                   (palm max);
 $u-text-apply-at-breakpoints-for-align-center:  true;
 @import "../../node_modules/scally/utilities/u-text";
 
-$u-width-apply-at-breakpoints-for-auto: (lap);
-@import "utilities/u-widths";
-
 
 
 
@@ -265,6 +260,8 @@ $u-width-apply-at-breakpoints-for-auto: (lap);
 /**
  * LAYOUT.
  */
+
+@import "layout/l-flex-grid";
 
 @import "layout/l-container";
 
@@ -293,8 +290,6 @@ $u-width-apply-at-breakpoints-for-auto: (lap);
 /**
  * COMPONENTS.
  */
-
-@import "components/c-map";
 
 @import "components/c-profile";
 
