@@ -12,10 +12,8 @@
 @include headings(1, 6, true) {
   font-family: $font-family-headings;
   font-weight: $font-weight-headings;
-  //font-size: to-rem($font-size-x-small);
   text-transform: uppercase;
 }
-
 
 h2,
 .h2 {

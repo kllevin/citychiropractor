@@ -29,4 +29,10 @@
   &.is-active {
     background-color: tint($color-brand-alt, 10%);
   }
+
+  svg {
+    height: to-rem(24);
+    width: to-rem(24);
+    fill: $color-white;
+  }
 }

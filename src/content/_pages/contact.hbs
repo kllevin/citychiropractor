@@ -14,10 +14,20 @@ view-class: view-contact
 
   <div class="l-grid l-grid--gutter-huge">
     <div class="l-grid__item  u-one-half-from-lap-large u-s-mb-base">
+      <h2>Book an Appointment</h2>
+      <p>Give us a call today to book an appointment or send us a message.</p>
+      <p class="u-s-mb-large">
+        <a class="c-button" href="tel:+0292210771" itemprop="telephone">
+            <svg aria-hidden="true">
+                <use xlink:href="#phone-icon" />
+              </svg>
+              <span>02 9221 0771</span>
+        </a>
+      </p>
       <form id="contactForm" name="contactForm" action="https://formspree.io/kllevin@gmail.com"
       method="POST">
         <fieldset>
-          <legend class="h2">Book an Appointment</legend>
+          <legend class="u-hide-visually">Book Online</legend>
           <div class="c-form__row">
             <label class="c-form__label" for="name">Name</label>
             <input class="text-input" id="name" name="name" type="text" aria-required="true" required maxlength="200">
@@ -32,7 +42,7 @@ view-class: view-contact
           </div>
           <div class="c-form__row">
             <div class="l-grid">
-              <div class="l-grid__item u-one-half-from-500 u-s-mb-base-up-to-500">
+              <div class="l-grid__item u-one-half-from-500 u-s-mb-half-up-to-500">
                 <label class="c-form__label" for="preferred-day">Preferred day</label>
                 <div class="c-form-select">
                   <select id="preferred-day" name="preferred-day">
@@ -75,7 +85,7 @@ view-class: view-contact
       </form>
     </div>
     <div class="l-grid__item  u-one-half-from-lap-large" itemscope itemtype="http://schema.org/LocalBusiness">
-      <img src="http://maps.googleapis.com/maps/api/staticmap?center=66+Hunter+St.+Sydney+NSW&zoom=16&scale=false&size=400x300&maptype=roadmap&format=png&visual_refresh=true&markers=icon:City Chiropractic Care%7Cshadow:true%7C66+Hunter+St.+Sydney+NSW&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7C66+Hunter+St.+Sydney+NSW" alt="Google Map of 66 Hunter St. Sydney NSW" class="u-display-block u-s-mb-tiny">
+      <img src="http://maps.googleapis.com/maps/api/staticmap?center=66+Hunter+St.+Sydney+NSW&zoom=16&&scale=2&size=400x300&maptype=roadmap&format=png&visual_refresh=true&markers=icon:City Chiropractic Care%7Cshadow:true%7C66+Hunter+St.+Sydney+NSW&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7C66+Hunter+St.+Sydney+NSW" alt="Google Map of 66 Hunter St. Sydney NSW" class="u-display-block u-s-mb-tiny">
       <a href="https://www.google.com/maps/dir//66+Hunter+St.+Sydney+NSW/" rel="external">View full map</a>
 
       <p class="u-s-mt-base" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">

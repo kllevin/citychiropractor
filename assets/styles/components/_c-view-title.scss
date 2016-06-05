@@ -33,9 +33,13 @@
  */
 
 .c-view-title__text {
-  font-size: to-rem(60);
+  font-size: to-rem(40);
   font-weight: 600;
   line-height: 1.25;
   margin-bottom: 0;
   text-transform: none;
+
+  @include respond-to(lap) {
+    font-size: to-rem(60);
+  }
 }

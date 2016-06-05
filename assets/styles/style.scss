@@ -152,7 +152,7 @@
 @import "../../node_modules/scally/core/base/abbreviation";
 
 $apply-text-input-and-select-rounded-corners: true;
-$text-input-and-select-padding: $spacing-half;
+$text-input-and-select-padding: 11;
 $text-input-and-select-border-color: $color-brand-light;
 @import "../../node_modules/scally/core/base/forms";
 
