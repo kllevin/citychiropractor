@@ -13,18 +13,28 @@ view-class: view-contact
 <div class="l-container">
 
   <div class="l-grid l-grid--gutter-huge">
-    <div class="l-grid__item  u-one-half-from-lap-large u-s-mb-base">
+    <div class="l-grid__item  u-one-half-from-lap-large u-s-mb-base" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
       <h2>Book an Appointment</h2>
-      <p>Give us a call today to book an appointment or send us a message.</p>
+      <p>Give us a call today to book an appointment or send us an email.</p>
       <p class="u-s-mb-large">
-        <a class="c-button" href="tel:+0292210771" itemprop="telephone">
+        <a class="c-button u-s-mr-small" href="tel:+0292210771" itemprop="telephone">
             <svg aria-hidden="true">
                 <use xlink:href="#phone-icon" />
               </svg>
               <span>02 9221 0771</span>
+        </a><!--
+        --><a class="c-button" href="mailto:info@citychiropractor.com.au" itemprop="email">Send Email</a>
         </a>
       </p>
-      <form id="contactForm" name="contactForm" action="https://formspree.io/kllevin@gmail.com"
+      <p class="u-s-mt-base" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+        <strong>Office Address</strong><br>
+        <span itemprop="streetAddress">Suite 506<br>66 Hunter Street</span><br>
+        <span itemprop="addressLocality">Sydney</span>
+        <span itemprop="addressRegion">NSW</span>,
+        <span itemprop="postalCode">2000</span><br>
+        <span><em>(next to <a href="http://www.rockpool.com/" rel="external">Rockpool Bar &amp; Grill</a>)</em></span>
+      </p>
+      {{!-- <form id="contactForm" name="contactForm" action="https://formspree.io/kllevin@gmail.com"
       method="POST">
         <fieldset>
           <legend class="u-hide-visually">Book Online</legend>
@@ -82,23 +92,11 @@ view-class: view-contact
           </div>
           <button type="submit" class="c-button">Submit</button>
         </fieldset>
-      </form>
+      </form> --}}
     </div>
     <div class="l-grid__item  u-one-half-from-lap-large" itemscope itemtype="http://schema.org/LocalBusiness">
       <img src="http://maps.googleapis.com/maps/api/staticmap?center=66+Hunter+St.+Sydney+NSW&zoom=16&&scale=2&size=400x300&maptype=roadmap&format=png&visual_refresh=true&markers=icon:City Chiropractic Care%7Cshadow:true%7C66+Hunter+St.+Sydney+NSW&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7C66+Hunter+St.+Sydney+NSW" alt="Google Map of 66 Hunter St. Sydney NSW" class="u-display-block u-s-mb-tiny">
       <a href="https://www.google.com/maps/dir//66+Hunter+St.+Sydney+NSW/" rel="external">View full map</a>
-
-      <p class="u-s-mt-base" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-        <span itemprop="streetAddress">Suite 506<br>66 Hunter Street</span><br>
-        <span itemprop="addressLocality">Sydney</span>
-        <span itemprop="addressRegion">NSW</span>,
-        <span itemprop="postalCode">2000</span><br>
-        <span><em>(next to <a href="http://www.rockpool.com/" rel="external">Rockpool Bar &amp; Grill</a>)</em></span>
-      </p>
-      <p>
-        <span>Tel: <a href="tel:+0292210771" itemprop="telephone">02 9221 0771</a></span><br>
-        <a href="mailto:info@citychiropractor.com.au" itemprop="email">info@citychiropractor.com.au</a>
-      </p>
     </div>
   </div>
 </div>

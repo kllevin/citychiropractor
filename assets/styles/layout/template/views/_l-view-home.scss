@@ -13,11 +13,13 @@
 
 .l-view-home-banner {
   display: flex;
+  justify-content: space-around;
   max-height: 314px;
 }
 
 .l-view-home-banner__item {
   flex-basis: auto;
+  text-align:right;
 
   @include respond-to(lap) {
     width: 50%;
@@ -28,6 +30,7 @@
 .l-view-home-banner__item:last-child {
   border-left: 1px solid white;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  text-align: left;
 
   @include respond-to(palm, max) {
     display: none;
