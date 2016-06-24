@@ -17,6 +17,8 @@ $details-padding-ends: $spacing-half;
 
 $details-padding-sides: $spacing-base-plus-half;
 
+$details-padding-sides-small: 18;
+
 $details-spacing-bottom: $spacing-base;
 
 $details-border-color: $color-brand-tint;
@@ -102,5 +104,14 @@ summary {
 
 summary + div {
   font-size: to-rem($font-size-small);
-  padding: to-rem($details-padding-ends) to-rem($details-padding-sides);
+  padding-top: to-rem($details-padding-ends);
+  padding-bottom: to-rem($details-padding-ends);
+  padding-right: to-rem($details-padding-sides-small);
+  padding-left: to-rem($details-padding-sides-small);
+
+  @include respond-to(500) {
+    padding-right: to-rem($details-padding-sides);
+    padding-left: to-rem($details-padding-sides);
+  }
+
 }
