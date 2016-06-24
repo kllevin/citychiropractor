@@ -218,7 +218,7 @@ $u-display-apply-at-breakpoints: lap-large;
 $u-display-apply-at-breakpoints-for-block: true;
 @import "../../node_modules/scally/utilities/u-display";
 
-$u-hide-apply-at-breakpoints: (palm max, lap);
+$u-hide-apply-at-breakpoints: (880 max, 881);
 $u-hide-apply-at-breakpoints-for-hide: true;
 @import "../../node_modules/scally/utilities/u-hide";
 

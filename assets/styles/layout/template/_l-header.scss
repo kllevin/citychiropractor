@@ -89,44 +89,14 @@ $l-header-bp-large: 880 + 1;
 
 
 /**
- * CTA’s.
- */
-
-.l-header__ctas {
-  // Needed to make the buttons equal height
-  display: flex;
-
-  @include respond-to($l-header-bp-small, max) {
-    justify-content: center;
-    margin-top: to-rem($l-header-spacing-amount);
-  }
-
-  @include respond-to($l-header-bp-large) {
-    margin-right: -(to-em($c-button-padding-sides));
-  }
-}
-
-/**
  * The CTA’s.
  *
  * N.B. need to boost specificity with the `l-header` selector to override the
  * Button component.
  */
 
-.l-header .l-header__cta {
-  display: flex;
-  margin-right: to-rem($l-header-spacing-amount);
-
-  &:last-child {
-    margin-right: 0;
-  }
-}
-
-/**
- * Modifier: phone CTA.
- */
-
-.l-header .l-header__cta--phone {
+.l-header .l-header__cta{
+  margin-right: 0;
   // Make it not look like a button at larger viewports size
   @include respond-to($l-header-bp-large) {
     cursor: default;
@@ -232,6 +202,12 @@ $l-header-bp-large: 880 + 1;
   @include respond-to($l-header-bp-large) {
     margin-left: to-rem($spacing-sixth);
   }
+}
+
+.l-nav-main__menu-cta {
+  position: absolute;
+  top: to-rem($l-header-spacing-amount / 2);
+  left: to-rem($l-header-spacing-amount / 2);
 }
 
 // Used on the `<body>` element to prevent vertical scrolling when Nav Main

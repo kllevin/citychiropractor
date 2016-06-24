@@ -11,13 +11,12 @@
     <div class="l-header__nav__ctas">
 
       {{!-- CTA’s --}}
-      <div class="l-header__ctas">
+      <div class="u-hide-up-to-880">
         <a href="tel:+61-02-9221-0771" class="l-header__cta c-button c-button--small">
           <svg aria-hidden="true" class="u-s-mr-tiny">
             <use xlink:href="#phone-icon" />
           </svg>
-          <span class="u-hide-from-lap">Call us</span>
-          <span class="u-hide-up-to-palm">02 9221 0771</span>
+          <span>02 9221 0771</span>
         </a>
       </div>
       {{!-- //CTA’s --}}
@@ -26,6 +25,14 @@
       <button class="l-header__menu-btn  js-menu-toggle-trigger" type="button"><span class="u-hide-visually">Open </span>menu</button>
       <nav class="l-header__nav  js-menu-toggle-target" role="navigation" aria-label="Main navigation">
         <ul class="l-nav-main">
+          <li class="l-nav-main__menu-cta u-hide-from-881">
+            <a href="tel:+61-02-9221-0771" class="l-header__cta c-button c-button--small">
+              <svg aria-hidden="true" class="u-s-mr-tiny">
+                <use xlink:href="#phone-icon" />
+              </svg>
+              <span>Call us</span>
+            </a>
+          </li>
           {{#withSort pages 'data.nav-order'}}
             {{#if data.slug}}
               <li>
