@@ -222,8 +222,8 @@ $u-hide-apply-at-breakpoints: (880 max, 881);
 $u-hide-apply-at-breakpoints-for-hide: true;
 @import "../../node_modules/scally/utilities/u-hide";
 
-$u-spacing-apply-at-breakpoints: (500 max, 445 max);
-$u-spacing-apply-classes-for-breakpoints: ('.u-s-mb-base');
+$u-spacing-apply-at-breakpoints: (500 max, 445 max, 542);
+$u-spacing-apply-classes-for-breakpoints: ('.u-s-mb-base', '.u-s-mr-tiny');
 @import "../../node_modules/scally/utilities/u-spacing";
 
 $u-width-percentage-apply-at-breakpoints: (500, lap, 745, lap-large);
