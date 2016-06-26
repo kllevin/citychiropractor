@@ -1,0 +1,31 @@
+/* ============================================================================
+   @COMPONENTS -> BUTTON GROUP
+   ========================================================================= */
+
+/**
+ * Button Group
+ */
+
+.c-button-group {
+  text-align: center;
+}
+
+
+/**
+ * Item
+ */
+
+.c-button-group__item {
+  &:first-child {
+    margin-bottom: to-rem($spacing-half);
+  }
+
+  @include respond-to(550) {
+    display: inline-block;
+
+    &:first-child {
+      margin-bottom: 0;
+      margin-right: to-rem($spacing-half);
+    }
+  }
+}
