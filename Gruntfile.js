@@ -336,12 +336,6 @@ module.exports = function(grunt) {
     'htmlmin'
   ]);
 
-  // Deploy
-  // grunt.registerTask('deploy', [
-  //   'build',
-  //   'gh-pages'
-  // ]);
-
   // Default (serve)
   grunt.registerTask('default', ['serve']);
 };
