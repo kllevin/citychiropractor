@@ -15,6 +15,11 @@
   display: flex;
   justify-content: space-around;
   max-height: 314px;
+
+  @include respond-to(1200) {
+    max-width:1800;
+    max-height: auto;
+  }
 }
 
 .l-view-home-banner__item {
