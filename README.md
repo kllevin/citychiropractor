@@ -8,7 +8,7 @@ To run this project you will need:
 - [Node-Sass](https://npmjs.org/package/node-sass)
 - [Grunt-cli](http://gruntjs.com/)
 
-## Grunt Tasks
+## Grunt tasks
 
 - `grunt serve` packages up the site and serves it at `localhost:8000`
 - `grunt build` compile the site into `./dist` directory
