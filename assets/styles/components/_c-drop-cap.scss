@@ -9,7 +9,6 @@
  * be adjusted.
  */
 
-
 .c-drop-cap::first-letter {
   color: $color-brand;
   font-size: to-rem(106);
@@ -18,14 +17,8 @@
   line-height: 0.5;
   margin-right: to-rem(8);
   margin-top: to-rem(16);
-  text-shadow:  1px 1px 0 $color-white,
-                2px 2px 0 $color-brand-alt;
+  text-shadow: 1px 1px 0 $color-white, 2px 2px 0 $color-brand-alt;
 }
-
-.c-drop-cap::first-line {
-  //font-weight: $font-weight-bold;
-}
-
 
 /**
  * The rest of the word as it needs to be closer to the drop cap than

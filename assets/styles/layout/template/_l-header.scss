@@ -6,7 +6,6 @@
  * The site header.
  */
 
-
 /**
  * Settings.
  */
@@ -17,10 +16,13 @@ $l-header-bp-small: 880;
 
 $l-header-bp-large: 880 + 1;
 
-
 .l-header {
   background-color: $color-brand;
-  background-image: linear-gradient(45deg, shade($color-brand, 6%), tint($color-brand, 16%));
+  background-image: linear-gradient(
+    45deg,
+    shade($color-brand, 6%),
+    tint($color-brand, 16%)
+  );
   font-size: to-rem($font-size-x-small);
   line-height: 24 / $font-size-x-small;
   padding-top: to-rem($l-header-spacing-amount);
@@ -31,18 +33,9 @@ $l-header-bp-large: 880 + 1;
     padding-top: to-rem($l-header-spacing-amount + 3);
     padding-bottom: to-rem($l-header-spacing-amount + 3);
   }
-
-  /**
-   * Home page specific styles.
-   */
-
-  .view-index & {
-    //border-bottom: 1px solid $color-white;
-  }
 }
 
 .l-header__inner {
-
   @include respond-to($l-header-bp-small, max) {
     // To make the logo at small viewports center aligned
     text-align: center;
@@ -53,7 +46,6 @@ $l-header-bp-large: 880 + 1;
     justify-content: space-between;
   }
 }
-
 
 /**
  * The SVG logo.
@@ -73,7 +65,6 @@ $l-header-bp-large: 880 + 1;
   }
 }
 
-
 /**
  * Main nav and CTA’s.
  */
@@ -87,7 +78,6 @@ $l-header-bp-large: 880 + 1;
   }
 }
 
-
 /**
  * The CTA’s.
  *
@@ -95,7 +85,7 @@ $l-header-bp-large: 880 + 1;
  * Button component.
  */
 
-.l-header .l-header__cta{
+.l-header .l-header__cta {
   margin-right: 0;
   // Make it not look like a button at larger viewports size
   @include respond-to($l-header-bp-large) {
@@ -122,7 +112,6 @@ $l-header-bp-large: 880 + 1;
     }
   }
 }
-
 
 /**
  * Main nav.
@@ -215,7 +204,6 @@ $l-header-bp-large: 880 + 1;
 .has-no-scrolling {
   overflow-y: hidden;
 }
-
 
 /**
  * Menu button that opens and closes the main navigation.

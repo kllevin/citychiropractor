@@ -10,39 +10,36 @@ $font-face-source-sans-pro-file-path: "../fonts/source-sans-pro/sourcesanspro-";
 
 // Regular
 @font-face {
+  font-display: swap;
   font-family: "Source Sans Pro";
-  src:
-  local("Source Sans Pro Regular"),
-  local("SourceSansPro-Regular"),
-  local("Source-Sans-Pro-Regular"),
-  url("#{$font-face-source-sans-pro-file-path}regular.woff2") format("woff2"),
-  url("#{$font-face-source-sans-pro-file-path}regular.woff") format("woff");
+  src: local("Source Sans Pro Regular"), local("SourceSansPro-Regular"),
+    local("Source-Sans-Pro-Regular"),
+    url("#{$font-face-source-sans-pro-file-path}regular.woff2") format("woff2"),
+    url("#{$font-face-source-sans-pro-file-path}regular.woff") format("woff");
   font-weight: $font-weight-base;
   font-style: normal;
 }
 
 // Italic
 @font-face {
+  font-display: swap;
   font-family: "Source Sans Pro";
-  src:
-  local("Source Sans Pro Italic"),
-  local("SourceSansPro-Italic"),
-  local("Source-Sans-Pro-Italic"),
-  url("#{$font-face-source-sans-pro-file-path}italic.woff2") format("woff2"),
-  url("#{$font-face-source-sans-pro-file-path}italic.woff") format("woff");
+  src: local("Source Sans Pro Italic"), local("SourceSansPro-Italic"),
+    local("Source-Sans-Pro-Italic"),
+    url("#{$font-face-source-sans-pro-file-path}italic.woff2") format("woff2"),
+    url("#{$font-face-source-sans-pro-file-path}italic.woff") format("woff");
   font-weight: $font-weight-base;
   font-style: italic;
 }
 
 // Semi-bold
 @font-face {
+  font-display: swap;
   font-family: "Source Sans Pro";
-  src:
-  local("Source Sans Pro Semi-bold"),
-  local("SourceSansPro-Semi-bold"),
-  local("Source-Sans-Pro-Semi-bold"),
-  url("#{$font-face-source-sans-pro-file-path}semibold.woff2") format("woff2"),
-  url("#{$font-face-source-sans-pro-file-path}semibold.woff") format("woff");
+  src: local("Source Sans Pro Semi-bold"), local("SourceSansPro-Semi-bold"),
+    local("Source-Sans-Pro-Semi-bold"),
+    url("#{$font-face-source-sans-pro-file-path}semibold.woff2") format("woff2"),
+    url("#{$font-face-source-sans-pro-file-path}semibold.woff") format("woff");
   font-weight: $font-weight-bold;
   font-style: normal;
 }

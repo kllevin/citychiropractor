@@ -4,7 +4,7 @@
 
 /* TEAM */
 Your title: Chris Pearce.
-Site: chris[at]chris-pearce[dot]me / chris-pearce[dot]me.
+Site: yo[at]cjpearce[dot]com / cjpearce[dot]com.
 Twitter: [at]chris__pearce.
 
 Your title: Kate Levin.
@@ -26,7 +26,7 @@ Name: Facebook SVG icon used in the site header created by Niels Gesquiere
 
 /* SITE */
 
-Last update: 2016/01/18
+Last update: 2018/05/12
 Standards: HTML5, CSS3, JavaScript
 Components: Sass, EditorConfig, Browserslist, Apache Server Configs
 Software: Grunt, Assemble, Handlebars, NPM

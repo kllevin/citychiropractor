@@ -6,18 +6,12 @@
  * The site footer.
  */
 
-
 .l-footer {
   border-top: 1px solid $color-brand-tint;
   padding-top: to-rem($spacing-base);
   padding-bottom: to-rem($spacing-base);
-
-  // To center align the CAA logo
-  @include respond-to(palm, max) {
-    text-align: center;
-  }
+  text-align: center;
 }
-
 
 /**
  * Copyright text.
@@ -26,10 +20,6 @@
 .l-footer__copyright {
   display: block;
   font-size: to-rem($font-size-xxx-small);
-
-  @include respond-to(lap) {
-    text-align: right;
-  }
 
   /**
    * Extend the “Button” component in “_c-button.scss”.
@@ -64,7 +54,6 @@
     display: inline;
   }
 }
-
 
 /**
  * Site credits.
